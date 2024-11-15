@@ -2,7 +2,15 @@
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    fontFamily: {
+      Moulin: ['Cormorant Garamond', 'serif'],
+    },
+    extend: {
+      colors: {
+        'light-default': '#FCFCF0',
+        'shade-3': '#7F7E5B',
+      },
+    },
   },
   plugins: [],
 }
