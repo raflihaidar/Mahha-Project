@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import BaseHero from '@/components/BaseHero.vue'
+</script>
+
 <template>
-  <main>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
-  </main>
+  <header>
+    <BaseHero />
+  </header>
 </template>
