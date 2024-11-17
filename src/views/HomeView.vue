@@ -1,13 +1,13 @@
 <script setup>
-import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpeg'
+import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpg'
 import Image1 from '@/assets/images/Home_Page/Home-03.jpg'
 import Image2 from '@/assets/images/Home_Page/Home-06.jpg'
 
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
-import BaseButton from '../components/BaseButton.vue'
-import BaseSubTitle from '../components/BaseSubTitle.vue'
-import BaseBackground from '../components/BaseBackground.vue'
+import BaseButton from '@/components/BaseButton.vue'
+import BaseSubTitle from '@/components/BaseSubTitle.vue'
+import BaseBackground from '@/components/BaseBackground.vue'
 
 const bannerText = [
   'An escape for the romantics to rejuvenate self and loved ones from the overstimulation of city bustle. Immerse in the charm of the picturesque beauty of Puncak Bogor through the gentle care of our embrace. A tranquil and exquisite haven to refresh the senses.',
