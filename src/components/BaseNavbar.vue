@@ -64,7 +64,7 @@ watch(
 
   <section
     v-if="isMenuOpen"
-    class="fixed flex flex-col justify-between w-screen h-[90vh] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
+    class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
   >
     <nav class="w-full relative">
       <RouterLink to="/">

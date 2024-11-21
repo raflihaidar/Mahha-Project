@@ -85,7 +85,7 @@ const isMobile = computed(() => window.innerWidth < 768)
       </button>
     </div>
 
-    <div :class="`sm:hidden flex w-[90%] text-lg mx-auto justify-between mt-5 ${textColor}`">
+    <div :class="`sm:hidden flex w-[90%] text-lg mx-auto justify-between mt-5 z-50 ${textColor}`">
       <p>{{ currentIndex + 1 }}/{{ images.length }}</p>
       <p>SWIPE</p>
     </div>
