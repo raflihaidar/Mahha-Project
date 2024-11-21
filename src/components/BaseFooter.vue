@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-dark-default sm:px-10 px-5 py-5 flex flex-col sm:space-y-52 space-y-28">
+  <footer
+    class="bg-dark-default sm:px-10 px-5 sm:pt-28 py-5 flex flex-col sm:space-y-52 space-y-28"
+  >
     <section
       class="flex flex-col sm:flex-row space-y-10 justify-between items-center mt-28 sm:mt-0 text-light-default"
     >

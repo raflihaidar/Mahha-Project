@@ -28,7 +28,7 @@ const props = defineProps({
 
 <template>
   <article
-    class="w-full text-center mx-auto bg-gradient-to-b mix-blend-screen"
+    class="font-medium w-full text-center mx-auto bg-gradient-to-b mix-blend-screen"
     :class="[
       `${gradientFromColor}`,
       `${gradientFromPercent}`,

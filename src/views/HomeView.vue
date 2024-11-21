@@ -1,4 +1,6 @@
 <script setup>
+import { RouterLink } from 'vue-router'
+
 import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpg'
 import Image1 from '@/assets/images/Home_Page/Home-03.jpg'
 import Image2 from '@/assets/images/Home_Page/Home-06.jpg'
@@ -35,7 +37,9 @@ const bannerText = [
         sanctuary designed for romance, with breathtaking views that invite you to linger longer and
         create unforgettable memories with your loved one.
       </p>
-      <BaseButton text="Explore Accomodation" icon-color="#45462A" font-size="text-xl" />
+      <RouterLink to="/accommodation">
+        <BaseButton text="Explore Accomodation" icon-color="#45462A" font-size="text-xl" />
+      </RouterLink>
       <figure class="absolute sm:-top-96 top-20 sm:left-0 right-10 w-40 sm:w-[384px]">
         <img src="../assets/images/Home_Page/Home-02.jpg" alt="" class="w-full" />
       </figure>
@@ -68,7 +72,7 @@ const bannerText = [
   >
     <article class="sm:w-1/2 w-full flex justify-center">
       <div class="sm:w-1/2 w-[90%] mx-auto">
-        <BaseSubTitle text-color="text-light-default" text-size="text-xl" class="mb-5">
+        <BaseSubTitle text-color="text-light-default" text-size="text-2xl" class="mb-5">
           Whispers of Endless Joy <br />
           in Every Moment
         </BaseSubTitle>
@@ -78,11 +82,14 @@ const bannerText = [
           glance, and breath be a shared moment of calm, wrapped in the soft embrace of love and
           nature.
         </p>
-        <BaseButton
-          text="Discover Experience"
-          text-color="text-light-default"
-          icon-color="#FCFCF0"
-        />
+        <RouterLink to="/experiences">
+          <BaseButton
+            text="Discover Experience"
+            text-color="text-light-default"
+            icon-color="#FCFCF0"
+            font-size="text-xl"
+          />
+        </RouterLink>
       </div>
     </article>
 

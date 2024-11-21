@@ -9,23 +9,27 @@ const props = defineProps({
 <template>
   <header
     :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center sm:bg-top sm:px-0"
+    class="font-bold sw-full h-full bg-cover bg-center sm:bg-top sm:px-0 relative"
   >
     <div
       class="text-center font-Moulin flex flex-col justify-center items-center h-screen sm:w-full w-[95%] mx-auto"
     >
-      <h1 class="text-4xl sm:text-4xl lg:text-8xl font-bold leading-tight text-light-default">
+      <h1 class="text-4xl sm:text-4xl lg:text-8xl font-bold leading-tight text-light-default z-20">
         {{ fTitle }} <br />
         {{ lTitle }}
       </h1>
     </div>
     <p
-      class="absolute bottom-10 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-shade-3 cursor-pointer z-20"
+      class="absolute top-[90vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-20"
     >
       Scroll Down To Discover
     </p>
     <div class="w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
-    <div class="bg-black w-full h-full absolute top-0 bottom-0 bg-opacity-30 -z-10"></div>
+    <div class="bg-black w-full h-full absolute bottom-0 top-0 bg-opacity-50 z-10">
+      <div
+        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
+      ></div>
+    </div>
     <div class="mix-blend-screen"></div>
   </header>
 </template>

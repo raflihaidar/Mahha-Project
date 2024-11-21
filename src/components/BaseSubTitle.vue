@@ -21,7 +21,7 @@ const subtitleClass = computed(() => {
 </script>
 
 <template>
-  <h2 :class="subtitleClass">
+  <h2 :class="subtitleClass" class="font-bold">
     <slot />
   </h2>
 </template>
