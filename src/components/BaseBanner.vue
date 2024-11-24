@@ -24,26 +24,24 @@ const props = defineProps({
     default: 'from-90', // Persentase default untuk gradient akhir (tanpa simbol %)
   },
 })
+
+
 </script>
 
 <template>
-  <article
-    class="font-medium w-full text-center mx-auto bg-gradient-to-b mix-blend-screen"
-    :class="[
-      `${gradientFromColor}`,
-      `${gradientFromPercent}`,
-      `${gradientToColor}`,
-      `${gradientToPercent}`,
-    ]"
-  >
-    <div class="relative">
-      <span class="w-full justify-between flex">
+  <article class="w-full h-full pt-28 mx-auto bg-gradient-to-b mix-blend-screen" :class="[
+    `${gradientFromColor}`,
+    `${gradientFromPercent}`,
+    `${gradientToColor}`,
+    `${gradientToPercent}`,
+  ]">
+    <div class="text-center w-full">
+      <div class="w-full gap-x-10 flex justify-evenly absolute">
         <BannerDecoration />
         <BannerDecoration />
-      </span>
-      <p
-        :class="`font-Moulin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${textColor} sm:w-[75vw] w-[95vw]  py-32 box-border mx-auto text-xl sm:text-2xl`"
-      >
+      </div>
+      <p data-scroll data-scroll-speed="2"
+        :class="`font-thin ${textColor} sm:w-[75vw] w-[95vw] py-32  mx-auto text-xl sm:text-2xl`">
         {{ text }}
       </p>
     </div>

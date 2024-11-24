@@ -21,8 +21,7 @@ watch(
 
 <template>
   <nav
-    class="fixed font-extrabold top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50"
-  >
+    class="fixed  top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50">
     <ul class="cursor-pointer text-sm hidden sm:block">
       <li>
         <RouterLink to="/accommodation">ACCOMODATION</RouterLink>
@@ -43,29 +42,16 @@ watch(
       </figure>
     </RouterLink>
     <section>
-      <BaseButton
-        class="hidden sm:block"
-        text="BOOK YOUR STAY"
-        iconColor="#FCFCF0"
-        textColor="text-light-default"
-        fontSize="text-sm"
-      />
+      <BaseButton class="hidden sm:block" text="BOOK YOUR STAY" iconColor="#FCFCF0" textColor="text-light-default"
+        fontSize="text-sm" />
 
-      <BaseButton
-        class="block sm:hidden"
-        text="BOOK"
-        iconColor="#FCFCF0"
-        textColor="text-light-default"
-        fontSize="text-md"
-        :icon="false"
-      />
+      <BaseButton class="block sm:hidden" text="BOOK" iconColor="#FCFCF0" textColor="text-light-default"
+        fontSize="text-md" :icon="false" />
     </section>
   </nav>
 
-  <section
-    v-if="isMenuOpen"
-    class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
-  >
+  <section v-if="isMenuOpen"
+    class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50">
     <nav class="w-full relative">
       <RouterLink to="/">
         <figure class="w-auto absolute cursor-pointer left-1/2 transform -translate-x-1/2">

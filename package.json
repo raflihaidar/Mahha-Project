@@ -11,6 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
+    "swiper": "^11.1.15",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },

@@ -1,13 +1,163 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Moulin';
+  src:
+    url('./fonts/moulin-light.woff2') format('woff2'),
+    url('./fonts/moulin-light.woff') format('woff');
+  font-weight: 300; /* Berat untuk 'light' */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Moulin';
+  src:
+    url('./fonts/moulin-regular.woff2') format('woff2'),
+    url('./fonts/moulin-regular.woff') format('woff');
+  font-weight: 400; /* Berat untuk 'regular' */
+  font-style: normal;
+}
+
 html,
 body {
-  font-family: 'Cormorant Garamond';
-  font-weight: 600;
-  overflow-x: hidden;
-  font-weight: 500;
+  font-family: 'Moulin';
+  /* overflow-x: hidden; */
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+#mySwiper .swiper-wrapper {
+  position: relative;
+}
+
+#mySwiper .swiper-wrapper {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  #mySwiper .swiper-wrapper .swiper-slide-next {
+    margin-top: -60px;
+    transform: translateX(0%) scaleY(0.83); /* Bergeser ke kiri dengan scale lebih kecil */
+    transform-origin: center center; /* Menentukan pusat transformasi */
+    transition:
+      transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+      margin-top 0.8s ease;
+    backface-visibility: hidden; /* Optimalkan rendering */
+    will-change: transform, margin-top; /* Optimisasi performa */
+  }
+
+  #mySwiper .swiper-wrapper .swiper-slide-active {
+    margin-top: 0; /* Mengembalikan margin ke normal */
+    transform: translateX(0) scale(1); /* Kembali ke posisi tengah dengan skala normal */
+    transform-origin: center center; /* Menjaga titik pusat */
+    transition:
+      transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+      margin-top 0.8s ease; /* Efek transisi */
+    backface-visibility: hidden; /* Hindari glitch saat transisi */
+    will-change: transform, margin-top;
+  }
+
+  #mySwiper .swiper-wrapper .swiper-slide {
+    transition:
+      transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+      margin-top 0.8s ease; /* Efek transisi */
+  }
+}
+
+/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction='horizontal'] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+[data-scroll-direction='horizontal'] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
 }
