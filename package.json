@@ -11,6 +11,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "dayjs": "^1.11.13",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
     "swiper": "^11.1.15",

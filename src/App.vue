@@ -2,7 +2,6 @@
 import { RouterView } from 'vue-router'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 import BaseFooter from '@/components/BaseFooter.vue'
-import BaseCalandar from '@/components/BaseCalendar.vue'
 
 import { onMounted, ref } from 'vue'
 
@@ -38,5 +37,4 @@ onMounted(() => {
     <RouterView />
     <BaseFooter />
   </main>
-  <BaseCalandar />
 </template>

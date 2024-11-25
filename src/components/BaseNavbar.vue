@@ -2,14 +2,15 @@
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import BaseButton from './BaseButton.vue'
+import BaseCalendar from './BaseCalendar.vue'
 import CloseIcon from '../assets/icons/CloseIcon.vue'
 
-const isMenuOpen = ref(false) // Menu status, awalnya tertutup
+const isMenuOpen = ref(false)
+const calenderOpen = ref(false)
 
 const closeMenu = () => {
-  isMenuOpen.value = false // Menutup menu
+  isMenuOpen.value = false
 }
-
 // Menutup menu ketika route berubah
 const route = useRoute()
 
@@ -43,11 +44,13 @@ watch(
     </RouterLink>
     <section>
       <BaseButton class="hidden sm:block" text="BOOK YOUR STAY" iconColor="#FCFCF0" textColor="text-light-default"
-        fontSize="text-sm" />
+        fontSize="text-sm" @click="calenderOpen = true" />
 
       <BaseButton class="block sm:hidden" text="BOOK" iconColor="#FCFCF0" textColor="text-light-default"
         fontSize="text-md" :icon="false" />
     </section>
+
+    <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
   </nav>
 
   <section v-if="isMenuOpen"
@@ -75,5 +78,7 @@ watch(
     <footer class="w-full font-medium text-xl text-center text-light-default">
       <h3>BOOK YOUR STAY</h3>
     </footer>
+
   </section>
+
 </template>

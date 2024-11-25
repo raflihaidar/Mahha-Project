@@ -163,9 +163,16 @@ html.has-scroll-dragging {
 }
 
 select,
-input,
-option {
+option,
+input {
   background: none;
   appearance: none;
   outline: none;
+  all: unset;
+}
+
+input[type='date']::-webkit-inner-spin-button,
+input[type='date']::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
