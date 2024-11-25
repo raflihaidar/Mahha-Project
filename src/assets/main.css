@@ -161,3 +161,11 @@ html.has-scroll-dragging {
   right: auto;
   bottom: 0;
 }
+
+select,
+input,
+option {
+  background: none;
+  appearance: none;
+  outline: none;
+}
