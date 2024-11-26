@@ -51,8 +51,8 @@ onMounted(() => {
 
     <p
       ref="subtext"
-      class="absolute top-[80vh] left-[45%] transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-medium"
-      data-scroll
+      class="w-full text-center absolute top-[80vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-medium"
+      d
       data-scroll-speed="2"
     >
       SCROLL DOWN TO DISCOVER

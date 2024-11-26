@@ -168,7 +168,6 @@ input {
   background: none;
   appearance: none;
   outline: none;
-  all: unset;
 }
 
 input[type='date']::-webkit-inner-spin-button,
