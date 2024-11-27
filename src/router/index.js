@@ -29,7 +29,6 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    // Mengatur scroll ke bagian atas halaman setelah navigasi
     return { top: 0 }
   },
 })

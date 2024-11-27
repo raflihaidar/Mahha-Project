@@ -96,27 +96,15 @@ const onLeave = (el, done) => {
 
 <template>
   <Teleport to="body">
-    <div
-      class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-30"
-      v-if="isOpen"
-      @click="closeModal"
-    ></div>
-    <transition
-      @before-enter="onBeforeEnter"
-      @enter="onEnter"
-      @before-leave="beforeLeave"
-      @leave="onLeave"
-      :css="false"
-    >
-      <article
-        class="sm:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
-        v-if="isOpen"
-      >
+    <div class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-30" v-if="isOpen" @click="closeModal">
+    </div>
+    <transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="beforeLeave" @leave="onLeave"
+      :css="false">
+      <article class="sm:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
+        v-if="isOpen">
         <div class="w-full sm:h-[70%] h-1/2 z-50 relative">
           <img :src="bikeImage" alt="Bike trekking experience" class="w-full h-full object-top" />
-          <div
-            class="absolute bottom-0 w-full h-64 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
-          ></div>
+          <div class="absolute bottom-0 w-full h-64 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
           <div class="mix-blend-screen"></div>
           <button class="absolute top-5 right-10">
             <CloseIcon @click="closeModal" />
@@ -131,12 +119,8 @@ const onLeave = (el, done) => {
               {{ item }}
             </p>
           </div>
-          <BaseButton
-            text="MAKE RESERVATION"
-            text-color="text-light-default"
-            font-size="text-sm"
-            icon-color="#FCFCF0"
-          />
+          <BaseButton text="MAKE RESERVATION" text-color="text-light-default" font-size="text-sm"
+            icon-color="#FCFCF0" />
         </section>
       </article>
     </transition>

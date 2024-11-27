@@ -1,9 +1,8 @@
 <script setup>
-import { RouterView } from 'vue-router'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 import BaseFooter from '@/components/BaseFooter.vue'
 
-import { onMounted, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref } from 'vue'
 
 const container = ref(null)
 
@@ -24,11 +23,11 @@ const setLocomotiveScroll = () => {
 
 onMounted(() => {
   setLocomotiveScroll()
-
   new ResizeObserver(() => locoScroll.update()).observe(
     document.querySelector('[data-scroll-container]'),
   )
 })
+
 </script>
 
 <template>
