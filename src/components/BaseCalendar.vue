@@ -1,0 +1,333 @@
+<script setup>
+import CloseIcon from '@/assets/icons/CloseIcon.vue'
+import NextIcon from '@/assets/icons/NextIcon.vue'
+import { ref, computed } from 'vue'
+import dayjs from 'dayjs'
+import PlusIcon from '../assets/icons/PlusIcon.vue'
+import MinusIcon from '../assets/icons/MinusIcon.vue'
+
+const props = defineProps({
+  isOpen: {
+    type: Boolean,
+    default: false,
+  },
+})
+
+const emits = defineEmits(['close'])
+
+// Tahun dan bulan saat ini
+const currentYear = ref(dayjs().year())
+const currentMonth = ref(dayjs().month())
+
+// Pilihan tanggal
+const checkInDate = ref(null)
+const checkOutDate = ref(null)
+
+const guestModal = ref(false)
+const guestQty = ref({
+  adults: 1,
+  childrens: 0,
+  infants: 0,
+})
+
+// Fungsi untuk menambah atau mengurangi jumlah tamu
+const increaseQty = (type) => {
+  if (type === 'adults') guestQty.value.adults += 1
+  if (type === 'childrens') guestQty.value.childrens += 1
+  if (type === 'infants') guestQty.value.infants += 1
+}
+
+const decreaseQty = (type) => {
+  if (type === 'adults' && guestQty.value.adults > 1) guestQty.value.adults -= 1
+  if (type === 'childrens' && guestQty.value.childrens > 0) guestQty.value.childrens -= 1
+  if (type === 'infants' && guestQty.value.infants > 0) guestQty.value.infants -= 1
+}
+
+// Hari dalam seminggu
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+
+// Fungsi untuk menghasilkan tanggal dalam bulan tertentu
+const generateCalendar = (month, year) => {
+  const daysInMonth = dayjs().month(month).year(year).daysInMonth()
+  const firstDayOfWeek = dayjs().month(month).year(year).startOf('month').day()
+
+  const dates = Array.from({ length: firstDayOfWeek }, () => null) // Placeholder untuk offset awal
+  for (let date = 1; date <= daysInMonth; date++) {
+    dates.push({
+      date,
+      fullDate: dayjs().month(month).year(year).date(date).format('ddd, DD MMM YYYY'),
+    })
+  }
+  return dates
+}
+
+// Kalender saat ini dan bulan berikutnya
+const dates = computed(() => generateCalendar(currentMonth.value, currentYear.value))
+
+const nextMonthDates = computed(() => {
+  const nextMonth = (currentMonth.value + 1) % 12
+  const nextYear = currentMonth.value === 11 ? currentYear.value + 1 : currentYear.value
+  return generateCalendar(nextMonth, nextYear)
+})
+
+// Pilih tanggal
+const selected = (date) => {
+  if (!date) return
+
+  if (!checkInDate.value) {
+    checkInDate.value = date
+  } else if (!checkOutDate.value) {
+    checkOutDate.value = dayjs(date).isAfter(dayjs(checkInDate.value)) ? date : checkInDate.value
+  } else {
+    checkInDate.value = date
+    checkOutDate.value = null
+  }
+}
+
+const isPastDate = (date) => dayjs(date).isBefore(dayjs(), 'day')
+
+// Rentang waktu
+const isInRange = (date) => {
+  const parsedCheckIn = dayjs(checkInDate.value)
+  const parsedCheckOut = dayjs(checkOutDate.value)
+
+  return (
+    checkInDate.value &&
+    checkOutDate.value &&
+    dayjs(date).isAfter(parsedCheckIn) &&
+    dayjs(date).isBefore(parsedCheckOut)
+  )
+}
+
+const handleSlide = () => {
+  currentMonth.value += 1
+
+  if (currentMonth.value === 11) {
+    currentMonth.value = 0
+    currentYear.value += 1
+  }
+}
+
+const onBook = () => {
+  const link = 'https://secure.guestaps.com/'
+  let merchant_id = 'biladeubud'
+
+  location.href =
+    link +
+    merchant_id +
+    '/hotel-filter-redirect/' +
+    checkInDate.value +
+    '/' +
+    checkOutDate.value +
+    '/promo_code_empty' +
+    '?guest=' +
+    guestQty.value.adults +
+    '-' +
+    guestQty.value.childrens +
+    '-' +
+    guestQty.value.infants +
+    ''
+}
+</script>
+
+<template>
+  <Teleport to="body">
+    <section class="fixed bg-black bg-opacity-70 w-screen h-screen top-0" v-if="isOpen">
+      <main
+        class="w-[70%] h-auto p-16 bg-light-default border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
+        <!-- Bagian Input Guest, Check-in, dan Check-out -->
+        <section class="flex justify-between gap-x-5 items-start">
+          <div class="w-full grid relative">
+            <label for="guestInput">Guest</label>
+            <div
+              type="text"
+              name="guestInput"
+              id="guestInput"
+              class="w-full h-6 bg-inherit border-b border-dark-default cursor-pointer"
+              @click="guestModal = !guestModal"
+            >
+              <p class="text-sm">
+                <span>{{ guestQty.adults }} Adults, </span>
+                <span> {{ guestQty.childrens }} Children, </span>
+                <span>{{ guestQty.infants }} Infants</span>
+              </p>
+            </div>
+            <div
+              class="absolute -bottom-56 z-50 w-full bg-white px-3 pt-3 rounded-lg shadow-md"
+              v-if="guestModal"
+            >
+              <div class="w-full mb-2 py-2 flex justify-between items-center border-b">
+                <section class="w-1/2 self-end">
+                  <p>Adults</p>
+                  <p class="text-sm">Ages 17 or above</p>
+                </section>
+                <section class="flex w-1/2 items-center text-center justify-between gap-x-5">
+                  <button
+                    class="w-fit h-fit rounded-full shadow-md p-2 cursor-pointer"
+                    @click="decreaseQty('adults')"
+                  >
+                    <MinusIcon />
+                  </button>
+                  <p>{{ guestQty.adults }}</p>
+                  <button
+                    class="rounded-full shadow-md p-2 cursor-pointer"
+                    @click="increaseQty('adults')"
+                  >
+                    <PlusIcon />
+                  </button>
+                </section>
+              </div>
+              <div class="w-full mb-2 py-2 flex justify-between items-center border-b">
+                <section class="w-1/2 self-end">
+                  <p>Childrens</p>
+                  <p class="text-sm">Ages 2 - 16</p>
+                </section>
+                <section class="flex w-1/2 items-center justify-between gap-x-5">
+                  <button
+                    class="rounded-full shadow-md p-2 cursor-pointer"
+                    @click="decreaseQty('childrens')"
+                  >
+                    <MinusIcon />
+                  </button>
+                  <p>{{ guestQty.childrens }}</p>
+                  <button
+                    class="rounded-full shadow-md p-2 cursor-pointer"
+                    @click="increaseQty('childrens')"
+                  >
+                    <PlusIcon />
+                  </button>
+                </section>
+              </div>
+              <div class="w-full flex py-2 justify-between items-center border-b">
+                <section class="w-1/2 self-end">
+                  <p>Infants</p>
+                  <p class="text-sm">Under 2</p>
+                </section>
+                <section class="flex w-1/2 items-center justify-between gap-x-5">
+                  <button
+                    class="rounded-full shadow-md p-2 cursor-pointer"
+                    @click="decreaseQty('infants')"
+                  >
+                    <MinusIcon />
+                  </button>
+                  <p>{{ guestQty.infants }}</p>
+                  <button
+                    class="rounded-full shadow-md p-2 cursor-pointer"
+                    @click="increaseQty('infants')"
+                  >
+                    <PlusIcon />
+                  </button>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="w-full grid border-b border-dark-default">
+            <label for="checkin">Check-in</label>
+            <input type="text" name="checkin" id="checkin" :value="checkInDate" disabled />
+          </div>
+          <div class="w-full grid border-b border-dark-default">
+            <label for="checkout">Check-out</label>
+            <input type="text" name="checkout" id="checkout" :value="checkOutDate" disabled />
+          </div>
+        </section>
+
+        <CloseIcon
+          class="absolute top-5 right-5 cursor-pointer"
+          color="#000"
+          @close="emits('close')"
+        />
+
+        <!-- Kalender -->
+        <section class="w-full h-full">
+          <header class="w-full h-auto relative flex justify-between mt-10 text-dark-default">
+            <section class="w-1/2 flex justify-center gap-x-3">
+              <h4>{{ dayjs().month(currentMonth).format('MMMM') }}</h4>
+              <h4>{{ currentYear }}</h4>
+            </section>
+            <section class="w-1/2 flex justify-center gap-x-3">
+              <h4>
+                {{
+                  dayjs()
+                    .month((currentMonth + 1) % 12)
+                    .format('MMMM')
+                }}
+              </h4>
+              <h4>{{ currentMonth === 11 ? currentYear + 1 : currentYear }}</h4>
+            </section>
+
+            <NextIcon
+              color="#45462A"
+              @click="handleSlide"
+              class="absolute top-0 right-0 z-50 cursor-pointer"
+            />
+          </header>
+
+          <section
+            class="max-w-full h-full flex justify-between items-stretch gap-x-10 cursor-pointer"
+          >
+            <!-- Kalender Bulan Ini -->
+            <div class="w-full h-full">
+              <div class="grid grid-cols-7 font-thin text-dark-default my-5 place-items-center">
+                <p v-for="day in days" :key="day">{{ day }}</p>
+              </div>
+
+              <div class="w-full h-full grid grid-cols-7 bg-white p-3 place-items-center gap-x-0">
+                <template v-for="(d, index) in dates" :key="index">
+                  <div v-if="!d"></div>
+                  <button
+                    v-else
+                    class="w-full h-full px-3 py-3 font-thin text-sm text-dark-default"
+                    @click="selected(d.fullDate)"
+                    :class="{
+                      'bg-dark-default text-light-default':
+                        d.fullDate === checkInDate || d.fullDate === checkOutDate,
+                      'bg-light-shade-3': isInRange(d.fullDate),
+                      'hover:bg-light-shade-3 transition-colors':
+                        d.fullDate !== checkInDate && d.fullDate !== checkOutDate,
+                      'opacity-20': isPastDate(d.fullDate),
+                    }"
+                    :disabled="isPastDate(d.fullDate)"
+                  >
+                    <span>{{ d.date }}</span>
+                  </button>
+                </template>
+              </div>
+            </div>
+
+            <!-- Kalender Bulan Berikutnya -->
+            <div class="w-full h-full">
+              <div class="grid grid-cols-7 font-thin text-dark-default my-5 place-items-center">
+                <p v-for="day in days" :key="day">{{ day }}</p>
+              </div>
+
+              <div class="w-full h-full grid grid-cols-7 bg-white p-3 place-items-center gap-x-0">
+                <template v-for="(d, index) in nextMonthDates" :key="index">
+                  <div v-if="!d"></div>
+                  <button
+                    v-else
+                    class="w-full h-full px-3 py-3 font-thin text-sm text-dark-default"
+                    @click="selected(d.fullDate)"
+                    :class="{
+                      'bg-dark-default text-light-default':
+                        d.fullDate === checkInDate || d.fullDate === checkOutDate,
+                      'bg-light-shade-3': isInRange(d.fullDate),
+                      'hover:bg-light-shade-3 transition-colors':
+                        d.fullDate !== checkInDate && d.fullDate !== checkOutDate,
+                    }"
+                  >
+                    <span>{{ d.date }}</span>
+                  </button>
+                </template>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <div class="flex justify-center mt-10" @click="onBook">
+          <button class="bg-dark-default text-light-default w-fit px-6 py-4">Search</button>
+        </div>
+      </main>
+    </section>
+  </Teleport>
+</template>

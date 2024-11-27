@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { defineAsyncComponent } from 'vue'
 
 import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpg'
 import Image1 from '@/assets/images/Home_Page/Home-03.jpg'
@@ -9,7 +10,9 @@ import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSubTitle from '@/components/BaseSubTitle.vue'
-import BaseBackground from '@/components/BaseBackground.vue'
+
+const BaseMap = defineAsyncComponent(() => import('@/components/BaseMap.vue'))
+const BaseBackground = defineAsyncComponent(() => import('@/components/BaseBackground.vue'))
 
 const bannerText = [
   'An escape for the romantics to rejuvenate self and loved ones from the overstimulation of city bustle. Immerse in the charm of the picturesque beauty of Puncak Bogor through the gentle care of our embrace. A tranquil and exquisite haven to refresh the senses.',
@@ -20,29 +23,50 @@ const bannerText = [
 <template>
   <BaseHero fTitle="Exquisite Escapism" lTitle="To A Picturesque Haven" :img="HeroImage" />
   <BaseBanner :text="bannerText[0]" />
-
   <section
     class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col sm:flex-row justify-between sm:items-center"
   >
-    <figure class="w-[70%] sm:w-[40%]">
-      <img src="../assets/images/Home_Page/Home-01.jpg" alt="" class="w-full" />
-    </figure>
+    <div data-scroll data-scroll-repeat class="w-[70%] h-full sm:w-[40%] overflow-hidden">
+      <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
+        <img
+          src="../assets/images/Home_Page/Home-01.jpg"
+          alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
+          class="w-full h-auto"
+          loading="lazy"
+        />
+      </figure>
+    </div>
     <section class="w-[95%] sm:w-[40%] grid gap-y-5 place-items-start sm:relative">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-xl">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         A Haven of Intimate and <br />
         Timeless Serenity
       </BaseSubTitle>
-      <p class="text-dark-shade-2 sm:text-sm text-md w-full sm:w-[60%] text-justify">
+      <p class="text-dark-shade-2 sm:text-base text-base font-thin w-full sm:w-[60%] text-justify">
         Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
         sanctuary designed for romance, with breathtaking views that invite you to linger longer and
         create unforgettable memories with your loved one.
       </p>
       <RouterLink to="/accommodation">
-        <BaseButton text="Explore Accomodation" icon-color="#45462A" font-size="text-xl" />
+        <BaseButton
+          text="EXPLORE ACCOMMODATION"
+          text-color="text-dark-default"
+          icon-color="#45462A"
+        />
       </RouterLink>
-      <figure class="absolute sm:-top-96 top-20 sm:left-0 right-10 w-40 sm:w-[384px]">
-        <img src="../assets/images/Home_Page/Home-02.jpg" alt="" class="w-full" />
-      </figure>
+      <div
+        data-scroll
+        data-scroll-repeat
+        class="absolute sm:-top-96 top-20 sm:left-0 right-10 w-40 sm:w-[384px] overflow-hidden"
+      >
+        <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
+          <img
+            src="../assets/images/Home_Page/Home-02.jpg"
+            alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."
+            class="w-full h-full"
+            loading="lazy"
+          />
+        </figure>
+      </div>
     </section>
   </section>
 
@@ -68,7 +92,7 @@ const bannerText = [
   />
 
   <section
-    class="sm:px-10 mx-auto space-y-10 py-60 w-full h-full bg-gradient-to-b from-dark-default/100 from-50 via-dark-default/80 via-40 to-dark-default/10 to-10 flex flex-col sm:flex-row justify-between"
+    class="sm:px-10 mx-auto space-y-10 py-60 w-full h-full bg-gradient-to-b mix-blend-screen from-dark-default/100 from-50 via-dark-default/80 via-40 to-dark-default/0 to-10 flex flex-col sm:flex-row justify-between"
   >
     <article class="sm:w-1/2 w-full flex justify-center">
       <div class="sm:w-1/2 w-[90%] mx-auto">
@@ -76,7 +100,9 @@ const bannerText = [
           Whispers of Endless Joy <br />
           in Every Moment
         </BaseSubTitle>
-        <p class="w-full place-self-center text-light-shade-1 text-sm text-justify mb-5">
+        <p
+          class="w-full place-self-center text-light-shade-1 text-base font-thin text-justify mb-5"
+        >
           Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
           dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,
           glance, and breath be a shared moment of calm, wrapped in the soft embrace of love and
@@ -84,22 +110,52 @@ const bannerText = [
         </p>
         <RouterLink to="/experiences">
           <BaseButton
-            text="Discover Experience"
+            text="DISCOVER EXPERIENCE"
             text-color="text-light-default"
             icon-color="#FCFCF0"
-            font-size="text-xl"
           />
         </RouterLink>
       </div>
     </article>
 
-    <figure class="w-full flex justify-center items-end gap-x-5">
-      <img src="@/assets/images/Home_Page/Home-04.jpg" alt="" class="sm:w-72 w-28 h-fit" />
-      <img src="@/assets/images/Home_Page/Home-05.jpg" alt="" class="sm:w-96 w-52 h-fit" />
-    </figure>
+    <section class="w-full flex justify-center items-end gap-x-5">
+      <figure class="overflow-hidden sm:w-72 w-28 h-fit" data-scroll data-scroll-repeat>
+        <img
+          src="@/assets/images/Home_Page/Home-04.jpg"
+          alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
+      </figure>
+      <figure class="overflow-hidden sm:w-96 w-52 h-fit" data-scroll data-scroll-repeat>
+        <img
+          src="@/assets/images/Home_Page/Home-05.jpg"
+          alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
+      </figure>
+    </section>
   </section>
 
-  <!-- <section></section> -->
+  <section
+    class="w-full h-full bg-gradient-to-b mix-blend-screen from-[#E1E1D3]/0 from-50 to-[#E1E1D3]/100 to-50"
+  >
+    <section class="w-[95%] mx-auto flex justify-between items-center">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
+        How To Get Here
+      </BaseSubTitle>
+      <BaseButton text="VIEW DIRECTIONS" text-color="text-dark-default" icon-color="#45462A" />
+    </section>
+    <section class="w-full h-auto">
+      <BaseMap />
+    </section>
+  </section>
+
   <BaseBackground
     :img-src="Image2"
     :top-gradient="{
