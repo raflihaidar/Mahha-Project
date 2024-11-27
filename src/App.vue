@@ -13,10 +13,18 @@ const setLocomotiveScroll = () => {
   locoScroll = new LocomotiveScroll({
     el: container.value,
     smooth: true,
-    lerp: 0.1,
+    lerp: 0.03, // Linear Interpolation, 0 > 1 // Try 0.01
+    multiplier: 1, // Effect Multiplier
+    reloadOnContextChange: true,
+    touchMultiplier: 2,
+    smoothMobile: 0,
     smartphone: {
-      smooth: true,
-      multiplier: 2,
+      smooth: !0,
+      breakpoint: 767,
+    },
+    tablet: {
+      smooth: !1,
+      breakpoint: 1024,
     },
   })
 }
