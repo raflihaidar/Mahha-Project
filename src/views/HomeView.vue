@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { defineAsyncComponent } from 'vue'
 
 import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpg'
 import Image1 from '@/assets/images/Home_Page/Home-03.jpg'
@@ -9,9 +10,9 @@ import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import BaseSubTitle from '@/components/BaseSubTitle.vue'
-import BaseBackground from '@/components/BaseBackground.vue'
-import BaseMap from '@/components/BaseMap.vue'
-import Map from '@/assets/icons/Map.vue'
+
+const BaseMap = defineAsyncComponent(() => import('@/components/BaseMap.vue'))
+const BaseBackground = defineAsyncComponent(() => import('@/components/BaseBackground.vue'))
 
 const bannerText = [
   'An escape for the romantics to rejuvenate self and loved ones from the overstimulation of city bustle. Immerse in the charm of the picturesque beauty of Puncak Bogor through the gentle care of our embrace. A tranquil and exquisite haven to refresh the senses.',
@@ -27,7 +28,12 @@ const bannerText = [
   >
     <div data-scroll data-scroll-repeat class="w-[70%] h-full sm:w-[40%] overflow-hidden">
       <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
-        <img src="../assets/images/Home_Page/Home-01.jpg" alt="" class="w-full h-auto" />
+        <img
+          src="../assets/images/Home_Page/Home-01.jpg"
+          alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
+          class="w-full h-auto"
+          loading="lazy"
+        />
       </figure>
     </div>
     <section class="w-[95%] sm:w-[40%] grid gap-y-5 place-items-start sm:relative">
@@ -53,7 +59,12 @@ const bannerText = [
         class="absolute sm:-top-96 top-20 sm:left-0 right-10 w-40 sm:w-[384px] overflow-hidden"
       >
         <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
-          <img src="../assets/images/Home_Page/Home-02.jpg" alt="" class="w-full h-full" />
+          <img
+            src="../assets/images/Home_Page/Home-02.jpg"
+            alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."
+            class="w-full h-full"
+            loading="lazy"
+          />
         </figure>
       </div>
     </section>
@@ -111,19 +122,21 @@ const bannerText = [
       <figure class="overflow-hidden sm:w-72 w-28 h-fit" data-scroll data-scroll-repeat>
         <img
           src="@/assets/images/Home_Page/Home-04.jpg"
-          alt=""
+          alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
           class="w-full h-full"
           data-scroll
           data-scroll-speed="-1"
+          loading="lazy"
         />
       </figure>
       <figure class="overflow-hidden sm:w-96 w-52 h-fit" data-scroll data-scroll-repeat>
         <img
           src="@/assets/images/Home_Page/Home-05.jpg"
-          alt=""
+          alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
           class="w-full h-full"
           data-scroll
           data-scroll-speed="-1"
+          loading="lazy"
         />
       </figure>
     </section>

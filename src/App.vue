@@ -1,12 +1,11 @@
 <script setup>
 import BaseNavbar from '@/components/BaseNavbar.vue'
 import BaseFooter from '@/components/BaseFooter.vue'
+import LocomotiveScroll from 'locomotive-scroll'
 
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const container = ref(null)
-
-import LocomotiveScroll from 'locomotive-scroll'
 
 let locoScroll = null
 
@@ -17,6 +16,7 @@ const setLocomotiveScroll = () => {
     lerp: 0.1,
     smartphone: {
       smooth: true,
+      multiplier: 2,
     },
   })
 }
@@ -27,11 +27,10 @@ onMounted(() => {
     document.querySelector('[data-scroll-container]'),
   )
 })
-
 </script>
 
 <template>
-  <main ref="container" id="scroll-container" data-scroll-container>
+  <main ref="container" data-scroll-container>
     <BaseNavbar />
     <RouterView />
     <BaseFooter />

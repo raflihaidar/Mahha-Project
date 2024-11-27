@@ -24,7 +24,7 @@
 html,
 body {
   font-family: 'Moulin';
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 @layer utilities {
