@@ -18,7 +18,9 @@ const props = defineProps({
 
 <template>
   <button>
-    <p :class="[{ 'mb-2': icon }, `${textColor}`, `${fontSize}`, 'font-normal']">{{ text }}</p>
+    <p :class="[{ 'mb-2': icon }, `${textColor}`, `sm:${fontSize}`, 'font-normal', 'text-sm']">
+      {{ text }}
+    </p>
     <ButtonIcon :color="iconColor" v-if="icon" />
   </button>
 </template>

@@ -159,8 +159,8 @@ const bannerText = [
   <BaseBackground
     :img-src="Image2"
     :top-gradient="{
-      fromColor: 'from-light-default/0 ',
-      toColor: 'to-light-default/0',
+      fromColor: 'from-light-shade-3/100 ',
+      toColor: 'to-light-default/30',
     }"
     :bottom-gradient="{
       fromColor: 'from-dark-default/0 ',

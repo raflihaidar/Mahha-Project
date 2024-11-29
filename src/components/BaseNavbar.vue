@@ -60,6 +60,7 @@ watch(
         textColor="text-light-default"
         fontSize="text-md"
         :icon="false"
+        @click="calenderOpen = true"
       />
     </section>
 
