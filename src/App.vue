@@ -20,10 +20,12 @@ const setLocomotiveScroll = () => {
     smoothMobile: 0,
     smartphone: {
       smooth: !0,
+      multiplier: 3,
       breakpoint: 767,
     },
     tablet: {
       smooth: !1,
+      multiplier: 3,
       breakpoint: 1024,
     },
   })

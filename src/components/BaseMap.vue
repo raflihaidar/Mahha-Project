@@ -20,11 +20,10 @@ const updateDistance = (place) => {
 </script>
 
 <template>
-  <section class="w-full h-auto relative">
+  <section
+    class="sm:w-full flex flex-col justify-center items-center overflow-x-scroll sm:overflow-auto h-auto relative">
     <Map :distances="places" @update="updateDistance" />
-    <p
-      class="absolute bottom-0 md:bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-sm lg:text-lg"
-    >
+    <p class="absolute bottom-0 md:bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-sm lg:text-lg">
       {{ distance }} km
     </p>
   </section>

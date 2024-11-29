@@ -65,11 +65,8 @@ const openModal = (item) => {
   <BaseBanner :text="bannerText" />
 
   <section
-    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col-reverse sm:flex-row justify-between sm:items-center"
-  >
-    <section
-      class="w-[95%] sm:w-[40%] grid gap-y-5 place-items-start mx-auto max-sm:mt-10 sm:relative"
-    >
+    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col-reverse sm:flex-row justify-between sm:items-center">
+    <section class="w-[95%] sm:w-[40%] grid gap-y-5 place-items-start mx-auto max-sm:mt-10 sm:relative">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         Rejuvenation Awaits in <br />
         Nature's Embrace
@@ -80,38 +77,24 @@ const openModal = (item) => {
         create unforgettable memories with your loved one.
       </p>
       <RouterLink to="/accommodation">
-        <BaseButton text="MAKE RESERVATION" icon-color="#45462A" />
+        <BaseButton text="MAKE RESERVATION" icon-color="#45462A" text-color="text-dark-default" />
       </RouterLink>
-      <figure
-        class="absolute sm:-top-96 top-20 left-5 sm:left-0 sm:right-10 w-40 sm:w-[384px] overflow-hidden"
-        data-scroll
-        data-scroll-repeat
-      >
-        <img
-          src="../assets/images/Experiences_Page/Experiences-01.jpg"
-          data-scroll
-          data-scroll-speed="-1"
+      <figure class="absolute sm:-top-96 top-20 left-5 sm:left-0 sm:right-10 w-40 sm:w-[384px] overflow-hidden"
+        data-scroll data-scroll-repeat>
+        <img src="../assets/images/Experiences_Page/Experiences-01.jpg" data-scroll data-scroll-speed="-1"
           alt="A woman receiving a soothing foot massage in a tranquil spa setting, enhancing her relaxation and comfort."
-          class="w-full h-full"
-          loading="lazy"
-        />
+          class="w-full h-full" loading="lazy" />
       </figure>
     </section>
     <figure class="w-[70%] sm:w-[40%] self-end overflow-hidden" data-scroll data-scroll-repeat>
-      <img
-        src="../assets/images/Experiences_Page/Experiences-02.jpg"
-        alt="A woman relaxes at a spa while receiving a soothing facial mask treatment"
-        class="w-full h-full"
-        data-scroll
-        data-scroll-speed="-1"
-        loading="lazy"
-      />
+      <img src="../assets/images/Experiences_Page/Experiences-02.jpg"
+        alt="A woman relaxes at a spa while receiving a soothing facial mask treatment" class="w-full h-full"
+        data-scroll data-scroll-speed="-1" loading="lazy" />
     </figure>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto py-28 sm:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20"
-  >
+    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto py-28 sm:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20">
     <section class="w-full text-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
         Unwind and Explore at <br class="sm:hidden" />
@@ -125,58 +108,35 @@ const openModal = (item) => {
     </section>
 
     <section
-      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar sm:grid grid-cols-4 sm:gap-x-10 sm:overflow-x-hidden"
-    >
-      <article
-        v-for="(item, index) in cardContent"
-        :key="index"
-        class="flex-shrink-0 w-64 snap-center sm:w-auto group"
-      >
+      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar sm:grid grid-cols-4 sm:gap-x-10 sm:overflow-x-hidden">
+      <article v-for="(item, index) in cardContent" :key="index" class="flex-shrink-0 w-64 snap-center sm:w-auto group">
         <figure class="overflow-hidden" data-scroll data-scroll-repeat>
-          <img
-            :src="getImageUrl(item.image)"
-            :alt="item.description"
-            loading="lazy"
-            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform"
-          />
+          <img :src="getImageUrl(item.image)" :alt="item.description" loading="lazy"
+            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform" />
         </figure>
         <section class="mt-5">
           <h2 class="text-dark-default text-xl">{{ item.subTitle }}</h2>
-          <button
-            class="text-accent-default text-sm cursor-pointer group-hover:blur-[1px]"
-            @click="openModal(item)"
-          >
+          <button class="text-accent-default text-sm cursor-pointer group-hover:blur-[1px]" @click="openModal(item)">
             VIEW DETAILS
           </button>
         </section>
       </article>
 
-      <BaseModal
-        :isOpen="showModal"
-        @closeModal="showModal = false"
-        :subTitle="modalData.subTitle"
-        title="Pedal Through Nature’s Serene Trails"
-        :contents="[
-          'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
-          'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
-        ]"
-      >
+      <BaseModal :isOpen="showModal" @closeModal="showModal = false" :subTitle="modalData.subTitle"
+        title="Pedal Through Nature’s Serene Trails" :contents="[
+    'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
+    'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
+  ]">
       </BaseModal>
     </section>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto sm:pt-28 pb-40 sm:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20 flex flex-col sm:flex-row justify-between sm:items-center"
-  >
+    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto sm:pt-28 pb-40 sm:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20 flex flex-col sm:flex-row justify-between sm:items-center">
     <figure class="w-[70%] sm:w-[40%] overflow-hidden" data-scroll data-scroll-repeat>
-      <img
-        src="../assets/images/Experiences_Page/Experiences-07.jpg"
+      <img src="../assets/images/Experiences_Page/Experiences-07.jpg"
         alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
-        class="w-full h-auto"
-        data-scroll
-        data-scroll-speed="-1"
-        loading="lazy"
-      />
+        class="w-full h-auto" data-scroll data-scroll-speed="-1" loading="lazy" />
     </figure>
     <section class="w-[95%] sm:w-[40%] max-sm:pt-[200px] grid gap-y-5 place-items- sm:relative">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
@@ -189,31 +149,21 @@ const openModal = (item) => {
         beautiful experience in a setting that feels uniquely yours.
       </p>
       <RouterLink to="/accommodation">
-        <BaseButton text="CONTACT US" icon-color="#45462A" font-size="text-base" />
+        <BaseButton text="CONTACT US" icon-color="#45462A" text-color="text-dark-default" font-size="text-base" />
       </RouterLink>
       <figure
         class="absolute sm:-bottom-[24rem] max-sm:bottom-[30rem] sm:left-0 right-10 w-40 sm:w-[384px] overflow-hidden"
-        data-scroll
-        data-scroll-repeat
-      >
-        <img
-          src="../assets/images/Experiences_Page/Experiences-08.jpg"
-          alt=""
-          class="w-full h-auto"
-          data-scroll
-          data-scroll-speed="-1"
-          loading="lazy"
-        />
+        data-scroll data-scroll-repeat>
+        <img src="../assets/images/Experiences_Page/Experiences-08.jpg" alt="" class="w-full h-auto" data-scroll
+          data-scroll-speed="-1" loading="lazy" />
       </figure>
     </section>
   </section>
 
-  <SliderSwiper
-    :images="[
-      'Experiences_Page/Experiences-09.jpg',
-      'Experiences_Page/Experiences-010.jpg',
-      'Experiences_Page/Experiences-09.jpg',
-      'Experiences_Page/Experiences-010.jpg',
-    ]"
-  />
+  <SliderSwiper :images="[
+    'Experiences_Page/Experiences-09.jpg',
+    'Experiences_Page/Experiences-010.jpg',
+    'Experiences_Page/Experiences-09.jpg',
+    'Experiences_Page/Experiences-010.jpg',
+  ]" />
 </template>
