@@ -39,12 +39,11 @@ body {
   }
 }
 
-#mySwiper .swiper-wrapper {
+#mySwiper .swiper-wrapper,
+#mySwiper,
+#swiper-2 {
   position: relative;
-}
-
-#mySwiper .swiper-wrapper {
-  position: relative;
+  border: none;
 }
 
 @media (min-width: 768px) {

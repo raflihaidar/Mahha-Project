@@ -8,6 +8,10 @@ import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: 'mySwiper'
+  },
   images: Array,
   from: {
     type: String,
@@ -26,11 +30,15 @@ const props = defineProps({
     type: String,
     default: 'text-light-default',
   },
+  typeNavigation: {
+    type: Number,
+    default: 1
+  }
 })
 
 const currentIndex = ref(0)
 
-const onSwiper = (swiper) => {}
+const onSwiper = (swiper) => { }
 
 const onSlideChange = (swiper) => {
   // Menggunakan realIndex untuk mendapatkan indeks asli slide
@@ -44,38 +52,25 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <swiper
-    id="mySwiper"
-    :loop="true"
-    :modules="[Navigation, EffectFade]"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    :speed="1000"
-    :grab-cursor="true"
-    :breakpoints="{
-      '640': {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        effect: 'fade',
-      },
-      '768': {
-        slidesPerView: 2,
-        spaceBetween: 50,
-        effect: 'slide',
-      },
-    }"
-    :class="`bg-gradient-to-b ${from} ${via} ${to}`"
-  >
+  <swiper :id="id" :loop="true" :modules="[Navigation, EffectFade]" @swiper="onSwiper" @slideChange="onSlideChange"
+    :speed="1000" :grab-cursor="true"  :breakpoints="{
+    '640': {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+    '1024': {
+      slidesPerView: 2,
+      spaceBetween: 50,
+    },
+  }" class="bg-gradient-to-b relative" :class="[{
+    'w-[90%] mx-auto': typeNavigation === 2
+  }, `${from}`, `${via}`, `${to}`]">
     <swiper-slide v-for="(item, index) in images" :key="index">
-      <figure class="w-full relative">
+      <figure class="relative w-full">
         <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full slider_image" />
       </figure>
     </swiper-slide>
-    <ButtonSlider
-      :current-index="currentIndex"
-      :data-length="images.length"
-      :color-icon="colorIcon"
-      :text-color="textColor"
-    />
+    <ButtonSlider :current-index="currentIndex" :type-button="typeNavigation" :data-length="images.length"
+      :color-icon="colorIcon" :text-color="textColor" />
   </swiper>
 </template>

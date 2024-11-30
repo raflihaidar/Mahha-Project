@@ -27,25 +27,19 @@ const props = defineProps({
 </script>
 
 <template>
-  <article
-    class="w-full h-full pt-28 mx-auto bg-gradient-to-b mix-blend-screen"
-    :class="[
-      `${gradientFromColor}`,
-      `${gradientFromPercent}`,
-      `${gradientToColor}`,
-      `${gradientToPercent}`,
-    ]"
-  >
+  <article class="w-full h-full pt-28 mx-auto bg-gradient-to-b" :class="[
+    `${gradientFromColor}`,
+    `${gradientFromPercent}`,
+    `${gradientToColor}`,
+    `${gradientToPercent}`,
+  ]">
     <div class="text-center w-full">
       <div class="w-full gap-x-10 flex justify-evenly absolute">
         <BannerDecoration />
         <BannerDecoration />
       </div>
-      <p
-        data-scroll
-        data-scroll-speed="2"
-        :class="`font-thin ${textColor} sm:w-[60vw] w-[95vw] py-32  mx-auto text-xl sm:text-2xl`"
-      >
+      <p data-scroll data-scroll-speed="2"
+        :class="`font-thin ${textColor} lg:w-[60vw] w-[95vw] py-32  mx-auto text-base md:text-xl lg:text-2xl`">
         {{ text }}
       </p>
     </div>

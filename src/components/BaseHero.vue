@@ -29,7 +29,7 @@ onMounted(() => {
     // Animasi teks utama
     .fromTo(
       textRef.value,
-      { opacity: 0, y: 10 }, // Transparan dan sedikit di bawah
+      { opacity: 0, y: 50 }, // Transparan dan sedikit di bawah
       { opacity: 1, y: 0 },
       '<+=0.5', // Animasi mulai 0.5 detik setelah animasi sebelumnya
     )
@@ -70,42 +70,28 @@ onBeforeRouteLeave((to, from, next) => {
 })
 </script>
 
+
 <template>
-  <header
-    ref="headerRef"
-    id="hero"
-    :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center sm:bg-top sm:px-0 relative z-10"
-  >
-    <div
-      class="text-center flex flex-col justify-center items-center h-screen sm:w-full w-[95%] mx-auto z-30 relative"
-    >
-      <h1
-        ref="textRef"
-        class="text-4xl sm:text-4xl lg:text-8xl font-normal leading-tight text-light-default"
-        data-scroll
-        data-scroll-speed="2"
-      >
+  <header ref="headerRef" :style="{ backgroundImage: `url(${img})` }"
+    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10">
+    <div class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative">
+      <h1 ref="textRef"
+        class="text-4xl sm:text-6xl lg:text-8xl font-normal leading-tight text-light-default will-change-transform"
+        data-scroll data-scroll-speed="2">
         {{ fTitle }} <br />
         {{ lTitle }}
       </h1>
     </div>
 
-    <p
-      ref="subtext"
-      class="w-full text-center absolute top-[80vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-medium"
-      d
-      data-scroll-speed="2"
-    >
+    <p ref="subtext"
+      class="w-full text-center text-xs sm:text-base absolute top-[95vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-bold">
       SCROLL DOWN TO DISCOVER
     </p>
 
     <div class="w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A] z-0"></div>
 
     <div class="bg-black w-full h-full absolute bottom-0 top-0 bg-opacity-50 z-0">
-      <div
-        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
-      ></div>
+      <div class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
     </div>
   </header>
 </template>

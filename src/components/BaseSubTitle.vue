@@ -7,7 +7,7 @@ const props = defineProps({
   },
   textSize: {
     type: String,
-    default: 'text-lg', // Ukuran teks default
+    default: 'sm:text-lg', // Ukuran teks default
   },
 })
 

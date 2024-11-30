@@ -52,7 +52,7 @@ onUnmounted(() => {
 </style>
 
 <template>
-  <figure class="sm:w-1/2 w-[90%] mx-auto relative">
+  <figure class="lg:w-1/2 h-fit w-[90%] mx-auto relative">
     <Transition name="fade">
       <img v-if="isChange" :src="images[currentIndex]" alt="Slideshow" class="sm:w-full h-fit object-cover" />
     </Transition>
