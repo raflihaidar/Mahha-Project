@@ -1,11 +1,13 @@
 <script setup>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent, onMounted, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
 import HeroImage from '@/assets/images/Accommodation_Page/Accommodation-00-Hero.jpg'
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseSubTitle from '@/components/BaseSubTitle.vue'
 
 const SliderSwiper = defineAsyncComponent(() => import('@/components/SliderSwiper.vue'))
+const router = useRouter()
 
 import BedIcon from '@/assets/icons/accommodation/BedIcon.vue'
 import ShowerIcon from '@/assets/icons/accommodation/ShowerIcon.vue'
@@ -126,6 +128,15 @@ const fullAmenities = [
     ],
   },
 ]
+
+onMounted(() => {
+  nextTick(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  })
+})
 </script>
 
 <template>

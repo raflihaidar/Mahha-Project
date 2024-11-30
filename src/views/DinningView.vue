@@ -1,14 +1,13 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
-
+import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 import HeroImage from '@/assets/images/Dining_Page/Dining-00-Hero.jpg'
 import BackgroundImage from '@/assets/images/Dining_Page/Dining-09.jpg'
 import Image1 from '@/assets/images/Dining_Page/Dining-07.jpg'
 import Image2 from '@/assets/images/Dining_Page/Dining-08.jpg'
 import Image3 from '@/assets/images/Dining_Page/Dining-09.jpg'
 import Image4 from '@/assets/images/Dining_Page/Dining-10.jpg'
-
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -54,7 +53,8 @@ const generalInformation = [
   <BaseBanner :text="bannerText" />
 
   <section
-    class="sm:px-10 mx-auto space-y-10 sm:py-60 max-sm:pb-36 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col-reverse sm:flex-row justify-center items-center">
+    class="sm:px-10 mx-auto space-y-10 sm:py-60 max-sm:pb-36 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col-reverse sm:flex-row justify-center items-center"
+  >
     <article class="sm:w-[45%] w-full flex justify-start">
       <div class="sm:w-1/2 w-[90%] mx-auto pt-5 sm:pt-10">
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
@@ -72,35 +72,66 @@ const generalInformation = [
       </div>
     </article>
 
-    <section class="sm:w-[50%] w-[90%] flex flex-row-reverse sm:flex-row justify-end gap-x-5 object-cover">
-      <figure data-scroll data-scroll-repeat
-        class="sm:w-1/2 z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group">
-        <img src="@/assets/images/Dining_Page/Dining-01.jpg" alt=""
-          class="w-full h-full group-hover:opacity-0 transition-opacity cursor-pointer" data-scroll
-          data-scroll-speed="-1" />
+    <section
+      class="sm:w-[50%] w-[90%] flex flex-row-reverse sm:flex-row justify-end gap-x-5 object-cover"
+    >
+      <figure
+        data-scroll
+        data-scroll-repeat
+        class="sm:w-1/2 z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+      >
+        <img
+          src="@/assets/images/Dining_Page/Dining-01.jpg"
+          alt=""
+          class="w-full h-full group-hover:opacity-0 transition-opacity cursor-pointer"
+          data-scroll
+          data-scroll-speed="-1"
+        />
 
-        <img src="@/assets/images/Dining_Page/Dining-02.jpg" alt="Dining Image 3"
-          class="w-full h-full object-cover absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <img
+          src="@/assets/images/Dining_Page/Dining-02.jpg"
+          alt="Dining Image 3"
+          class="w-full h-full object-cover absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity"
+        />
       </figure>
-      <figure data-scroll data-scroll-repeat class="sm:w-1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group">
-        <img src="@/assets/images/Dining_Page/Dining-03.jpg" alt="" class="w-full h-full group-hover:opacity-0"
-          data-scroll data-scroll-speed="-1" />
+      <figure
+        data-scroll
+        data-scroll-repeat
+        class="sm:w-1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+      >
+        <img
+          src="@/assets/images/Dining_Page/Dining-03.jpg"
+          alt=""
+          class="w-full h-full group-hover:opacity-0"
+          data-scroll
+          data-scroll-speed="-1"
+        />
 
-        <img src="@/assets/images/Dining_Page/Dining-04.jpg" alt="Dining Image 4"
-          class="w-full h-full object-cover absolute top-0 group-hover:opacity-100 opacity-0 transition-opacity" />
+        <img
+          src="@/assets/images/Dining_Page/Dining-04.jpg"
+          alt="Dining Image 4"
+          class="w-full h-full object-cover absolute top-0 group-hover:opacity-100 opacity-0 transition-opacity"
+        />
       </figure>
     </section>
   </section>
 
-  <SliderSwiper :images="[
-    'Dining_Page/Dining-06.jpg',
-    'Dining_Page/Dining-07.jpg',
-    'Dining_Page/Dining-06.jpg',
-    'Dining_Page/Dining-07.jpg',
-  ]" via="via-[#705729]/20" to="to-[#705729]/20" color-icon="#45462A" text-color="text-dark-default" />
+  <SliderSwiper
+    :images="[
+      'Dining_Page/Dining-06.jpg',
+      'Dining_Page/Dining-07.jpg',
+      'Dining_Page/Dining-06.jpg',
+      'Dining_Page/Dining-07.jpg',
+    ]"
+    via="via-[#705729]/20"
+    to="to-[#705729]/20"
+    color-icon="#45462A"
+    text-color="text-dark-default"
+  />
 
   <section
-    class="sm:px-10 mx-auto space-y-10 sm:py-60 py-36 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20 flex flex-col sm:flex-row justify-between items-center">
+    class="sm:px-10 mx-auto space-y-10 sm:py-60 py-36 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20 flex flex-col sm:flex-row justify-between items-center"
+  >
     <SlideShow :images="[Image1, Image2, Image3, Image4]" />
     <article class="sm:w-1/2 w-full flex justify-center">
       <div class="sm:w-1/2 w-[90%] mx-auto">
@@ -113,26 +144,43 @@ const generalInformation = [
           dining areas. Thoughtfully designed and tailored to your needs, each event becomes a
           cherished memory in a setting of quiet beauty.
         </p>
-        <RouterLink to="/experiences">
-          <BaseButton text="MAKE RESERVATION" text-color="text-dark-default" icon-color="#45462A" />
-        </RouterLink>
+        <BaseButton
+          text="MAKE RESERVATION"
+          text-color="text-dark-default"
+          icon-color="#45462A"
+          @action="sendWhatsAppMessage"
+        />
       </div>
     </article>
   </section>
 
-  <section class="sm:px-10 mx-auto space-y-10 pb-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20">
+  <section
+    class="sm:px-10 mx-auto space-y-10 pb-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20"
+  >
     <section class="sm:w-full w-[90%] mx-auto">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5 w-[90%]">
         General Information
       </BaseSubTitle>
       <section class="w-full grid sm:grid-cols-3 grid-cols-1 gap-x-5 gap-y-10">
-        <article v-for="(item, index) in generalInformation" :key="index"
-          class="sm:w-full p-5 border-[#CBCAB9] border hover:border-accent-default transition-colors cursor-pointer">
+        <article
+          v-for="(item, index) in generalInformation"
+          :key="index"
+          @click="
+            () => {
+              if (index === 2) sendWhatsAppMessage()
+            }
+          "
+          class="sm:w-full p-5 border-[#CBCAB9] border hover:border-accent-default transition-colors cursor-pointer"
+        >
           <component :is="item.icon" class="mb-5" />
           <h3 class="text-dark-default text-base mb-5">{{ item.title }}</h3>
           <ul>
-            <li v-for="(content, number) in item.item" :key="number"
-              :class="[{ 'underline underline-offset-1': index === 1 }]" class="text-sm font-thin text-dark-shade-2">
+            <li
+              v-for="(content, number) in item.item"
+              :key="number"
+              :class="[{ 'underline underline-offset-1': index === 1 }]"
+              class="text-sm font-thin text-dark-shade-2"
+            >
               {{ content }}
             </li>
           </ul>
@@ -141,11 +189,15 @@ const generalInformation = [
     </section>
   </section>
 
-  <BaseBackground :img-src="BackgroundImage" :top-gradient="{
-    fromColor: 'from-light-shade-3/0 ',
-    toColor: 'to-light-shade-3/100',
-  }" :bottom-gradient="{
-    fromColor: 'from-dark-default/0 ',
-    toColor: 'to-dark-default/100',
-  }" />
+  <BaseBackground
+    :img-src="BackgroundImage"
+    :top-gradient="{
+      fromColor: 'from-light-shade-3/0 ',
+      toColor: 'to-light-shade-3/100',
+    }"
+    :bottom-gradient="{
+      fromColor: 'from-dark-default/0 ',
+      toColor: 'to-dark-default/100',
+    }"
+  />
 </template>
