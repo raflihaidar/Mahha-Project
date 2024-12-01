@@ -1,16 +1,22 @@
 <template>
-  <footer class="bg-dark-default sm:px-10 px-5 sm:pt-28 py-5 flex flex-col sm:space-y-52 space-y-28">
-    <section class="flex flex-col sm:flex-row space-y-10 justify-between items-center mt-28 sm:mt-0 text-light-default">
+  <footer class="bg-dark-default lg:px-10 px-5 lg:pt-28 py-5 flex flex-col lg:space-y-52 space-y-28">
+    <section class="flex flex-col lg:flex-row space-y-10 justify-between items-center mt-28 lg:mt-0 text-light-default">
       <figure class="w-auto cursor-pointer">
         <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
       </figure>
-      <ul class="flex flex-col sm:flex-row irems-center text-center gap-y-5 gap-x-5 uppercase text-sm">
-        <li>Accomodation</li>
-        <li>Experiences</li>
-        <li>Dinning</li>
+      <ul class="flex flex-col lg:flex-row irems-center text-center gap-y-5 gap-x-5 uppercase text-lg">
+        <li>
+          <a :href="$router.resolve({ name: 'accommodation' }).href">Accomodation </a>
+        </li>
+        <li>
+          <a :href="$router.resolve({ name: 'experiences' }).href">Experiences </a>
+        </li>
+        <li>
+          <a :href="$router.resolve({ name: 'dining' }).href">Dining </a>
+        </li>
       </ul>
     </section>
-    <section class="w-full grid sm:grid-cols-4 gap-y-5 gap-x-10">
+    <section class="w-full grid lg:grid-cols-4 gap-y-5 gap-x-10">
       <div>
         <section class="text-light-default border-b-2 pb-3 mb-3 border-[#96742A]">
           <h3>Location</h3>
@@ -73,7 +79,7 @@
           </svg>
         </li>
       </ul>
-      <section class="text-light-shade-1 text-sm font-thin">
+      <section class="text-light-shade-1 text-lg font-thin">
         <p>© Mahha dii Meru 2024. All Rights Reserved.</p>
       </section>
     </section>

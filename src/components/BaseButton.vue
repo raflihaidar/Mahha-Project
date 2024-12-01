@@ -14,11 +14,26 @@ const props = defineProps({
     default: true,
   },
 })
+
+const emits = defineEmits(['action'])
+
+const handleAction = () => {
+  emits('action')
+}
 </script>
 
 <template>
-  <button>
-    <p :class="[{ 'mb-2': icon }, `${textColor}`, `${fontSize}`, 'font-normal']">{{ text }}</p>
-    <ButtonIcon :color="iconColor" v-if="icon" />
+  <button @click="handleAction" class="group">
+    <p :class="[
+    { 'mb-2': icon },
+    `${textColor}`,
+    `sm:${fontSize}`,
+    'font-normal',
+    'text-sm',
+    'cursor-pointer',
+  ]">
+      {{ text }}
+    </p>
+    <ButtonIcon :color="iconColor" v-if="icon" class="group-hover:translate-y-1 transition-transform" />
   </button>
 </template>

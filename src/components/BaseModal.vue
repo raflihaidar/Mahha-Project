@@ -1,9 +1,10 @@
 <script setup>
 import gsap from 'gsap'
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
 import bikeImage from '@/assets/images/Experiences_Page/Experiences-06.jpg'
 import CloseIcon from '../assets/icons/CloseIcon.vue'
+import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 
 const props = defineProps({
   isOpen: {
@@ -100,7 +101,7 @@ const onLeave = (el, done) => {
     </div>
     <transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="beforeLeave" @leave="onLeave"
       :css="false">
-      <article class="sm:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
+      <article class="lg:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
         v-if="isOpen">
         <div class="w-full sm:h-[70%] h-1/2 z-50 relative">
           <img :src="bikeImage" alt="Bike trekking experience" class="w-full h-full object-top" />
@@ -119,8 +120,8 @@ const onLeave = (el, done) => {
               {{ item }}
             </p>
           </div>
-          <BaseButton text="MAKE RESERVATION" text-color="text-light-default" font-size="text-sm"
-            icon-color="#FCFCF0" />
+          <BaseButton text="MAKE RESERVATION" text-color="text-light-default" font-size="text-sm" icon-color="#FCFCF0"
+            @action="sendWhatsAppMessage" />
         </section>
       </article>
     </transition>

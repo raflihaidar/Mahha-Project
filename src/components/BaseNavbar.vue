@@ -22,9 +22,8 @@ watch(
 
 <template>
   <nav
-    class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50"
-  >
-    <ul class="cursor-pointer text-sm hidden sm:block">
+    class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50">
+    <ul class="cursor-pointer text-sm hidden md:block">
       <li>
         <RouterLink to="/accommodation">ACCOMODATION</RouterLink>
       </li>
@@ -35,7 +34,7 @@ watch(
         <RouterLink to="/dining">DINING</RouterLink>
       </li>
     </ul>
-    <section class="text-md cursor-pointer block sm:hidden" @click="isMenuOpen = true">
+    <section class="text-md cursor-pointer block md:hidden" @click="isMenuOpen = true">
       <p>MENU</p>
     </section>
     <RouterLink to="/">
@@ -44,33 +43,19 @@ watch(
       </figure>
     </RouterLink>
     <section>
-      <BaseButton
-        class="hidden sm:block"
-        text="BOOK YOUR STAY"
-        iconColor="#FCFCF0"
-        textColor="text-light-default"
-        fontSize="text-sm"
-        @click="calenderOpen = true"
-      />
+      <BaseButton class="hidden md:block" text="BOOK YOUR STAY" iconColor="#FCFCF0" textColor="text-light-default"
+        fontSize="text-sm" @click="calenderOpen = true" />
 
-      <BaseButton
-        class="block sm:hidden"
-        text="BOOK"
-        iconColor="#FCFCF0"
-        textColor="text-light-default"
-        fontSize="text-md"
-        :icon="false"
-      />
+      <BaseButton class="block md:hidden" text="BOOK" iconColor="#FCFCF0" textColor="text-light-default"
+        fontSize="text-md" :icon="false" @click="calenderOpen = true" />
     </section>
 
     <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
   </nav>
 
   <Teleport to="body">
-    <section
-      v-if="isMenuOpen"
-      class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
-    >
+    <section v-if="isMenuOpen"
+      class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50">
       <nav class="w-full relative">
         <RouterLink to="/">
           <figure class="w-auto absolute cursor-pointer left-1/2 transform -translate-x-1/2">

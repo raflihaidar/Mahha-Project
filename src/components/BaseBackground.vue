@@ -1,8 +1,4 @@
 <script setup>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { onMounted, ref } from "vue";
-
 const props = defineProps({
   imgSrc: {
     type: String,
@@ -23,22 +19,22 @@ const props = defineProps({
     }),
   },
 })
-
 </script>
 
 <template>
   <section class="overflow-hidden w-full h-screen relative" data-scroll data-scroll-repeat>
-    <!-- Gradient Atas -->
-    <div class="absolute top-0 w-full h-40 bg-gradient-to-b" :class="[topGradient.fromColor, topGradient.toColor]">
-    </div>
     <section :style="{ backgroundImage: `url(${imgSrc})` }" data-scroll data-scroll-speed="-1.5"
-      class=" w-full h-full bg-cover bg-center">
-
-
+      class="w-full h-full bg-cover bg-center">
       <!-- Konten -->
     </section>
+
+    <!-- Gradient Atas -->
+    <div class="absolute top-0 mix-blend-screen z-50"></div>
+    <div class="absolute top-0 w-full h-60 bg-gradient-to-t" :class="[topGradient.fromColor, topGradient.toColor]">
+    </div>
+
     <!-- Gradient Bawah -->
-    <div class="absolute bottom-0 w-full h-56 bg-gradient-to-b"
+    <div class="absolute bottom-0 w-full h-60 bg-gradient-to-b"
       :class="[bottomGradient.fromColor, bottomGradient.toColor]"></div>
     <div class="mix-blend-screen"></div>
   </section>

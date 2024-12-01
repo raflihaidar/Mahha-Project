@@ -1,6 +1,10 @@
 <script setup>
 import CloseIcon from '@/assets/icons/CloseIcon.vue'
 import NextIcon from '@/assets/icons/NextIcon.vue'
+import UserIcon from '@/assets/icons/calendar/UserIcon.vue'
+import CalendarInIcon from '@/assets/icons/calendar/CalendarInIcon.vue'
+import CalendarOutIcon from '@/assets/icons/calendar/CalendarOutIcon.vue'
+
 import { ref, computed } from 'vue'
 import dayjs from 'dayjs'
 import PlusIcon from '../assets/icons/PlusIcon.vue'
@@ -102,7 +106,7 @@ const isInRange = (date) => {
 const handleSlide = () => {
   currentMonth.value += 1
 
-  if (currentMonth.value === 11) {
+  if (currentMonth.value === 12) {
     currentMonth.value = 0
     currentYear.value += 1
   }
@@ -128,33 +132,51 @@ const onBook = () => {
     guestQty.value.infants +
     ''
 }
+
+const handleClose = () => {
+  emits('close')
+  currentYear.value = dayjs().year()
+  currentMonth.value = dayjs().month()
+  checkOutDate.value = null
+  checkInDate.value = null
+  guestQty.value = {
+    adults: 1,
+    childrens: 0,
+    infants: 0,
+  }
+}
 </script>
 
 <template>
   <Teleport to="body">
     <section class="fixed bg-black bg-opacity-70 w-screen h-screen top-0" v-if="isOpen">
       <main
-        class="w-[70%] h-auto p-16 bg-light-default border absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        class="sm:w-[70%] w-full sm:h-auto h-full sm:p-16 p-5 bg-light-default absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <!-- Bagian Input Guest, Check-in, dan Check-out -->
-        <section class="flex justify-between gap-x-5 items-start">
-          <div class="w-full grid relative">
-            <label for="guestInput">Guest</label>
+        <section class="flex flex-col sm:flex-row justify-between gap-x-5 items-start">
+          <div
+            class="w-full flex gap-x-5 items-center relative text-dark-default border-b border-dark-default mb-3"
+          >
+            <UserIcon />
+            <label for="guestInput">
+              Guest
+              <div
+                type="text"
+                name="guestInput"
+                id="guestInput"
+                class="w-full h-6 bg-inherit cursor-pointer"
+                @click="guestModal = !guestModal"
+              >
+                <p class="text-sm">
+                  <span>{{ guestQty.adults }} Adults, </span>
+                  <span> {{ guestQty.childrens }} Children, </span>
+                  <span>{{ guestQty.infants }} Infants</span>
+                </p>
+              </div>
+            </label>
             <div
-              type="text"
-              name="guestInput"
-              id="guestInput"
-              class="w-full h-6 bg-inherit border-b border-dark-default cursor-pointer"
-              @click="guestModal = !guestModal"
-            >
-              <p class="text-sm">
-                <span>{{ guestQty.adults }} Adults, </span>
-                <span> {{ guestQty.childrens }} Children, </span>
-                <span>{{ guestQty.infants }} Infants</span>
-              </p>
-            </div>
-            <div
-              class="absolute -bottom-56 z-50 w-full bg-white px-3 pt-3 rounded-lg shadow-md"
+              class="absolute -bottom-56 z-[999] w-full bg-white px-3 pt-3 rounded-lg shadow-md"
               v-if="guestModal"
             >
               <div class="w-full mb-2 py-2 flex justify-between items-center border-b">
@@ -222,30 +244,54 @@ const onBook = () => {
               </div>
             </div>
           </div>
-          <div class="w-full grid border-b border-dark-default">
-            <label for="checkin">Check-in</label>
-            <input type="text" name="checkin" id="checkin" :value="checkInDate" disabled />
+          <div
+            class="w-full flex gap-x-5 items-center text-dark-default border-b border-dark-default mb-3"
+          >
+            <CalendarInIcon />
+            <label for="checkin" class="grid">
+              Check-in
+              <input
+                type="text"
+                name="checkin"
+                id="checkin"
+                class="text-sm"
+                :value="checkInDate"
+                disabled
+              />
+            </label>
           </div>
-          <div class="w-full grid border-b border-dark-default">
-            <label for="checkout">Check-out</label>
-            <input type="text" name="checkout" id="checkout" :value="checkOutDate" disabled />
+          <div
+            class="w-full flex gap-x-5 items-center text-dark-default border-b border-dark-default mb-3"
+          >
+            <CalendarInIcon />
+            <label for="checkin" class="grid">
+              Check-out
+              <input
+                type="text"
+                name="checkin"
+                id="checkin"
+                class="text-sm"
+                :value="checkOutDate"
+                disabled
+              />
+            </label>
           </div>
         </section>
 
         <CloseIcon
           class="absolute top-5 right-5 cursor-pointer"
           color="#000"
-          @close="emits('close')"
+          @close="handleClose"
         />
 
         <!-- Kalender -->
-        <section class="w-full h-full">
+        <section class="w-full sm:h-full h-auto">
           <header class="w-full h-auto relative flex justify-between mt-10 text-dark-default">
-            <section class="w-1/2 flex justify-center gap-x-3">
+            <section class="sm:w-1/2 w-full flex justify-center gap-x-3">
               <h4>{{ dayjs().month(currentMonth).format('MMMM') }}</h4>
               <h4>{{ currentYear }}</h4>
             </section>
-            <section class="w-1/2 flex justify-center gap-x-3">
+            <section class="w-1/2 sm:flex justify-center gap-x-3 hidden">
               <h4>
                 {{
                   dayjs()
@@ -264,7 +310,7 @@ const onBook = () => {
           </header>
 
           <section
-            class="max-w-full h-full flex justify-between items-stretch gap-x-10 cursor-pointer"
+            class="max-w-full h-full flex justify-between sm:items-stretch items-center gap-x-10 cursor-pointer"
           >
             <!-- Kalender Bulan Ini -->
             <div class="w-full h-full">
@@ -272,7 +318,9 @@ const onBook = () => {
                 <p v-for="day in days" :key="day">{{ day }}</p>
               </div>
 
-              <div class="w-full h-full grid grid-cols-7 bg-white p-3 place-items-center gap-x-0">
+              <div
+                class="sm:w-full sm:h-full w-full h-[40%] grid grid-cols-7 bg-white sm:p-3 place-items-center gap-x-0"
+              >
                 <template v-for="(d, index) in dates" :key="index">
                   <div v-if="!d"></div>
                   <button
@@ -296,7 +344,7 @@ const onBook = () => {
             </div>
 
             <!-- Kalender Bulan Berikutnya -->
-            <div class="w-full h-full">
+            <div class="w-full h-full hidden sm:block">
               <div class="grid grid-cols-7 font-thin text-dark-default my-5 place-items-center">
                 <p v-for="day in days" :key="day">{{ day }}</p>
               </div>
@@ -324,8 +372,8 @@ const onBook = () => {
           </section>
         </section>
 
-        <div class="flex justify-center mt-10" @click="onBook">
-          <button class="bg-dark-default text-light-default w-fit px-6 py-4">Search</button>
+        <div class="w-full h-auto mx-auto sm:w-fit mt-10 border" @click="onBook">
+          <button class="w-full bg-dark-default text-light-default px-6 py-4">Search</button>
         </div>
       </main>
     </section>
