@@ -40,8 +40,8 @@ onMounted(() => {
 
 <template>
   <main ref="container">
-    <BaseNavbar />
+    <BaseNavbar v-if="$route.meta.navbar" />
     <RouterView />
-    <BaseFooter />
+    <BaseFooter v-if="$route.meta.footer" />
   </main>
 </template>
