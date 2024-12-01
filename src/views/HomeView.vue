@@ -28,15 +28,15 @@ const directMap = () => {
   <BaseHero fTitle="Exquisite Escapism" lTitle="To A Picturesque Haven" :img="HeroImage" />
   <BaseBanner :text="bannerText[0]" />
   <section
-    class="px-3 relative gap-y-5 sm:px-10 sm:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col sm:flex-row justify-between sm:items-center">
-    <div data-scroll data-scroll-repeat class="w-[70%] h-full lg:w-[40%] md:w-1/2 overflow-hidden">
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col lg:flex-row justify-between lg:items-center">
+    <div data-scroll data-scroll-repeat class="w-[70%] h-full lg:w-[40%] overflow-hidden">
       <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
         <img src="../assets/images/Home_Page/Home-01.jpg"
           alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
           class="w-full h-auto" loading="lazy" />
       </figure>
     </div>
-    <section class="w-[95%] sm:w-[40%] grid gap-y-5 place-items-start sm:relative">
+    <section class="w-[95%] lg:w-[40%] grid gap-y-5 place-items-start lg:relative">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         A Haven of Intimate and <br />
         Timeless Serenity
@@ -50,7 +50,7 @@ const directMap = () => {
         <BaseButton text="EXPLORE ACCOMMODATION" text-color="text-dark-default" icon-color="#45462A" />
       </a>
       <div data-scroll data-scroll-repeat
-        class="absolute lg:-top-96 md:-top-72 top-20 sm:left-0 right-10 w-40 lg:w-[384px] md:w-[300px] overflow-hidden">
+        class="absolute lg:-top-96 md:-top-72 top-20 lg:left-0 right-10 w-40 lg:w-[384px] md:w-[300px] overflow-hidden">
         <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
           <img src="../assets/images/Home_Page/Home-02.jpg"
             alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."

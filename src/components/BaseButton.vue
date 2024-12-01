@@ -23,19 +23,17 @@ const handleAction = () => {
 </script>
 
 <template>
-  <button @click="handleAction">
-    <p
-      :class="[
-        { 'mb-2': icon },
-        `${textColor}`,
-        `sm:${fontSize}`,
-        'font-normal',
-        'text-sm',
-        'cursor-pointer',
-      ]"
-    >
+  <button @click="handleAction" class="group">
+    <p :class="[
+    { 'mb-2': icon },
+    `${textColor}`,
+    `sm:${fontSize}`,
+    'font-normal',
+    'text-sm',
+    'cursor-pointer',
+  ]">
       {{ text }}
     </p>
-    <ButtonIcon :color="iconColor" v-if="icon" />
+    <ButtonIcon :color="iconColor" v-if="icon" class="group-hover:translate-y-1 transition-transform" />
   </button>
 </template>

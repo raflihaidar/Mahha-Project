@@ -53,7 +53,7 @@ const getImageUrl = (image) => {
 
 <template>
   <swiper :id="id" :loop="true" :modules="[Navigation, EffectFade]" @swiper="onSwiper" @slideChange="onSlideChange"
-    :speed="1000" :grab-cursor="true"  :breakpoints="{
+    :speed="1000" :grab-cursor="true" :breakpoints="{
     '640': {
       slidesPerView: 1,
       spaceBetween: 0,

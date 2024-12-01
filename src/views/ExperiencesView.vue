@@ -154,7 +154,7 @@ const openModal = (item) => {
           @action="sendWhatsAppMessage" />
       </RouterLink>
       <figure
-        class="absolute lg:-bottom-[24rem] bottom-[30rem] md:bottom-60 right-10 lg:left-0 w-40 sm:w-[384px] overflow-hidden"
+        class="absolute lg:-bottom-[24rem] bottom-[30rem] md:bottom-60 right-10 lg:left-0 w-40 lg:w-[384px] md:w-[300px] overflow-hidden"
         data-scroll data-scroll-repeat>
         <img src="../assets/images/Experiences_Page/Experiences-08.jpg" alt="" class="w-full h-auto" data-scroll
           data-scroll-speed="-1" loading="lazy" />
