@@ -1,8 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import AccommodationView from '@/views/AccommodationView.vue'
-import ExperiencesView from '@/views/ExperiencesView.vue'
-import DiningView from '@/views/DiningView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,19 +6,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('@/views/HomeView.vue'),
       meta: { title: 'Mahha Dii Meru - Luxury Retreat in Nature', navbar: true, footer: true },
     },
     {
       path: '/accommodation',
       name: 'accommodation',
-      component: AccommodationView,
+      component: () => import('@/views/AccommodationView.vue'),
       meta: { title: 'Accommodation - Stay at Mahha Dii Meru', navbar: true, footer: true },
     },
     {
       path: '/experiences',
       name: 'experiences',
-      component: ExperiencesView,
+      component: () => import('@/views/ExperiencesView.vue'),
       meta: {
         title: 'Experiences - Discover Mahha Dii Meru Adventures',
         navbar: true,
@@ -32,7 +28,7 @@ const router = createRouter({
     {
       path: '/dining',
       name: 'dining',
-      component: DiningView,
+      component: () => import('@/views/DiningView.vue'),
       meta: { title: 'Dining - Culinary Delights at Mahha Dii Meru', navbar: true, footer: true },
     },
     {
