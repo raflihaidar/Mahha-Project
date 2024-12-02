@@ -1,6 +1,6 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, EffectFade } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import ButtonSlider from './ButtonSlider.vue'
 import { ref } from 'vue'
 import 'swiper/css'
@@ -52,8 +52,8 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <swiper :id="id" :loop="true" :modules="[Navigation, EffectFade]" @swiper="onSwiper" @slideChange="onSlideChange"
-    :speed="1000" :grab-cursor="true" :breakpoints="{
+  <swiper :id="id" :loop="true" :modules="[Navigation]" @swiper="onSwiper" @slideChange="onSlideChange" :speed="1000"
+    :grab-cursor="true" :breakpoints="{
     '640': {
       slidesPerView: 1,
       spaceBetween: 0,
