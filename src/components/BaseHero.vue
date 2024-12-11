@@ -82,8 +82,6 @@ onBeforeRouteLeave((to, from, next) => {
       <h1
         ref="textRef"
         class="w-full text-[2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal leading-tight text-light-default will-change-transform"
-        data-scroll
-        data-scroll-speed="2"
       >
         {{ fTitle }} <br />
         {{ lTitle }}

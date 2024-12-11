@@ -20,7 +20,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased; /* Untuk Chrome/Safari */
   -moz-osx-font-smoothing: grayscale; /* Untuk Firefox di macOS */
-  scroll-behavior: smooth;
 }
 
 @layer utilities {
