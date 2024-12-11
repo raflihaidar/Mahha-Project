@@ -70,28 +70,39 @@ onBeforeRouteLeave((to, from, next) => {
 })
 </script>
 
-
 <template>
-  <header ref="headerRef" :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10">
-    <div class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative">
-      <h1 ref="textRef"
-        class="text-4xl sm:text-6xl lg:text-8xl font-normal leading-tight text-light-default will-change-transform"
-        data-scroll data-scroll-speed="2">
+  <header
+    ref="headerRef"
+    :style="{ backgroundImage: `url(${img})` }"
+    class="w-full h-full bg-cover bg-center md:bg-bottom md:px-0 relative z-10"
+  >
+    <div
+      class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative"
+    >
+      <h1
+        ref="textRef"
+        class="w-full text-[2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal leading-tight text-light-default will-change-transform"
+        data-scroll
+        data-scroll-speed="2"
+      >
         {{ fTitle }} <br />
         {{ lTitle }}
       </h1>
     </div>
 
-    <p ref="subtext"
-      class="w-full text-center text-xs sm:text-base absolute top-[95vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-bold">
+    <p
+      ref="subtext"
+      class="w-full text-center text-[0.625rem] 2xl:text-base absolute top-[90vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-normal"
+    >
       SCROLL DOWN TO DISCOVER
     </p>
 
     <div class="w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A] z-0"></div>
 
     <div class="bg-black w-full h-full absolute bottom-0 top-0 bg-opacity-50 z-0">
-      <div class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
+      <div
+        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
+      ></div>
     </div>
   </header>
 </template>

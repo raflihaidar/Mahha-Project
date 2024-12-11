@@ -39,8 +39,7 @@ const suite = [
   },
   {
     title: 'Complimentary Wi-Fi',
-    description:
-      'A well-stocked mini bar with a selection of beverages and snacks for your enjoyment.',
+    description: 'Stay connected with complimentary high-speed Wi-Fi available throughout.',
     icon: WifiIcon,
   },
   {
@@ -128,15 +127,6 @@ const fullAmenities = [
     ],
   },
 ]
-
-onMounted(() => {
-  nextTick(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  })
-})
 </script>
 
 <template>
@@ -145,75 +135,122 @@ onMounted(() => {
   <BaseBanner :text="bannerText" />
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col lg:flex-row justify-between lg:items-center">
-    <figure class="w-full mb-10 lg:mb-0 lg:w-1/2 overflow-hidden" data-scroll data-scroll-repeat>
-      <img src="../assets/video/accommodation/video.png" alt="" class="w-full h-full" data-scroll data-scroll-speed="-1"
-        loading="lazy" />
-    </figure>
-    <section class="w-full  lg:w-[30%]">
-      <BaseSubTitle text-color="text-dark-default" text-size="sm:text-2xl" class="text-xl">
-        A Haven of Intimate and <br />
-        Timeless Serenity
-      </BaseSubTitle>
-      <p class="text-dark-shade-2 sm:text-sm mt-5 text-base font-thin w-full lg:w-[60%] text-justify">
-        Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
-        sanctuary designed for romance, with breathtaking views that invite you to linger longer and
-        create unforgettable memories with your loved one.
-      </p>
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-48 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+  >
+    <section
+      class="lg:w-[90%] w-full h-full flex flex-col lg:flex-row justify-between lg:items-center"
+    >
+      <figure
+        class="w-full mb-10 lg:mb-0 lg:w-[43.5rem] overflow-hidden"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/video/accommodation/video.png"
+          alt=""
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
+      </figure>
+      <section class="w-full lg:w-[17.5rem]">
+        <BaseSubTitle text-color="text-dark-default" text-size="sm:text-2xl" class="text-xl">
+          A Haven of Intimate and <br />
+          Timeless Serenity
+        </BaseSubTitle>
+        <p class="text-dark-shade-2 text-sm mt-5 font-thin w-full">
+          Our rooms are crafted with love and care, inviting you to sink into comfort and intimacy.
+          Surrounded by nature’s quiet elegance, each space is a cocoon of warmth where you and your
+          loved one can rest, reconnect, and let the world drift away.
+        </p>
+      </section>
     </section>
   </section>
 
-  <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/20 from-20 to-[#705729]/20 to-20 ">
+  <section class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-[#e1e1d3]">
     <BaseSubTitle text-color="text-dark-default" text-size="lg:text-2xl" class="text-xl">
       Details of your Suite
     </BaseSubTitle>
     <section class="w-full h-full flex flex-col lg:flex-row justify-between lg:items-center">
-      <section class="w-full lg:w-1/2 h-full mt-28 grid grid-cols-2 gap-x-5 gap-y-10 lg:gap-28">
-        <div class="w-full lg:px-5" v-for="(item, index) in suite.filter((item, index) => index < 4)" :key="index">
+      <section
+        class="w-full max-sm:mt-16 lg:w-1/2 h-full grid grid-cols-2 gap-x-5 gap-y-10 lg:gap-28"
+      >
+        <div
+          class="w-full lg:px-5"
+          v-for="(item, index) in suite.filter((item, index) => index < 4)"
+          :key="index"
+        >
           <component :is="item.icon" />
-          <h3 class="text-dark-default text-base lg:text-xl mt-5">{{ item.title }}</h3>
-          <p class="text-dark-shade-3 text-sm lg:text-base font-thin">{{ item.description }}</p>
+          <h3 class="text-dark-default text-base mt-5">{{ item.title }}</h3>
+          <p class="text-dark-shade-3 text-sm font-thin">{{ item.description }}</p>
         </div>
       </section>
-      <figure class="w-full lg:w-[40%] max-lg:mt-16 overflow-hidden" data-scroll data-scroll-repeat>
-        <img src="../assets/images/Accommodation_Page/Accommodation-01.jpg"
+      <figure
+        class="w-full lg:w-[30.5rem] max-lg:mt-16 overflow-hidden"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/images/Accommodation_Page/Accommodation-01.jpg"
           alt="A serene hot tub situated on a wooden deck, surrounded by lush jungle foliage and vibrant greenery"
-          class="w-full h-full" data-scroll data-scroll-speed="-1" loading="lazy" />
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
       </figure>
     </section>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-60 w-full h-full bg-gradient-to-b from-[#705729]/20 from-20 to-[#705729]/20 to-20 flex flex-col-reverse lg:flex-row justify-between lg:items-center">
-    <figure class="w-full lg:w-[40%] max-sm:mt-16 overflow-hidden" data-scroll data-scroll-repeat>
-      <img src="../assets/images/Accommodation_Page/Accommodation-02.jpg"
-        alt=" A bathroom featuring a sink and a mirror, showcasing a clean and modern design." class="w-full h-auto"
-        data-scroll data-scroll-speed="-1" loading="lazy" />
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-60 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
+  >
+    <figure
+      class="w-full lg:w-[30.5rem] max-sm:mt-16 overflow-hidden"
+      data-scroll
+      data-scroll-repeat
+    >
+      <img
+        src="../assets/images/Accommodation_Page/Accommodation-02.jpg"
+        alt=" A bathroom featuring a sink and a mirror, showcasing a clean and modern design."
+        class="w-full h-auto"
+        data-scroll
+        data-scroll-speed="-1"
+        loading="lazy"
+      />
     </figure>
     <section class="lg:w-[50%] w-full">
       <section class="w-full h-full mt-20 lg:mt-28 grid gap-x-5 gap-y-10 grid-cols-2 lg:gap-28">
-        <div class="w-full lg:px-5" v-for="(item, index) in suite.filter((item, index) => index >= 4)" :key="index">
+        <div
+          class="w-full lg:px-5"
+          v-for="(item, index) in suite.filter((item, index) => index >= 4)"
+          :key="index"
+        >
           <component :is="item.icon" />
-          <h3 class="text-dark-default text-base lg:text-xl mt-5">{{ item.title }}</h3>
-          <p class="text-dark-shade-3 text-sm lg:text-base font-thin">{{ item.description }}</p>
+          <h3 class="text-dark-default text-base mt-5">{{ item.title }}</h3>
+          <p class="text-dark-shade-3 text-sm font-thin">{{ item.description }}</p>
         </div>
       </section>
     </section>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/20 from-20 to-[#705729]/20 to-20 flex flex-col lg:flex-row justify-between lg:items-center">
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-[#e1e1d3] flex flex-col lg:flex-row justify-between lg:items-center"
+  >
     <section class="lg:w-full pb-28">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         Full Amenities
       </BaseSubTitle>
       <section class="grid lg:grid-cols-6 md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-10 mt-16 w-full">
         <div v-for="(item, index) in fullAmenities" :key="index">
-          <h3 class="text-dark-default mb-5">{{ item.category }}</h3>
+          <h3 class="text-dark-default text-sm mb-5">{{ item.category }}</h3>
           <ul>
-            <li v-for="(amenity, amenityIndex) in item.amenities" :key="amenityIndex"
-              class="text-dark-shade-3 text-sm lg:text-base font-thin mb-2">
+            <li
+              v-for="(amenity, amenityIndex) in item.amenities"
+              :key="amenityIndex"
+              class="text-dark-shade-3 text-sm font-thin mb-2"
+            >
               {{ amenity }}
             </li>
           </ul>
@@ -222,10 +259,15 @@ onMounted(() => {
     </section>
   </section>
 
-  <SliderSwiper :images="[
-    'Accommodation_Page/Accommodation-04.jpg',
-    'Accommodation_Page/Accommodation-00-Hero.jpg',
-    'Accommodation_Page/Accommodation-04.jpg',
-    'Accommodation_Page/Accommodation-00-Hero.jpg',
-  ]" color-icon="#fff" />
+  <SliderSwiper
+    :images="[
+      'Accommodation_Page/Accommodation-04.jpg',
+      'Accommodation_Page/Accommodation-00-Hero.jpg',
+      'Accommodation_Page/Accommodation-04.jpg',
+      'Accommodation_Page/Accommodation-00-Hero.jpg',
+    ]"
+    from="from-[#e1e1d3]"
+    to="to-dark-default/100"
+    color-icon="#fff"
+  />
 </template>

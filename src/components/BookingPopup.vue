@@ -54,6 +54,7 @@ const isOpen = ref(false)
 onMounted(() => {
   setTimeout(() => {
     isOpen.value = true
+    console.log(isOpen.value)
   }, 5000)
 })
 </script>
@@ -61,28 +62,32 @@ onMounted(() => {
 <template>
   <Teleport to="body">
     <Transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
-      <section class="w-screen h-screen fixed top-0" v-if="isOpen">
-        <section
-          class="sm:w-[360px] sm:h-[222px] w-full h-[40%] bg-no-repeat bg-cover absolute bottom-0 sm:right-0 text-light-default px-10 py-10"
-          :style="{ backgroundImage: `url(${bookingPopupImage})` }">
-          <h3 class="text-2xl mb-3">Direct Booking Benefits</h3>
-          <ul class="font-thin text-sm mb-3">
-            <li class="flex items-center">
-              <CheckIcon />
-              Best rate guarantee
-            </li>
-            <li class="flex items-center">
-              <CheckIcon />
-              Free upgrade on arrival (upon availability)
-            </li>
-            <li class="flex items-center">
-              <CheckIcon />
-              Tailored stay experience
-            </li>
-          </ul>
-          <BaseButton text="BOOK NOW" @click="sendWhatsAppMessage" />
-          <CloseIcon class="absolute top-5 right-5 cursor-pointer" size="0.7rem" @close="isOpen = false" />
-        </section>
+      <section
+        v-if="isOpen"
+        class="sm:w-[360px] z-50 sm:h-[222px] w-full h-[40%] bg-no-repeat bg-cover fixed bottom-0 sm:right-0 text-light-default px-10 py-10"
+        :style="{ backgroundImage: `url(${bookingPopupImage})` }"
+      >
+        <h3 class="text-2xl mb-3">Direct Booking Benefits</h3>
+        <ul class="font-thin text-sm mb-3">
+          <li class="flex items-center">
+            <CheckIcon />
+            Best rate guarantee
+          </li>
+          <li class="flex items-center">
+            <CheckIcon />
+            Free upgrade on arrival (upon availability)
+          </li>
+          <li class="flex items-center">
+            <CheckIcon />
+            Tailored stay experience
+          </li>
+        </ul>
+        <BaseButton text="BOOK NOW" @click="sendWhatsAppMessage" />
+        <CloseIcon
+          class="absolute top-5 right-5 cursor-pointer"
+          size="0.7rem"
+          @close="isOpen = false"
+        />
       </section>
     </Transition>
   </Teleport>

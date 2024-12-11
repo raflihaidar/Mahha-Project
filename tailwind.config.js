@@ -10,7 +10,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      Moulin: ['Moulin', 'serif'],
+      moulin: 'Moulin',
     },
     extend: {
       colors: {

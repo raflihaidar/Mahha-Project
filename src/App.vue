@@ -1,20 +1,18 @@
 <script setup>
-import { useRouter } from 'vue-router'
-import { onMounted, ref, defineAsyncComponent, nextTick } from 'vue'
+import { defineAsyncComponent, onMounted, ref } from 'vue'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 const BaseFooter = defineAsyncComponent(() => import('@/components/BaseFooter.vue'))
 import LocomotiveScroll from 'locomotive-scroll'
 
 const container = ref(null)
-const router = useRouter()
 let locoScroll = null
 
 const setLocomotiveScroll = () => {
   locoScroll = new LocomotiveScroll({
     el: container.value,
-    smooth: true,
-    lerp: 0.03, // Linear Interpolation, 0 > 1 // Try 0.01
-    multiplier: 1, // Effect Multiplier
+    smooth: true, // Aktifkan smooth scrolling
+    lerp: 0.03, // Linear interpolation lebih halus
+    multiplier: 2,
     reloadOnContextChange: true,
     touchMultiplier: 2,
     smoothMobile: 0,
@@ -33,7 +31,6 @@ const setLocomotiveScroll = () => {
 
 onMounted(() => {
   setLocomotiveScroll()
-
   new ResizeObserver(() => locoScroll.update()).observe(container.value)
 })
 </script>
