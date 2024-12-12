@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 
-import HeroImage from '@/assets/images/Experiences_Page/Experiences-00-Hero.jpg'
+import HeroImage from '@/assets/images/Experiences_Page/Experiences-00-Hero.webp'
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -9,7 +9,7 @@ import BaseSubTitle from '@/components/BaseSubTitle.vue'
 import SliderSwiper from '../components/SliderSwiper.vue'
 import BaseModal from '@/components/BaseModal.vue'
 import { ref } from 'vue'
-import { sendWhatsAppMessage } from '@/utils/waDirect.js'
+import { sendWhatsAppMessage, moreInfo } from '@/utils/waDirect.js'
 
 const showModal = ref(false)
 const modalData = ref({
@@ -49,7 +49,7 @@ const cardContent = [
 ]
 
 const getImageUrl = (image) => {
-  return new URL(`../assets/images/Experiences_Page/${image}.jpg`, import.meta.url)
+  return new URL(`../assets/images/Experiences_Page/${image}.webp`, import.meta.url)
 }
 
 const openModal = (item) => {
@@ -63,44 +63,73 @@ const openModal = (item) => {
 <template>
   <BaseHero fTitle="Whispers of Endless Joy" lTitle="in Every Moment" :img="HeroImage" />
   <BaseBanner :text="bannerText" />
-
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col-reverse lg:flex-row justify-between lg:items-center">
-    <section class="w-[95%] lg:w-[40%] grid gap-y-5 place-items-start mx-auto max-lg:mt-10 lg:relative">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
-        Rejuvenation Awaits in <br />
-        Nature's Embrace
-      </BaseSubTitle>
-      <p class="text-dark-shade-2 font-thin text-base w-full lg:w-[60%] text-justify">
-        Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
-        sanctuary designed for romance, with breathtaking views that invite you to linger longer and
-        create unforgettable memories with your loved one.
-      </p>
-      <BaseButton text="MAKE RESERVATION" icon-color="#45462A" text-color="text-dark-default"
-        @action="sendWhatsAppMessage" />
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+  >
+    <section
+      class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
+    >
+      <section
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative"
+      >
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
+          Rejuvenation Awaits in <br />
+          Nature's Embrace
+        </BaseSubTitle>
+        <p class="text-dark-shade-2 font-thin text-xs 2xl:text-base w-full">
+          Experience deep relaxation at our serene spa, where personalized treatments are designed
+          to soothe the body and calm the mind. Surrounded by nature, let our expert therapists
+          guide you into a peaceful state of renewal and tranquility.
+        </p>
+        <BaseButton
+          text="MAKE RESERVATION"
+          icon-color="#45462A"
+          text-color="text-dark-default"
+          @action="sendWhatsAppMessage"
+        />
+        <figure
+          class="absolute lg:-top-96 top-20 left-5 lg:left-0 lg:right-10 w-40 lg:w-96 md:w-[300px] overflow-hidden"
+          data-scroll
+          data-scroll-repeat
+        >
+          <img
+            src="../assets/images/Experiences_Page/Experiences-01.webp"
+            data-scroll
+            data-scroll-speed="-1"
+            alt="A woman receiving a soothing foot massage in a tranquil spa setting, enhancing her relaxation and comfort."
+            class="w-full h-full"
+            loading="lazy"
+          />
+        </figure>
+      </section>
       <figure
-        class="absolute lg:-top-96 top-20 left-5 lg:left-0 lg:right-10 w-40 lg:w-[384px] md:w-[300px] overflow-hidden"
-        data-scroll data-scroll-repeat>
-        <img src="../assets/images/Experiences_Page/Experiences-01.jpg" data-scroll data-scroll-speed="-1"
-          alt="A woman receiving a soothing foot massage in a tranquil spa setting, enhancing her relaxation and comfort."
-          class="w-full h-full" loading="lazy" />
+        class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/images/Experiences_Page/Experiences-02.webp"
+          alt="A woman relaxes at a spa while receiving a soothing facial mask treatment"
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
       </figure>
     </section>
-    <figure class="w-[70%] sm:w-[40%] self-end overflow-hidden" data-scroll data-scroll-repeat>
-      <img src="../assets/images/Experiences_Page/Experiences-02.jpg"
-        alt="A woman relaxes at a spa while receiving a soothing facial mask treatment" class="w-full h-full"
-        data-scroll data-scroll-speed="-1" loading="lazy" />
-    </figure>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-28 lg:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20">
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-28 lg:py-60 w-full h-full bg-[#e1e1d3]"
+  >
     <section class="w-full text-center">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl mb-5">
         Unwind and Explore at <br class="lg:hidden" />
         Your Own Pace
       </BaseSubTitle>
-      <p class="lg:w-[55%] w-full mx-auto mb-10 text-dark-shade-3 text-base font-thin">
+      <p
+        class="lg:w-[37rem] 2xl:w-[50rem] w-full mx-auto mb-10 text-dark-shade-3 text-xs 2xl:text-base font-thin"
+      >
         Immerse yourself in a variety of experiences, from peaceful nature walks to thrilling
         outdoor adventures. Whether you're seeking relaxation or excitement, our curated activities
         offer something for every mood and moment.
@@ -108,64 +137,111 @@ const openModal = (item) => {
     </section>
 
     <section
-      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar lg:grid grid-cols-4 sm:gap-x-10 lg:overflow-x-hidden">
-      <article v-for="(item, index) in cardContent" :key="index" class="flex-shrink-0 w-64 snap-center lg:w-auto group">
+      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar lg:grid grid-cols-4 sm:gap-x-10 lg:overflow-x-hidden"
+    >
+      <article
+        v-for="(item, index) in cardContent"
+        :key="index"
+        class="flex-shrink-0 w-64 snap-center lg:w-auto group"
+      >
         <figure class="overflow-hidden" data-scroll data-scroll-repeat>
-          <img :src="getImageUrl(item.image)" :alt="item.description" loading="lazy"
-            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform" />
+          <img
+            :src="getImageUrl(item.image)"
+            :alt="item.description"
+            loading="lazy"
+            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform"
+          />
         </figure>
         <section class="mt-5">
-          <h2 class="text-dark-default lg:text-xl text-sm md:text-base">{{ item.subTitle }}</h2>
-          <button class="text-accent-default lg:text-sm text-xs cursor-pointer group-hover:blur-[1px]"
-            @click="openModal(item)">
+          <h2 class="text-dark-default lg:text-base text-sm">{{ item.subTitle }}</h2>
+          <button
+            class="text-accent-default text-xs cursor-pointer group-hover:blur-[1px]"
+            @click="openModal(item)"
+          >
             VIEW DETAILS
           </button>
         </section>
       </article>
 
-      <BaseModal :isOpen="showModal" @closeModal="showModal = false" :subTitle="modalData.subTitle"
-        title="Pedal Through Nature’s Serene Trails" :contents="[
-    'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
-    'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
-  ]">
+      <BaseModal
+        :isOpen="showModal"
+        @closeModal="showModal = false"
+        :subTitle="modalData.subTitle"
+        title="Pedal Through Nature’s Serene Trails"
+        :contents="[
+          'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
+          'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
+        ]"
+      >
       </BaseModal>
     </section>
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-28 pb-40 lg:py-60 w-full h-full bg-gradient-to-b from-[#705729]/20 to-[#705729]/20 flex flex-col lg:flex-row justify-between lg:items-center">
-    <figure class="w-[70%] lg:w-[40%] overflow-hidden" data-scroll data-scroll-repeat>
-      <img src="../assets/images/Experiences_Page/Experiences-07.jpg"
-        alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
-        class="w-full h-auto" data-scroll data-scroll-speed="-1" loading="lazy" />
-    </figure>
-    <section class="w-[95%] lg:w-[40%] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
-        Moments to Remember, <br />
-        Spaces to Cherish
-      </BaseSubTitle>
-      <p class="text-dark-shade-2 font-thin text-base w-full lg:w-[60%] text-justify">
-        Create lasting memories in our serene and private dining spaces, perfect for intimate
-        gatherings or meaningful celebrations. Each occasion is tailored with care, ensuring a
-        beautiful experience in a setting that feels uniquely yours.
-      </p>
-      <RouterLink to="/accommodation">
-        <BaseButton text="CONTACT US" icon-color="#45462A" text-color="text-dark-default" font-size="text-base"
-          @action="sendWhatsAppMessage" />
-      </RouterLink>
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-28 pb-40 lg:py-60 w-full h-full bg-[#e1e1d3]"
+  >
+    <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
       <figure
-        class="absolute lg:-bottom-[24rem] bottom-[30rem] md:bottom-60 right-10 lg:left-0 w-40 lg:w-[384px] md:w-[300px] overflow-hidden"
-        data-scroll data-scroll-repeat>
-        <img src="../assets/images/Experiences_Page/Experiences-08.jpg" alt="" class="w-full h-auto" data-scroll
-          data-scroll-speed="-1" loading="lazy" />
+        class="w-[70%] lg:w-[30.5rem] 2xl:w-[35rem] overflow-hidden"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/images/Experiences_Page/Experiences-07.webp"
+          alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
+          class="w-full h-auto"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
       </figure>
+      <section
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative"
+      >
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
+          Moments to Remember, <br />
+          Spaces to Cherish
+        </BaseSubTitle>
+        <p class="text-dark-shade-2 font-thin text-xs 2xl:text-base w-full">
+          Create lasting memories in our serene and private dining spaces, perfect for intimate
+          gatherings or meaningful celebrations. Each occasion is tailored with care, ensuring a
+          beautiful experience in a setting that feels uniquely yours.
+        </p>
+        <RouterLink to="/accommodation">
+          <BaseButton
+            text="CONTACT US"
+            icon-color="#45462A"
+            text-color="text-dark-default"
+            font-size="text-base"
+            @action="moreInfo"
+          />
+        </RouterLink>
+        <figure
+          class="absolute lg:-bottom-[24rem] bottom-[24rem] md:bottom-60 right-10 lg:left-0 w-40 lg:w-96 md:w-[300px] overflow-hidden"
+          data-scroll
+          data-scroll-repeat
+        >
+          <img
+            src="../assets/images/Experiences_Page/Experiences-08.webp"
+            alt=""
+            class="w-full h-auto"
+            data-scroll
+            data-scroll-speed="-1"
+            loading="lazy"
+          />
+        </figure>
+      </section>
     </section>
   </section>
 
-  <SliderSwiper :images="[
-    'Experiences_Page/Experiences-09.jpg',
-    'Experiences_Page/Experiences-010.jpg',
-    'Experiences_Page/Experiences-09.jpg',
-    'Experiences_Page/Experiences-010.jpg',
-  ]" />
+  <SliderSwiper
+    :images="[
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
+    ]"
+    from="from-[#e1e1d3]"
+    to="to-dark-default/100"
+  />
 </template>

@@ -26,10 +26,16 @@ onMounted(() => {
 
 <template>
   <section class="sm:w-full w-full flex flex-col sm:overflow-auto h-auto relative">
-    <section class="flex my-0 mx-auto overflow-x-auto whitespace-nowrap w-full no-scrollbar" id="map-container">
+    <section
+      class="flex -mt-32 mx-auto overflow-x-auto whitespace-nowrap w-full no-scrollbar"
+      id="map-container"
+    >
       <Map :distances="places" @update="updateDistance" />
     </section>
-    <p class="absolute bottom-0 md:bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-sm lg:text-lg">
+    <p
+      v-if="distance > 0"
+      class="absolute bottom-0 md:bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 text-sm lg:text-lg"
+    >
       {{ distance }} km
     </p>
   </section>

@@ -21,41 +21,60 @@ watch(
 </script>
 
 <template>
-  <nav
-    class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50">
-    <ul class="cursor-pointer text-sm hidden md:block">
-      <li>
-        <RouterLink to="/accommodation">ACCOMODATION</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/experiences">EXPERIENCES</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/dining">DINING</RouterLink>
-      </li>
-    </ul>
-    <section class="text-md cursor-pointer block md:hidden" @click="isMenuOpen = true">
-      <p>MENU</p>
-    </section>
-    <RouterLink to="/">
-      <figure class="w-auto cursor-pointer">
-        <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
-      </figure>
-    </RouterLink>
-    <section>
-      <BaseButton class="hidden md:block" text="BOOK YOUR STAY" iconColor="#FCFCF0" textColor="text-light-default"
-        fontSize="text-sm" @click="calenderOpen = true" />
+  <Teleport to="body">
+    <nav
+      class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50"
+    >
+      <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin">
+        <li>
+          <a :href="$router.resolve({ name: 'accommodation' }).href">ACCOMMODATION </a>
+        </li>
+        <li>
+          <a :href="$router.resolve({ name: 'experiences' }).href">EXPERIENCES </a>
+        </li>
+        <li>
+          <a :href="$router.resolve({ name: 'dining' }).href">DINING </a>
+        </li>
+      </ul>
+      <section class="text-xs cursor-pointer block md:hidden" @click="isMenuOpen = true">
+        <p>MENU</p>
+      </section>
+      <a :href="$router.resolve({ name: 'home' }).href">
+        <figure class="w-auto cursor-pointer">
+          <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
+        </figure>
+      </a>
+      <section>
+        <BaseButton
+          class="hidden md:block"
+          text="BOOK YOUR STAY"
+          iconColor="#FCFCF0"
+          textColor="text-light-default"
+          fontSize="text-xs"
+          font-weight="font-thin"
+          @click="calenderOpen = true"
+        />
 
-      <BaseButton class="block md:hidden" text="BOOK" iconColor="#FCFCF0" textColor="text-light-default"
-        fontSize="text-md" :icon="false" @click="calenderOpen = true" />
-    </section>
+        <BaseButton
+          class="block md:hidden"
+          text="BOOK"
+          iconColor="#FCFCF0"
+          textColor="text-light-default"
+          fontSize="text-xs"
+          :icon="false"
+          @click="calenderOpen = true"
+        />
+      </section>
 
-    <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
-  </nav>
+      <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
+    </nav>
+  </Teleport>
 
   <Teleport to="body">
-    <section v-if="isMenuOpen"
-      class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50">
+    <section
+      v-if="isMenuOpen"
+      class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
+    >
       <nav class="w-full relative">
         <RouterLink to="/">
           <figure class="w-auto absolute cursor-pointer left-1/2 transform -translate-x-1/2">

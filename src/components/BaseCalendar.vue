@@ -149,9 +149,9 @@ const handleClose = () => {
 
 <template>
   <Teleport to="body">
-    <section class="fixed bg-black bg-opacity-70 w-screen h-screen top-0" v-if="isOpen">
+    <section class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-50" v-if="isOpen">
       <main
-        class="sm:w-[70%] w-full sm:h-auto h-full sm:p-16 p-5 bg-light-default absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        class="sm:w-[50rem] w-full sm:p-12 p-6 sm:h-auto h-full bg-light-default absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       >
         <!-- Bagian Input Guest, Check-in, dan Check-out -->
         <section class="flex flex-col sm:flex-row justify-between gap-x-5 items-start">
@@ -168,7 +168,7 @@ const handleClose = () => {
                 class="w-full h-6 bg-inherit cursor-pointer"
                 @click="guestModal = !guestModal"
               >
-                <p class="text-sm">
+                <p class="text-xs">
                   <span>{{ guestQty.adults }} Adults, </span>
                   <span> {{ guestQty.childrens }} Children, </span>
                   <span>{{ guestQty.infants }} Infants</span>
@@ -182,7 +182,7 @@ const handleClose = () => {
               <div class="w-full mb-2 py-2 flex justify-between items-center border-b">
                 <section class="w-1/2 self-end">
                   <p>Adults</p>
-                  <p class="text-sm">Ages 17 or above</p>
+                  <p class="text-xs">Ages 17 or above</p>
                 </section>
                 <section class="flex w-1/2 items-center text-center justify-between gap-x-5">
                   <button
@@ -203,7 +203,7 @@ const handleClose = () => {
               <div class="w-full mb-2 py-2 flex justify-between items-center border-b">
                 <section class="w-1/2 self-end">
                   <p>Childrens</p>
-                  <p class="text-sm">Ages 2 - 16</p>
+                  <p class="text-xs">Ages 2 - 16</p>
                 </section>
                 <section class="flex w-1/2 items-center justify-between gap-x-5">
                   <button
@@ -224,7 +224,7 @@ const handleClose = () => {
               <div class="w-full flex py-2 justify-between items-center border-b">
                 <section class="w-1/2 self-end">
                   <p>Infants</p>
-                  <p class="text-sm">Under 2</p>
+                  <p class="text-xs">Under 2</p>
                 </section>
                 <section class="flex w-1/2 items-center justify-between gap-x-5">
                   <button
@@ -250,30 +250,24 @@ const handleClose = () => {
             <CalendarInIcon />
             <label for="checkin" class="grid">
               Check-in
-              <input
-                type="text"
-                name="checkin"
-                id="checkin"
-                class="text-sm"
-                :value="checkInDate"
-                disabled
-              />
+              <div type="text" name="checkin" id="checkin" class="w-full h-6 bg-inherit">
+                <p class="text-xs">
+                  {{ checkInDate }}
+                </p>
+              </div>
             </label>
           </div>
           <div
             class="w-full flex gap-x-5 items-center text-dark-default border-b border-dark-default mb-3"
           >
-            <CalendarInIcon />
-            <label for="checkin" class="grid">
+            <CalendarOutIcon />
+            <label for="checkout" class="grid">
               Check-out
-              <input
-                type="text"
-                name="checkin"
-                id="checkin"
-                class="text-sm"
-                :value="checkOutDate"
-                disabled
-              />
+              <div type="text" name="checkout" id="checkout" class="w-full h-6 bg-inherit">
+                <p class="text-xs">
+                  {{ checkOutDate }}
+                </p>
+              </div>
             </label>
           </div>
         </section>
@@ -286,7 +280,9 @@ const handleClose = () => {
 
         <!-- Kalender -->
         <section class="w-full sm:h-full h-auto">
-          <header class="w-full h-auto relative flex justify-between mt-10 text-dark-default">
+          <header
+            class="w-full h-auto relative flex justify-between text-dark-default text-[0.875rem] mt-5"
+          >
             <section class="sm:w-1/2 w-full flex justify-center gap-x-3">
               <h4>{{ dayjs().month(currentMonth).format('MMMM') }}</h4>
               <h4>{{ currentYear }}</h4>
@@ -314,7 +310,9 @@ const handleClose = () => {
           >
             <!-- Kalender Bulan Ini -->
             <div class="w-full h-full">
-              <div class="grid grid-cols-7 font-thin text-dark-default my-5 place-items-center">
+              <div
+                class="grid grid-cols-7 font-thin text-dark-default my-5 place-items-center text-[0.875rem]"
+              >
                 <p v-for="day in days" :key="day">{{ day }}</p>
               </div>
 
@@ -325,7 +323,7 @@ const handleClose = () => {
                   <div v-if="!d"></div>
                   <button
                     v-else
-                    class="w-full h-full px-3 py-3 font-thin text-sm text-dark-default"
+                    class="w-full h-full px-3 py-3 font-thin text-[0.875rem] text-dark-default"
                     @click="selected(d.fullDate)"
                     :class="{
                       'bg-dark-default text-light-default':
@@ -354,7 +352,7 @@ const handleClose = () => {
                   <div v-if="!d"></div>
                   <button
                     v-else
-                    class="w-full h-full px-3 py-3 font-thin text-sm text-dark-default"
+                    class="w-full h-full px-3 py-3 font-thin text-[0.875rem] text-dark-default"
                     @click="selected(d.fullDate)"
                     :class="{
                       'bg-dark-default text-light-default':
@@ -372,8 +370,10 @@ const handleClose = () => {
           </section>
         </section>
 
-        <div class="w-full h-auto mx-auto sm:w-fit mt-10 border" @click="onBook">
-          <button class="w-full bg-dark-default text-light-default px-6 py-4">Search</button>
+        <div class="w-full h-auto mx-auto sm:w-[5.875rem] mt-5 border" @click="onBook">
+          <button class="w-full bg-dark-default text-xs text-light-default py-4 px-6">
+            SEARCH
+          </button>
         </div>
       </main>
     </section>

@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
-import bikeImage from '@/assets/images/Experiences_Page/Experiences-06.jpg'
+import bikeImage from '@/assets/images/Experiences_Page/Experiences-06.webp'
 import CloseIcon from '../assets/icons/CloseIcon.vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 
@@ -97,15 +97,27 @@ const onLeave = (el, done) => {
 
 <template>
   <Teleport to="body">
-    <div class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-30" v-if="isOpen" @click="closeModal">
-    </div>
-    <transition @before-enter="onBeforeEnter" @enter="onEnter" @before-leave="beforeLeave" @leave="onLeave"
-      :css="false">
-      <article class="lg:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
-        v-if="isOpen">
+    <div
+      class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-30"
+      v-if="isOpen"
+      @click="closeModal"
+    ></div>
+    <transition
+      @before-enter="onBeforeEnter"
+      @enter="onEnter"
+      @before-leave="beforeLeave"
+      @leave="onLeave"
+      :css="false"
+    >
+      <article
+        class="lg:w-[50vw] w-full top-0 left-0 h-full fixed overflow-y-scroll no-scrollbar z-[100]"
+        v-if="isOpen"
+      >
         <div class="w-full sm:h-[70%] h-1/2 z-50 relative">
           <img :src="bikeImage" alt="Bike trekking experience" class="w-full h-full object-top" />
-          <div class="absolute bottom-0 w-full h-64 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
+          <div
+            class="absolute bottom-0 w-full h-64 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
+          ></div>
           <div class="mix-blend-screen"></div>
           <button class="absolute top-5 right-10">
             <CloseIcon @click="closeModal" />
@@ -114,14 +126,23 @@ const onLeave = (el, done) => {
 
         <section class="w-full h-fit sm:py-28 py-20 sm:px-28 px-5 bg-dark-default">
           <h3 class="text-light-shade-1 uppercase text-base font-medium">{{ subTitle }}</h3>
-          <h2 class="text-light-default text-2xl mt-5">{{ title }}</h2>
+          <h2 class="text-light-default text-xl 2xl:text-2xl mt-5">{{ title }}</h2>
           <div class="w-full my-16">
-            <p class="text-light-shade-1 mb-10" v-for="(item, index) in contents" :key="index">
+            <p
+              class="text-light-shade-1 mb-10 text-xs 2xl:text-base"
+              v-for="(item, index) in contents"
+              :key="index"
+            >
               {{ item }}
             </p>
           </div>
-          <BaseButton text="MAKE RESERVATION" text-color="text-light-default" font-size="text-sm" icon-color="#FCFCF0"
-            @action="sendWhatsAppMessage" />
+          <BaseButton
+            text="MAKE RESERVATION"
+            text-color="text-light-default"
+            font-size="text-xs"
+            icon-color="#FCFCF0"
+            @action="sendWhatsAppMessage"
+          />
         </section>
       </article>
     </transition>
