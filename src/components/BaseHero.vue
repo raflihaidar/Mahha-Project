@@ -81,7 +81,7 @@ onBeforeRouteLeave((to, from, next) => {
     >
       <h1
         ref="textRef"
-        class="text-4xl sm:text-6xl lg:text-8xl font-normal leading-tight text-light-default will-change-transform"
+        class="w-full text-[2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal leading-tight text-light-default will-change-transform"
         data-scroll
         data-scroll-speed="2"
       >
@@ -92,7 +92,7 @@ onBeforeRouteLeave((to, from, next) => {
 
     <p
       ref="subtext"
-      class="w-full text-center text-xs sm:text-base absolute top-[95vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-bold"
+      class="w-full text-center text-[0.625rem] 2xl:text-base absolute top-[90vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-normal"
     >
       SCROLL DOWN TO DISCOVER
     </p>

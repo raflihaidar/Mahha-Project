@@ -1,12 +1,11 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { onMounted, ref, defineAsyncComponent, nextTick } from 'vue'
+import { onMounted, ref, defineAsyncComponent } from 'vue'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 const BaseFooter = defineAsyncComponent(() => import('@/components/BaseFooter.vue'))
 import LocomotiveScroll from 'locomotive-scroll'
 
 const container = ref(null)
-const router = useRouter()
 let locoScroll = null
 
 const setLocomotiveScroll = () => {
@@ -20,12 +19,10 @@ const setLocomotiveScroll = () => {
     smoothMobile: 0,
     smartphone: {
       smooth: false,
-      multiplier: 3,
       breakpoint: 767,
     },
     tablet: {
       smooth: false,
-      multiplier: 3,
       breakpoint: 1024,
     },
   })

@@ -25,7 +25,7 @@ watch(
     <nav
       class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50"
     >
-      <ul class="cursor-pointer hidden md:block text-xs font-thin">
+      <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin">
         <li>
           <a :href="$router.resolve({ name: 'accommodation' }).href">ACCOMMODATION </a>
         </li>

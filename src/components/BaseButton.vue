@@ -35,6 +35,7 @@ const handleAction = () => {
         `sm:${fontSize}`,
         `${fontWeight}`,
         'text-xs',
+        '2xl:text-base',
         'cursor-pointer',
       ]"
     >

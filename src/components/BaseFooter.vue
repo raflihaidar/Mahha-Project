@@ -9,7 +9,7 @@
         <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
       </figure>
       <ul
-        class="flex flex-col lg:flex-row irems-center text-center gap-y-5 gap-x-5 uppercase text-xs font-thin"
+        class="flex flex-col lg:flex-row irems-center text-center gap-y-5 gap-x-5 uppercase text-xs 2xl:text-base font-thin"
       >
         <li>
           <a :href="$router.resolve({ name: 'accommodation' }).href">Accomodation </a>
@@ -22,12 +22,12 @@
         </li>
       </ul>
     </section>
-    <section class="w-full grid lg:grid-cols-4 gap-y-5 gap-x-10 text-xs">
+    <section class="w-full grid lg:grid-cols-4 gap-y-5 gap-x-10 text-xs 2xl:text-base">
       <div>
         <section class="text-light-default border-b-[0.5px] pb-3 mb-3 border-[#96742A]">
           <h3>Location</h3>
         </section>
-        <address class="text-light-shade-1 font-thin not-italic max-w-[17.5rem]">
+        <address class="text-light-shade-1 font-thin not-italic w-[17.5rem] 2xl:w-full">
           Jl. Raya Puncak No.90, Tugu Selatan, Kecamatan Cisarua, Kabupaten Bogor, Jawa Barat 16750
         </address>
       </div>

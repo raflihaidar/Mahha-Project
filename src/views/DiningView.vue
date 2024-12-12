@@ -77,12 +77,18 @@ const generalInformation = [
       class="lg:w-[90%] ml-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
     >
       <article class="lg:w-[30.5rem] w-full">
-        <div class="sm:w-[17.5rem] sm:mx-0 w-[90%] mx-auto pt-5 sm:pt-10">
-          <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
+        <div class="sm:w-[17.5rem] 2xl:w-[23rem] sm:mx-0 w-[90%] mx-auto pt-5 sm:pt-10">
+          <BaseSubTitle
+            text-color="text-dark-default"
+            text-size="text-2xl"
+            class="mb-5 2xl:text-3xl"
+          >
             Symphony of Flavors and <br />
             Refreshments
           </BaseSubTitle>
-          <p class="w-full place-self-center text-dark-shade-2 text-xs font-thin mb-5">
+          <p
+            class="w-full place-self-center text-dark-shade-2 text-xs 2xl:text-base font-thin mb-5"
+          >
             Explore a diverse selection of handcrafted beverages and exquisite dishes, each
             thoughtfully created to satisfy your senses. From refreshing drinks to gourmet meals,
             indulge in flavors that reflect the essence of our culinary philosophy.
@@ -99,7 +105,7 @@ const generalInformation = [
         <figure
           data-scroll
           data-scroll-repeat
-          class="sm:w-[20.75rem] z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+          class="sm:w-[20.75rem] 2xl:w-[25rem] z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
             src="@/assets/images/Dining_Page/Dining-01.webp"
@@ -120,7 +126,7 @@ const generalInformation = [
         <figure
           data-scroll
           data-scroll-repeat
-          class="sm:w-[20.75rem] z-0 group1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+          class="sm:w-[20.75rem] 2xl:w-[25rem] z-0 group1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
             src="@/assets/images/Dining_Page/Dining-03.webp"
@@ -159,13 +165,19 @@ const generalInformation = [
   <section class="lg:px-10 mx-auto space-y-10 lg:py-60 py-36 w-full h-full bg-[#e1e1d3]">
     <section class="w-full flex flex-col lg:flex-row justify-between items-center">
       <SlideShow :images="[Image1, Image2, Image3, Image4]" />
-      <article class="lg:w-[30.5rem] w-full flex justify-center">
-        <div class="lg:w-[17.5rem] w-[90%] mx-auto">
-          <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
+      <article class="lg:w-[30.5rem] 2xl:w-[35rem] w-full flex justify-center">
+        <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto">
+          <BaseSubTitle
+            text-color="text-dark-default"
+            text-size="text-2xl"
+            class="mb-5 2xl:text-3xl"
+          >
             Exclusive Spaces for <br />
             Unforgettable Moments
           </BaseSubTitle>
-          <p class="w-full place-self-center text-dark-shade-3 text-xs font-thin mb-5">
+          <p
+            class="w-full place-self-center text-dark-shade-3 text-xs 2xl:text-base font-thin mb-5"
+          >
             Enjoy intimate gatherings and special occasions in the peaceful elegance of our private
             dining areas. Thoughtfully designed and tailored to your needs, each event becomes a
             cherished memory in a setting of quiet beauty.
@@ -183,7 +195,7 @@ const generalInformation = [
 
   <section class="lg:px-10 mx-auto space-y-10 pb-60 w-full h-full bg-[#e1e1d3]">
     <section class="lg:w-full w-[90%] mx-auto">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5 w-[90%]">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-16 w-[90%]">
         General Information
       </BaseSubTitle>
       <section class="w-full grid lg:grid-cols-3 grid-cols-1 gap-x-[2rem] gap-y-10">
@@ -204,7 +216,7 @@ const generalInformation = [
               v-for="(content, number) in item.item"
               :key="number"
               :class="[{ 'underline underline-offset-1': index === 1 }]"
-              class="text-xs font-thin text-dark-shade-2"
+              class="text-xs 2xl:text-base font-thin text-dark-shade-2"
             >
               {{ content }}
             </li>

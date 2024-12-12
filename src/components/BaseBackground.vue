@@ -22,11 +22,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="overflow-hidden w-full h-screen relative" data-scroll data-scroll-repeat>
+  <section class="overflow-hidden w-full h-screen relative">
     <section
       :style="{ backgroundImage: `url(${imgSrc})` }"
-      data-scroll
-      data-scroll-speed="-1.5"
       class="w-full h-full bg-cover bg-center"
     >
       <!-- Konten -->

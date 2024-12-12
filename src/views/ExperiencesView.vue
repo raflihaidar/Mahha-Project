@@ -70,13 +70,13 @@ const openModal = (item) => {
       class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
     >
       <section
-        class="w-[95%] lg:w-[17.5rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative"
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative"
       >
-        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Rejuvenation Awaits in <br />
           Nature's Embrace
         </BaseSubTitle>
-        <p class="text-dark-shade-2 font-thin text-xs w-full">
+        <p class="text-dark-shade-2 font-thin text-xs 2xl:text-base w-full">
           Experience deep relaxation at our serene spa, where personalized treatments are designed
           to soothe the body and calm the mind. Surrounded by nature, let our expert therapists
           guide you into a peaceful state of renewal and tranquility.
@@ -103,7 +103,7 @@ const openModal = (item) => {
         </figure>
       </section>
       <figure
-        class="w-[70%] sm:w-[30.5rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5"
+        class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5"
         data-scroll
         data-scroll-repeat
       >
@@ -123,11 +123,13 @@ const openModal = (item) => {
     class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-28 lg:py-60 w-full h-full bg-[#e1e1d3]"
   >
     <section class="w-full text-center">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-5">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl mb-5">
         Unwind and Explore at <br class="lg:hidden" />
         Your Own Pace
       </BaseSubTitle>
-      <p class="lg:w-[37rem] w-full mx-auto mb-10 text-dark-shade-3 text-xs font-thin">
+      <p
+        class="lg:w-[37rem] 2xl:w-[50rem] w-full mx-auto mb-10 text-dark-shade-3 text-xs 2xl:text-base font-thin"
+      >
         Immerse yourself in a variety of experiences, from peaceful nature walks to thrilling
         outdoor adventures. Whether you're seeking relaxation or excitement, our curated activities
         offer something for every mood and moment.
@@ -179,7 +181,11 @@ const openModal = (item) => {
     class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-28 pb-40 lg:py-60 w-full h-full bg-[#e1e1d3]"
   >
     <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
-      <figure class="w-[70%] lg:w-[30.5rem] overflow-hidden" data-scroll data-scroll-repeat>
+      <figure
+        class="w-[70%] lg:w-[30.5rem] 2xl:w-[35rem] overflow-hidden"
+        data-scroll
+        data-scroll-repeat
+      >
         <img
           src="../assets/images/Experiences_Page/Experiences-07.webp"
           alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
@@ -189,12 +195,14 @@ const openModal = (item) => {
           loading="lazy"
         />
       </figure>
-      <section class="w-[95%] lg:w-[17.5rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative">
-        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
+      <section
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative"
+      >
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Moments to Remember, <br />
           Spaces to Cherish
         </BaseSubTitle>
-        <p class="text-dark-shade-2 font-thin text-xs w-full">
+        <p class="text-dark-shade-2 font-thin text-xs 2xl:text-base w-full">
           Create lasting memories in our serene and private dining spaces, perfect for intimate
           gatherings or meaningful celebrations. Each occasion is tailored with care, ensuring a
           beautiful experience in a setting that feels uniquely yours.

@@ -126,10 +126,10 @@ const onLeave = (el, done) => {
 
         <section class="w-full h-fit sm:py-28 py-20 sm:px-28 px-5 bg-dark-default">
           <h3 class="text-light-shade-1 uppercase text-base font-medium">{{ subTitle }}</h3>
-          <h2 class="text-light-default text-xl mt-5">{{ title }}</h2>
+          <h2 class="text-light-default text-xl 2xl:text-2xl mt-5">{{ title }}</h2>
           <div class="w-full my-16">
             <p
-              class="text-light-shade-1 mb-10 text-xs"
+              class="text-light-shade-1 mb-10 text-xs 2xl:text-base"
               v-for="(item, index) in contents"
               :key="index"
             >

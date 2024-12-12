@@ -44,7 +44,7 @@ const props = defineProps({
       <p
         data-scroll
         data-scroll-speed="2"
-        :class="`${textColor} will-change-transform font-light lg:max-w-[50rem] w-[95vw] py-32  mx-auto text-base md:text-xl`"
+        :class="`${textColor} will-change-transform font-light lg:w-[50rem] w-[95vw] py-32  mx-auto text-base md:text-xl 2xl:text-2xl 2xl:w-[60vw] `"
       >
         {{ text }}
       </p>
