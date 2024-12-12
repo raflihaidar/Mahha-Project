@@ -1,5 +1,4 @@
 import Lenis from 'lenis'
-import gsap from 'gsap/all'
 
 export const useSmoothScroll = () => {
   const scrollLenis = new Lenis({
@@ -11,9 +10,10 @@ export const useSmoothScroll = () => {
     touchMultiplier: 1.5,
   })
 
-  gsap.ticker.add((time) => {
-    scrollLenis.raf(time * 1000)
-  })
+  const raf = (time) => {
+    scrollLenis.raf(time)
+    requestAnimationFrame(raf)
+  }
 
-  gsap.ticker.lagSmoothing(0)
+  requestAnimationFrame(raf)
 }

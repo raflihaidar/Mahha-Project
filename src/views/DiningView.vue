@@ -2,12 +2,12 @@
 import { RouterLink } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
-import HeroImage from '@/assets/images/Dining_Page/Dining-00-Hero.jpg'
-import BackgroundImage from '@/assets/images/Dining_Page/Dining-09.jpg'
-import Image1 from '@/assets/images/Dining_Page/Dining-07.jpg'
-import Image2 from '@/assets/images/Dining_Page/Dining-08.jpg'
-import Image3 from '@/assets/images/Dining_Page/Dining-09.jpg'
-import Image4 from '@/assets/images/Dining_Page/Dining-10.jpg'
+import HeroImage from '@/assets/images/Dining_Page/Dining-00-Hero.webp'
+import BackgroundImage from '@/assets/images/Dining_Page/Dining-09.webp'
+import Image1 from '@/assets/images/Dining_Page/Dining-07.webp'
+import Image2 from '@/assets/images/Dining_Page/Dining-08.webp'
+import Image3 from '@/assets/images/Dining_Page/Dining-09.webp'
+import Image4 from '@/assets/images/Dining_Page/Dining-10.webp'
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -57,10 +57,10 @@ const generalInformation = [
       id="swiper-2"
       :type-navigation="2"
       :images="[
-        'Dining_Page/Dining-01.jpg',
-        'Dining_Page/Dining-02.jpg',
-        'Dining_Page/Dining-03.jpg',
-        'Dining_Page/Dining-04.jpg',
+        'Dining_Page/Dining-01.webp',
+        'Dining_Page/Dining-02.webp',
+        'Dining_Page/Dining-03.webp',
+        'Dining_Page/Dining-04.webp',
       ]"
       from="from-[#705729]/75"
       via="via-[#705729]/20"
@@ -102,7 +102,7 @@ const generalInformation = [
           class="sm:w-[20.75rem] z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
-            src="@/assets/images/Dining_Page/Dining-01.jpg"
+            src="@/assets/images/Dining_Page/Dining-01.webp"
             alt=""
             class="w-full h-full group-hover:opacity-0 transition-opacity cursor-pointer"
             data-scroll
@@ -110,7 +110,7 @@ const generalInformation = [
           />
 
           <img
-            src="@/assets/images/Dining_Page/Dining-02.jpg"
+            src="@/assets/images/Dining_Page/Dining-02.webp"
             alt="Dining Image 3"
             class="w-full h-full object-cover absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity"
             data-scroll
@@ -123,7 +123,7 @@ const generalInformation = [
           class="sm:w-[20.75rem] z-0 group1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
-            src="@/assets/images/Dining_Page/Dining-03.jpg"
+            src="@/assets/images/Dining_Page/Dining-03.webp"
             alt=""
             class="w-full h-full group-hover:opacity-0"
             data-scroll
@@ -131,7 +131,7 @@ const generalInformation = [
           />
 
           <img
-            src="@/assets/images/Dining_Page/Dining-04.jpg"
+            src="@/assets/images/Dining_Page/Dining-04.webp"
             alt="Dining Image 4"
             class="w-full h-full object-cover absolute top-0 group-hover:opacity-100 opacity-0 transition-opacity"
             data-scroll
@@ -144,10 +144,10 @@ const generalInformation = [
 
   <SliderSwiper
     :images="[
-      'Dining_Page/Dining-06.jpg',
-      'Dining_Page/Dining-07.jpg',
-      'Dining_Page/Dining-06.jpg',
-      'Dining_Page/Dining-07.jpg',
+      'Dining_Page/Dining-06.webp',
+      'Dining_Page/Dining-07.webp',
+      'Dining_Page/Dining-06.webp',
+      'Dining_Page/Dining-07.webp',
     ]"
     from="from-[#e1e1d3]"
     via="via[#e1e1d3]"

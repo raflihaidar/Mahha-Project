@@ -2,7 +2,7 @@
 import gsap from 'gsap'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
-import bikeImage from '@/assets/images/Experiences_Page/Experiences-06.jpg'
+import bikeImage from '@/assets/images/Experiences_Page/Experiences-06.webp'
 import CloseIcon from '../assets/icons/CloseIcon.vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 

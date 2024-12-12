@@ -2,9 +2,9 @@
 import { RouterLink } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 
-import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.jpg'
-import Image1 from '@/assets/images/Home_Page/Home-03.jpg'
-import Image2 from '@/assets/images/Home_Page/Home-06.jpg'
+import HeroImage from '@/assets/images/Home_Page/Home-00-Hero.webp'
+import Image1 from '@/assets/images/Home_Page/Home-03.webp'
+import Image2 from '@/assets/images/Home_Page/Home-06.webp'
 
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
@@ -28,33 +28,24 @@ const directMap = () => {
   <BaseHero fTitle="Exquisite Escapism" lTitle="To A Picturesque Haven" :img="HeroImage" />
   <BaseBanner :text="bannerText[0]" />
   <section
-    class="relative px-3 sm:px-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col lg:flex-row justify-between lg:items-center gap-y-3 sm:gap-y-5"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#705729]/20 to-20 flex flex-col lg:flex-row justify-between lg:items-center"
   >
-    <!-- Gambar Kiri -->
-    <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
-      <figure
-        data-scroll
-        data-scroll-speed="-1"
-        class="w-[15.125rem] md:w-[25rem] lg:w-[30.5rem] 2xl:w-[80%] h-auto parallax-section"
-      >
+    <div data-scroll data-scroll-repeat class="w-[70%] h-full lg:w-[40%] overflow-hidden">
+      <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
         <img
-          src="../assets/images/Home_Page/Home-01.jpg"
+          src="../assets/images/Home_Page/Home-01.webp"
           alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
-          class="w-full h-full parallax-image"
+          class="w-full h-auto"
           loading="lazy"
         />
       </figure>
     </div>
-
-    <!-- Konten Teks dan Button -->
-    <section class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start lg:relative">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
+    <section class="w-[95%] lg:w-[40%] grid gap-y-5 place-items-start lg:relative">
+      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         A Haven of Intimate and <br />
         Timeless Serenity
       </BaseSubTitle>
-      <p
-        class="text-dark-shade-2 text-xs 2xl:text-base font-thin w-full lg:max-w-[17.5rem] 2xl:max-w-[22rem]"
-      >
+      <p class="text-dark-shade-2 sm:text-base text-base font-thin w-full lg:w-[60%] text-justify">
         Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
         sanctuary designed for romance, with breathtaking views that invite you to linger longer and
         create unforgettable memories with your loved one.
@@ -66,15 +57,14 @@ const directMap = () => {
           icon-color="#45462A"
         />
       </a>
-      <!-- Gambar Kecil Kanan -->
       <div
         data-scroll
         data-scroll-repeat
-        class="absolute lg:-top-96 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
+        class="absolute lg:-top-96 md:-top-72 top-20 lg:left-0 right-10 w-40 lg:w-[384px] md:w-[300px] overflow-hidden"
       >
-        <figure data-scroll data-scroll-speed="-1" class="w-full h-auto">
+        <figure class="w-full h-full" data-scroll data-scroll-speed="-1">
           <img
-            src="../assets/images/Home_Page/Home-02.jpg"
+            src="../assets/images/Home_Page/Home-02.webp"
             alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."
             class="w-full h-full"
             loading="lazy"
@@ -106,7 +96,7 @@ const directMap = () => {
   />
 
   <section
-    class="sm:px-10 mx-auto space-y-10 py-60 w-full h-full bg-gradient-to-b from-dark-default/100 from-50 via-dark-default/80 via-40 to-[#E1E1D3]/100 to-10 flex flex-col lg:flex-row justify-between"
+    class="sm:px-10 mx-auto space-y-10 py-60 w-full h-full bg-gradient-to-b mix-blend-screen from-dark-default/100 from-50 via-dark-default/80 via-40 to-dark-default/0 to-10 flex flex-col lg:flex-row justify-between"
   >
     <article class="lg:w-1/2 w-full flex justify-center">
       <div class="lg:w-1/2 w-[90%] mx-auto">
@@ -115,7 +105,7 @@ const directMap = () => {
           in Every Moment
         </BaseSubTitle>
         <p
-          class="w-full lg:max-w-[17.5rem] place-self-center text-light-shade-1 text-xs font-thin mb-5"
+          class="w-full place-self-center text-light-shade-1 text-base font-thin text-justify mb-5"
         >
           Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
           dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,
@@ -133,10 +123,10 @@ const directMap = () => {
       </div>
     </article>
 
-    <section class="lg:w-1/2 h-full flex justify-center items-end gap-x-5">
-      <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
+    <section class="lg:w-1/2 flex justify-center items-end gap-x-5">
+      <figure class="overflow-hidden sm:w-72 w-28 h-fit" data-scroll data-scroll-repeat>
         <img
-          src="@/assets/images/Home_Page/Home-04.jpg"
+          src="@/assets/images/Home_Page/Home-04.webp"
           alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
           class="w-full h-full"
           data-scroll
@@ -144,9 +134,9 @@ const directMap = () => {
           loading="lazy"
         />
       </figure>
-      <figure class="overflow-hidden sm:w-96 w-[12.5rem] h-fit" data-scroll data-scroll-repeat>
+      <figure class="overflow-hidden sm:w-96 w-52 h-fit" data-scroll data-scroll-repeat>
         <img
-          src="@/assets/images/Home_Page/Home-05.jpg"
+          src="@/assets/images/Home_Page/Home-05.webp"
           alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
           class="w-full h-full"
           data-scroll
@@ -158,7 +148,7 @@ const directMap = () => {
   </section>
 
   <section
-    class="w-full h-full bg-gradient-to-b mix-blend-normal from-[#E1E1D3]/100 from-50 to-[#E1E1D3]/100 to-50"
+    class="w-full h-full bg-gradient-to-b mix-blend-screen from-[#E1E1D3]/0 from-50 to-[#E1E1D3]/100 to-50"
   >
     <section class="w-[95%] mx-auto flex flex-col sm:flex-row justify-between items-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">

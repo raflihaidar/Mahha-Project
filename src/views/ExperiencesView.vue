@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 
-import HeroImage from '@/assets/images/Experiences_Page/Experiences-00-Hero.jpg'
+import HeroImage from '@/assets/images/Experiences_Page/Experiences-00-Hero.webp'
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -49,7 +49,7 @@ const cardContent = [
 ]
 
 const getImageUrl = (image) => {
-  return new URL(`../assets/images/Experiences_Page/${image}.jpg`, import.meta.url)
+  return new URL(`../assets/images/Experiences_Page/${image}.webp`, import.meta.url)
 }
 
 const openModal = (item) => {
@@ -93,7 +93,7 @@ const openModal = (item) => {
           data-scroll-repeat
         >
           <img
-            src="../assets/images/Experiences_Page/Experiences-01.jpg"
+            src="../assets/images/Experiences_Page/Experiences-01.webp"
             data-scroll
             data-scroll-speed="-1"
             alt="A woman receiving a soothing foot massage in a tranquil spa setting, enhancing her relaxation and comfort."
@@ -108,7 +108,7 @@ const openModal = (item) => {
         data-scroll-repeat
       >
         <img
-          src="../assets/images/Experiences_Page/Experiences-02.jpg"
+          src="../assets/images/Experiences_Page/Experiences-02.webp"
           alt="A woman relaxes at a spa while receiving a soothing facial mask treatment"
           class="w-full h-full"
           data-scroll
@@ -181,7 +181,7 @@ const openModal = (item) => {
     <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
       <figure class="w-[70%] lg:w-[30.5rem] overflow-hidden" data-scroll data-scroll-repeat>
         <img
-          src="../assets/images/Experiences_Page/Experiences-07.jpg"
+          src="../assets/images/Experiences_Page/Experiences-07.webp"
           alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
           class="w-full h-auto"
           data-scroll
@@ -214,7 +214,7 @@ const openModal = (item) => {
           data-scroll-repeat
         >
           <img
-            src="../assets/images/Experiences_Page/Experiences-08.jpg"
+            src="../assets/images/Experiences_Page/Experiences-08.webp"
             alt=""
             class="w-full h-auto"
             data-scroll
@@ -228,10 +228,10 @@ const openModal = (item) => {
 
   <SliderSwiper
     :images="[
-      'Experiences_Page/Experiences-09.jpg',
-      'Experiences_Page/Experiences-010.jpg',
-      'Experiences_Page/Experiences-09.jpg',
-      'Experiences_Page/Experiences-010.jpg',
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
     ]"
     from="from-[#e1e1d3]"
     to="to-dark-default/100"
