@@ -23,7 +23,6 @@ const navigateWithAnimation = (event) => {
   event.preventDefault()
   const targetUrl = event.target.href
 
-  // You can now use currentScrollPosition.value to check scroll position
   setTimeout(() => {
     isChange.value = true
     window.location.href = targetUrl
@@ -50,7 +49,7 @@ const navigateWithAnimation = (event) => {
       <section class="text-xs cursor-pointer block md:hidden" @click="isMenuOpen = true">
         <p>MENU</p>
       </section>
-      <a href="/" @click="navigateWithAnimation">
+      <a :href="$router.resolve({ name: 'home' }).href">
         <figure class="w-auto cursor-pointer">
           <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
         </figure>

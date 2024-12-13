@@ -63,7 +63,7 @@ onUnmounted(() => {
         v-if="isChange"
         :src="images[currentIndex]"
         alt="Slideshow"
-        class="sm:w-full h-fit object-cover"
+        class="sm:w-full h-full object-cover"
       />
     </Transition>
   </figure>
