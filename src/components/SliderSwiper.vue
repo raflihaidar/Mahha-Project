@@ -52,7 +52,7 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <section class="mix-blend-screen">
+  <section>
     <swiper
       :id="id"
       :loop="true"
