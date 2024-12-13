@@ -86,23 +86,23 @@ const navigateWithAnimation = (event) => {
       class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
     >
       <nav class="w-full relative">
-        <RouterLink to="/">
+        <a :href="$router.resolve({ name: 'home' }).href">
           <figure class="w-auto absolute cursor-pointer left-1/2 transform -translate-x-1/2">
             <img src="../assets/images/Logo.svg" alt="Logo" class="w-full h-full" />
           </figure>
-        </RouterLink>
+        </a>
         <CloseIcon @click="closeMenu" class="ml-auto cursor-pointer" />
       </nav>
 
       <ul class="w-full grid gap-y-3 text-center text-light-default text-3xl font-medium">
         <li>
-          <RouterLink to="/accommodation">Accommodation</RouterLink>
+          <a href="/accommodation" @click="navigateWithAnimation">ACCOMMODATION</a>
         </li>
         <li>
-          <RouterLink to="/experiences">Experiences</RouterLink>
+          <a href="/experiences" @click="navigateWithAnimation">EXPERIENCES</a>
         </li>
         <li>
-          <RouterLink to="/dining">Dining</RouterLink>
+          <a href="/dining" @click="navigateWithAnimation">DINING</a>
         </li>
       </ul>
       <footer class="w-full font-medium text-xl text-center text-light-default">
