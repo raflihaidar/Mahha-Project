@@ -30,7 +30,6 @@ const setLocomotiveScroll = () => {
 
 onMounted(() => {
   setLocomotiveScroll()
-
   new ResizeObserver(() => locoScroll.update()).observe(container.value)
 })
 </script>

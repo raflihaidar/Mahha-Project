@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
+
 import HeroImage from '@/assets/images/Dining_Page/Dining-00-Hero.webp'
 import BackgroundImage from '@/assets/images/Dining_Page/Dining-09.webp'
 import Image1 from '@/assets/images/Dining_Page/Dining-07.webp'

@@ -18,6 +18,11 @@ const textRef = ref(null)
 const subtext = ref(null)
 
 onMounted(() => {
+  // Memastikan fungsi tersedia untuk komponen lain
+  //
+  const headerHeight = headerRef.value?.offsetHeight
+  console.log('Tinggi header:', headerHeight)
+
   const tl = gsap.timeline({ defaults: { ease: 'power2.out', duration: 2 } })
 
   // Animasi background header
@@ -41,40 +46,32 @@ onMounted(() => {
       '<+=0.5', // Dimulai setelah teks utama selesai
     )
 
-  // Efek parallax untuk background header
-  gsap.to(headerRef.value, {
-    backgroundPosition: '50% 0%', // Background bergerak ke atas
-    scrollTrigger: {
-      trigger: headerRef.value,
-      start: 'top top', // Animasi dimulai saat header masuk viewport
-      end: 'bottom top', // Animasi selesai saat header keluar viewport
-      scrub: true, // Sinkronkan animasi dengan scroll
-    },
-  })
-})
+  document.body.addEventListener('click', (event) => {
+    // Pastikan elemen yang diklik adalah <a>
+    if (event.target.tagName === 'A') {
+      const leaveTl = gsap.timeline({
+        onComplete: () => {
+          next() // Melanjutkan navigasi setelah animasi selesai
+        },
+      })
 
-// Menggunakan beforeRouteLeave untuk animasi saat meninggalkan halaman
-onBeforeRouteLeave((to, from, next) => {
-  const leaveTl = gsap.timeline({
-    onComplete: () => {
-      next() // Melanjutkan navigasi setelah animasi selesai
-    },
-  })
-
-  leaveTl.to(headerRef.value, {
-    scale: 1.1, // Background menjadi lebih besar
-    opacity: 0, // Background menjadi transparan
-    duration: 0.8, // Durasi 0.8 detik
-    ease: 'power2.inOut', // Easing yang lebih tajam
+      leaveTl.to(headerRef.value, {
+        scale: 1.1, // Background menjadi lebih besar
+        opacity: 0, // Background menjadi transparan
+        duration: 0.8, // Durasi 0.8 detik
+        ease: 'power2.inOut', // Easing yang lebih tajam
+      })
+    }
   })
 })
 </script>
 
 <template>
   <header
+    id="hero"
     ref="headerRef"
     :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10"
+    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10 bg-dark-default"
   >
     <div
       class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative"

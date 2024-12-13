@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import BaseButton from './BaseButton.vue'
 import BaseCalendar from './BaseCalendar.vue'
@@ -7,17 +7,28 @@ import CloseIcon from '../assets/icons/CloseIcon.vue'
 
 const isMenuOpen = ref(false)
 const calenderOpen = ref(false)
+const isChange = ref(false)
+const route = useRoute()
 
 const closeMenu = () => {
   isMenuOpen.value = false
 }
-// Menutup menu ketika route berubah
-const route = useRoute()
 
 watch(
   () => route.path,
   () => (isMenuOpen.value = false),
 )
+
+const navigateWithAnimation = (event) => {
+  event.preventDefault()
+  const targetUrl = event.target.href
+
+  // You can now use currentScrollPosition.value to check scroll position
+  setTimeout(() => {
+    isChange.value = true
+    window.location.href = targetUrl
+  }, 800)
+}
 </script>
 
 <template>
@@ -27,19 +38,19 @@ watch(
     >
       <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin">
         <li>
-          <a :href="$router.resolve({ name: 'accommodation' }).href">ACCOMMODATION </a>
+          <a href="/accommodation" @click="navigateWithAnimation">ACCOMMODATION</a>
         </li>
         <li>
-          <a :href="$router.resolve({ name: 'experiences' }).href">EXPERIENCES </a>
+          <a href="/experiences" @click="navigateWithAnimation">EXPERIENCES</a>
         </li>
         <li>
-          <a :href="$router.resolve({ name: 'dining' }).href">DINING </a>
+          <a href="/dining" @click="navigateWithAnimation">DINING</a>
         </li>
       </ul>
       <section class="text-xs cursor-pointer block md:hidden" @click="isMenuOpen = true">
         <p>MENU</p>
       </section>
-      <a :href="$router.resolve({ name: 'home' }).href">
+      <a href="/" @click="navigateWithAnimation">
         <figure class="w-auto cursor-pointer">
           <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
         </figure>
@@ -68,36 +79,5 @@ watch(
 
       <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
     </nav>
-  </Teleport>
-
-  <Teleport to="body">
-    <section
-      v-if="isMenuOpen"
-      class="fixed flex flex-col justify-between w-screen h-[90%] p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
-    >
-      <nav class="w-full relative">
-        <RouterLink to="/">
-          <figure class="w-auto absolute cursor-pointer left-1/2 transform -translate-x-1/2">
-            <img src="../assets/images/Logo.svg" alt="Logo" class="w-full h-full" />
-          </figure>
-        </RouterLink>
-        <CloseIcon @click="closeMenu" class="ml-auto cursor-pointer" />
-      </nav>
-
-      <ul class="w-full grid gap-y-3 text-center text-light-default text-3xl font-medium">
-        <li>
-          <RouterLink to="/accommodation">Accommodation</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/experiences">Experiences</RouterLink>
-        </li>
-        <li>
-          <RouterLink to="/dining">Dining</RouterLink>
-        </li>
-      </ul>
-      <footer class="w-full font-medium text-xl text-center text-light-default">
-        <h3>BOOK YOUR STAY</h3>
-      </footer>
-    </section>
   </Teleport>
 </template>

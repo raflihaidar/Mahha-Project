@@ -52,45 +52,47 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <swiper
-    :id="id"
-    :loop="true"
-    :modules="[Navigation]"
-    @swiper="onSwiper"
-    @slideChange="onSlideChange"
-    :speed="1000"
-    :grab-cursor="true"
-    :breakpoints="{
-      '640': {
-        slidesPerView: 1,
-        spaceBetween: 0,
-      },
-      '1024': {
-        slidesPerView: 2,
-        spaceBetween: 50,
-      },
-    }"
-    class="bg-gradient-to-b relative"
-    :class="[
-      {
-        'w-[90%] mx-auto': typeNavigation === 2,
-      },
-      `${from}`,
-      `${via}`,
-      `${to}`,
-    ]"
-  >
-    <swiper-slide v-for="(item, index) in images" :key="index">
-      <figure class="relative w-full">
-        <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full slider_image" />
-      </figure>
-    </swiper-slide>
-    <ButtonSlider
-      :current-index="currentIndex"
-      :type-button="typeNavigation"
-      :data-length="images.length"
-      :color-icon="colorIcon"
-      :text-color="textColor"
-    />
-  </swiper>
+  <section class="mix-blend-screen">
+    <swiper
+      :id="id"
+      :loop="true"
+      :modules="[Navigation]"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+      :speed="1000"
+      :grab-cursor="true"
+      :breakpoints="{
+        '640': {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        '1024': {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+      }"
+      class="bg-gradient-to-b relative"
+      :class="[
+        {
+          'w-[90%] mx-auto': typeNavigation === 2,
+        },
+        `${from}`,
+        `${via}`,
+        `${to}`,
+      ]"
+    >
+      <swiper-slide v-for="(item, index) in images" :key="index">
+        <figure class="relative w-full">
+          <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full slider_image" />
+        </figure>
+      </swiper-slide>
+      <ButtonSlider
+        :current-index="currentIndex"
+        :type-button="typeNavigation"
+        :data-length="images.length"
+        :color-icon="colorIcon"
+        :text-color="textColor"
+      />
+    </swiper>
+  </section>
 </template>

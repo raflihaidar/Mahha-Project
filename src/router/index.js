@@ -39,14 +39,17 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    return {
-      top: 0,
+    // Jika posisi sebelumnya disimpan (seperti pada navigasi back/forward), gunakan posisi tersebut.
+    if (savedPosition) {
+      return savedPosition
     }
+    // Selalu mulai dari atas untuk halaman baru.
+    return { top: 0 }
   },
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
+  document.title = to.meta.title || 'Default Title'
   next()
 })
 
