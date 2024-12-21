@@ -89,7 +89,7 @@ onMounted(() => {
 
     <p
       ref="subtext"
-      class="w-full text-center text-[0.625rem] 2xl:text-base absolute top-[90vh] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-dark-shade-3 cursor-pointer z-30 font-normal"
+      class="w-full text-center text-[0.625rem] 2xl:text-base absolute top-[90vh] text-dark-shade-3 cursor-pointer z-30 font-normal"
     >
       SCROLL DOWN TO DISCOVER
     </p>

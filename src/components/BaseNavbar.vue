@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import BaseButton from './BaseButton.vue'
 import BaseCalendar from './BaseCalendar.vue'
@@ -35,7 +35,7 @@ const navigateWithAnimation = (event) => {
     <nav
       class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-10 z-50"
     >
-      <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin">
+      <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin justify-self-start">
         <li>
           <a href="/accommodation" @click="navigateWithAnimation">ACCOMMODATION</a>
         </li>
@@ -54,7 +54,7 @@ const navigateWithAnimation = (event) => {
           <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
         </figure>
       </a>
-      <section>
+      <section class="w-fit justify-self-end">
         <BaseButton
           class="hidden md:block"
           text="BOOK YOUR STAY"
