@@ -13,7 +13,7 @@ const setLocomotiveScroll = () => {
     el: container.value,
     smooth: true,
     lerp: 0.05,
-    multiplier: 1.2,
+    multiplier: 1.35,
     reloadOnContextChange: true,
     touchMultiplier: 1.5,
     smoothMobile: 0,

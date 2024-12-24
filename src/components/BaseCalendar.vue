@@ -371,7 +371,7 @@ const handleClose = () => {
         </section>
 
         <div class="w-full h-auto mx-auto sm:w-[5.875rem] mt-5 border" @click="onBook">
-          <button class="w-full bg-dark-default text-xs text-light-default py-4 px-6">
+          <button class="w-full bg-dark-default text-xs text-light-default py-4 px-6" disabled>
             SEARCH
           </button>
         </div>

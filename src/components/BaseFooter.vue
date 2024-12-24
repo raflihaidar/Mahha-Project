@@ -36,8 +36,10 @@
           <h3>Contact</h3>
         </section>
         <section class="text-light-shade-1 font-thin">
-          <p>Tel: 0877-8985-9595</p>
-          <p>Email: contact@email.com</p>
+          <p>0877-8985-9595</p>
+          <p>0878-8194-8999</p>
+          <p>info@mahharesorts.com</p>
+          <p>reservation@mahharesorts.com</p>
         </section>
       </div>
       <div>
