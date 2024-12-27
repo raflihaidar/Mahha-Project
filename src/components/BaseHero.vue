@@ -11,6 +11,10 @@ const props = defineProps({
   fTitle: String,
   lTitle: String,
   img: String,
+  bgPosition: {
+    type: String,
+    default: 'center',
+  },
 })
 
 const headerRef = ref(null)
@@ -70,11 +74,11 @@ onMounted(() => {
   <header
     id="hero"
     ref="headerRef"
-    :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10 bg-dark-default"
+    :style="{ backgroundImage: `url(${img})`, backgroundPosition: `${bgPosition}` }"
+    class="w-full h-full bg-cover md:bg-top md:px-0 relative z-10 bg-dark-default"
   >
     <div
-      class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative"
+      class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[20.5rem] mx-auto z-30 relative"
     >
       <h1
         ref="textRef"
@@ -94,7 +98,7 @@ onMounted(() => {
       SCROLL DOWN TO DISCOVER
     </p>
 
-    <div class="w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A] z-0"></div>
+    <div class="w-full md:h-96 h-32 bg-gradient-to-b from-[#45462A00] to-[#45462A] z-0"></div>
 
     <div class="bg-black w-full h-full absolute bottom-0 top-0 bg-opacity-50 z-0">
       <div
