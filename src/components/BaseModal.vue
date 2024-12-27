@@ -98,7 +98,7 @@ const onLeave = (el, done) => {
 <template>
   <Teleport to="body">
     <div
-      class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-30"
+      class="fixed top-0 left-0 w-screen h-screen z-50 bg-black bg-opacity-75"
       v-if="isOpen"
       @click="closeModal"
     ></div>
@@ -124,12 +124,12 @@ const onLeave = (el, done) => {
           </button>
         </div>
 
-        <section class="w-full h-fit sm:py-28 py-20 sm:px-28 px-5 bg-dark-default">
+        <section class="w-full h-fit sm:py-28 py-20 sm:px-16 px-5 bg-dark-default">
           <h3 class="text-light-shade-1 uppercase text-base font-medium">{{ subTitle }}</h3>
-          <h2 class="text-light-default text-xl 2xl:text-2xl mt-5">{{ title }}</h2>
-          <div class="w-full my-16">
+          <h2 class="text-light-default text-2xl mt-5 w-[20.5rem] lg:w-full">{{ title }}</h2>
+          <div class="w-full my-10 font-thin">
             <p
-              class="text-light-shade-1 mb-10 text-xs 2xl:text-base"
+              class="text-light-shade-1 mb-7 text-xs 2xl:text-base"
               v-for="(item, index) in contents"
               :key="index"
             >

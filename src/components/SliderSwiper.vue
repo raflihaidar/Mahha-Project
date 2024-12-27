@@ -15,15 +15,12 @@ const props = defineProps({
   images: Array,
   from: {
     type: String,
-    default: 'from-[#705729]/20',
   },
   via: {
     type: String,
-    default: 'via-dark-default/75',
   },
   to: {
     type: String,
-    default: 'to-dark-default',
   },
   colorIcon: String,
   textColor: {
@@ -52,7 +49,7 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <section>
+  <section class="w-full bg-gradient-to-b" :class="[`${from}`, `${via}`, `${to}`]">
     <swiper
       :id="id"
       :loop="true"
@@ -71,14 +68,11 @@ const getImageUrl = (image) => {
           spaceBetween: 50,
         },
       }"
-      class="bg-gradient-to-b relative"
+      class="relative w-[90%] lg:w-full mx-aut"
       :class="[
         {
           'w-[90%] mx-auto': typeNavigation === 2,
         },
-        `${from}`,
-        `${via}`,
-        `${to}`,
       ]"
     >
       <swiper-slide v-for="(item, index) in images" :key="index">

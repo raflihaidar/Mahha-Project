@@ -53,7 +53,7 @@ const generalInformation = [
   <BaseHero fTitle="Culinary Escape in " lTitle="the Mountain Air" :img="HeroImage" />
   <BaseBanner :text="bannerText" />
 
-  <section class="lg:hidden bg-light-shade-2/75">
+  <section class="lg:hidden">
     <SliderSwiper
       id="swiper-2"
       :type-navigation="2"
@@ -63,9 +63,9 @@ const generalInformation = [
         'Dining_Page/Dining-03.webp',
         'Dining_Page/Dining-04.webp',
       ]"
-      from="from-[#705729]/75"
-      via="via-[#705729]/20"
-      to="to-[#705729]/20"
+      from="from-light-shade-2/75"
+      via="via-light-shade-2/75"
+      to="to-light-shade-2/75"
       color-icon="#45462A"
       text-color="text-light-default"
     />
@@ -78,7 +78,7 @@ const generalInformation = [
       class="lg:w-[90%] ml-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
     >
       <article class="lg:w-[30.5rem] w-full">
-        <div class="sm:w-[17.5rem] 2xl:w-[23rem] sm:mx-0 w-[90%] mx-auto pt-5 sm:pt-10">
+        <div class="sm:w-[17.5rem] 2xl:w-[23rem] sm:mx-0 w-[90%] mx-auto pt-16 lg:pt-0">
           <BaseSubTitle
             text-color="text-dark-default"
             text-size="text-2xl"
@@ -167,7 +167,7 @@ const generalInformation = [
     <section class="w-full flex flex-col lg:flex-row justify-between items-center">
       <SlideShow :images="[Image1, Image2, Image3, Image4]" />
       <article class="lg:w-[30.5rem] 2xl:w-[35rem] w-full flex justify-center">
-        <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto">
+        <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto pt-16 lg:pt-0">
           <BaseSubTitle
             text-color="text-dark-default"
             text-size="text-2xl"
@@ -194,7 +194,7 @@ const generalInformation = [
     </section>
   </section>
 
-  <section class="lg:px-10 mx-auto space-y-10 pb-60 w-full h-full bg-[#e1e1d3]">
+  <section class="lg:px-10 mx-auto space-y-10 lg:pb-60 pb-20 w-full h-full bg-[#e1e1d3]">
     <section class="lg:w-full w-[90%] mx-auto">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-16 w-[90%]">
         General Information

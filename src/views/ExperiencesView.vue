@@ -61,7 +61,12 @@ const openModal = (item) => {
 </script>
 
 <template>
-  <BaseHero fTitle="Whispers of Endless Joy" lTitle="in Every Moment" :img="HeroImage" />
+  <BaseHero
+    fTitle="Whispers of Endless Joy"
+    lTitle="in Every Moment"
+    :img="HeroImage"
+    bg-position="90% 0%"
+  />
   <BaseBanner :text="bannerText" />
   <section
     class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-dark-default lg:px-10 px-5 lg:pt-28 py-5 flex flex-col lg:space-y-52 space-y-28 mix-blend-screen"
+    class="bg-dark-default lg:px-10 px-5 lg:pt-28 pb-5 flex flex-col lg:space-y-52 space-y-20 mix-blend-screen"
   >
     <section
       class="flex flex-col lg:flex-row space-y-10 justify-between items-center mt-28 lg:mt-0 text-light-default"
@@ -9,7 +9,7 @@
         <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
       </figure>
       <ul
-        class="flex flex-col lg:flex-row irems-center text-center gap-y-5 gap-x-5 uppercase text-xs 2xl:text-base font-thin"
+        class="flex flex-col lg:flex-row irems-center text-center gap-y-3 gap-x-5 uppercase text-xs 2xl:text-base font-thin"
       >
         <li>
           <a :href="$router.resolve({ name: 'accommodation' }).href">Accomodation </a>
@@ -27,7 +27,9 @@
         <section class="text-light-default border-b-[0.5px] pb-3 mb-3 border-[#96742A]">
           <h3>Location</h3>
         </section>
-        <address class="text-light-shade-1 font-thin not-italic w-[17.5rem] 2xl:w-full">
+        <address
+          class="text-light-shade-1 font-thin not-italic w-[20.5rem] lg:w-[17.5rem] 2xl:w-full"
+        >
           Jl. Raya Puncak No.90, Tugu Selatan, Kecamatan Cisarua, Kabupaten Bogor, Jawa Barat 16750
         </address>
       </div>
@@ -67,10 +69,15 @@
         </section>
       </div>
     </section>
-    <section class="w-full flex justify-between">
+    <section class="w-full flex justify-between items-center">
       <ul class="w-fit flex justify-center gap-x-3">
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.5rem"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+          >
             <g fill="none" stroke="#96742a" stroke-width="1.5">
               <path
                 stroke-linecap="round"
@@ -83,7 +90,12 @@
           </svg>
         </li>
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1.5rem"
+            height="1.5rem"
+            viewBox="0 0 24 24"
+          >
             <path
               fill="#96742a"
               d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z"
@@ -93,8 +105,8 @@
         <li>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="1rem"
-            height="1rem"
+            width="1.5rem"
+            height="1.5rem"
             viewBox="-4.5 -2 24 24"
           >
             <path
@@ -104,7 +116,7 @@
           </svg>
         </li>
       </ul>
-      <section class="text-light-shade-1 text-xs 2xl:text-base font-thin text-[0.625rem]">
+      <section class="text-light-shade-1 md:text-xs 2xl:text-base font-thin text-[0.625rem]">
         <p>© Mahha dii Meru 2024. All Rights Reserved.</p>
       </section>
     </section>
