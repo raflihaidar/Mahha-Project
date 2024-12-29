@@ -24,10 +24,15 @@ const directMap = () => {
 </script>
 
 <template>
-  <BaseHero fTitle="Exquisite Escapism" lTitle="To A Picturesque Haven" :img="HeroImage" />
+  <BaseHero
+    fTitle="Exquisite Escapism"
+    lTitle="To A Picturesque Haven"
+    :img="HeroImage"
+    overlay-opacity="0.25"
+  />
   <BaseBanner :text="bannerText[0]" />
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 pb-20 w-full h-full bg-gradient-to-b from-[#705729]/75 from-20 via-[#705729]/40 via-10 to-[#e1e1d3] to-20 flex flex-col lg:flex-row justify-between lg:items-center"
+    class="px-3 pt-56 pb-28 relative gap-y-5 lg:px-10 lg:mx-auto w-full h-full bg-gradient-to-b from-[#705729]/75 from-90 to-[#e1e1d3] to-10 flex flex-col lg:flex-row justify-between lg:items-center"
   >
     <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
       <figure
@@ -44,7 +49,7 @@ const directMap = () => {
       </figure>
     </div>
     <section
-      class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-0 lg:relative"
+      class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-20 lg:relative"
     >
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
         A Haven of Intimate and <br />
@@ -68,7 +73,7 @@ const directMap = () => {
       <div
         data-scroll
         data-scroll-repeat
-        class="absolute lg:-top-96 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
+        class="absolute lg:-top-80 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
       >
         <figure data-scroll data-scroll-speed="-1" class="w-full h-auto">
           <img
@@ -104,10 +109,10 @@ const directMap = () => {
   />
 
   <section
-    class="sm:px-10 mx-auto space-y-10 md:py-60 pt-20 pb-32 w-full h-full bg-gradient-to-b from-dark-default/100 from-50 via-dark-default/80 via-40 to-[#E1E1D3]/100 to-10 flex flex-col lg:flex-row justify-between"
+    class="sm:px-5 mx-auto lg:pt-20 lg:pb-28 pt-20 pb-32 w-full h-full bg-gradient-to-b from-dark-default/100 from-30 to-[#E1E1D3]/100 to-70 flex flex-col lg:flex-row justify-between"
   >
-    <article class="lg:w-1/2 w-full flex justify-center">
-      <div class="lg:w-1/2 w-[90%] mx-auto">
+    <article class="lg:w-[40vw] w-full flex">
+      <div class="lg:w-[60%] w-[90%] mx-auto">
         <BaseSubTitle
           text-color="text-light-default"
           text-size="text-2xl"
@@ -135,7 +140,7 @@ const directMap = () => {
       </div>
     </article>
 
-    <section class="lg:w-1/2 h-full flex justify-center items-end gap-x-5">
+    <section class="lg:w-[60vw] h-full flex justify-center items-end gap-x-5">
       <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
         <img
           src="@/assets/images/Home_Page/Home-04.webp"

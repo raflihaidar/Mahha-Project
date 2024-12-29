@@ -24,7 +24,7 @@ const swiper = useSwiper()
 <template>
   <!-- Navigation -->
   <div
-    class="absolute bottom-5 left-1/2 px-5 lg:flex hidden items-center justify-between gap-x-10 z-50"
+    class="absolute bottom-0 left-1/2 px-5 lg:flex hidden items-center justify-between gap-x-10 z-50"
   >
     <section>
       <button @click="() => swiper.slidePrev()">
@@ -34,7 +34,7 @@ const swiper = useSwiper()
         <NextIcon :color="colorIcon" />
       </button>
     </section>
-    <p :class="`text-lg ${textColor}`">{{ currentIndex + 1 }}/{{ dataLength }}</p>
+    <p :class="`text-base ${textColor}`">{{ currentIndex + 1 }}/{{ dataLength }}</p>
   </div>
 
   <div

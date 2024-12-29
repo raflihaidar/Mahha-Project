@@ -91,7 +91,9 @@ const navigateWithAnimation = (event) => {
       v-if="isMenuOpen"
       class="fixed flex flex-col justify-between w-screen h-full p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
     >
-      <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+      <div
+        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -z-20 pointer-events-none"
+      >
         <GraphicsMobileIcon />
         <GraphicsMobileIcon />
       </div>
@@ -105,16 +107,16 @@ const navigateWithAnimation = (event) => {
       </nav>
 
       <ul
-        class="w-full grid gap-y-2 text-center text-light-default text-[2rem] font-thin capitalize"
+        class="w-full grid gap-y-2 text-center text-light-default text-[2rem] font-thin capitalize z-50"
       >
         <li>
-          <a href="/accommodation" @click="navigateWithAnimation">Accommodation</a>
+          <a :href="$router.resolve({ name: 'accommodation' }).href">Accommodation</a>
         </li>
         <li>
-          <a href="/experiences" @click="navigateWithAnimation">Experiences</a>
+          <a :href="$router.resolve({ name: 'experiences' }).href">Experiences</a>
         </li>
         <li>
-          <a href="/dining" @click="navigateWithAnimation">Dining</a>
+          <a :href="$router.resolve({ name: 'dining' }).href">Dining</a>
         </li>
       </ul>
       <footer class="w-full font-medium text-xl text-center text-light-default">
