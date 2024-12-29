@@ -28,7 +28,6 @@ onMounted(() => {
   // Memastikan fungsi tersedia untuk komponen lain
   //
   const headerHeight = headerRef.value?.offsetHeight
-  console.log('Tinggi header:', headerHeight)
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out', duration: 2 } })
 
@@ -88,7 +87,7 @@ onMounted(() => {
     >
       <h1
         ref="textRef"
-        class="absolute w-full text-[2rem] leading-[2.2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal text-light-default will-change-transform"
+        class="absolute top-[45vh] w-full text-[2rem] leading-[2.2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal text-light-default will-change-transform"
         data-scroll
         data-scroll-speed="2"
       >

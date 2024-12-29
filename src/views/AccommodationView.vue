@@ -173,7 +173,7 @@ const fullAmenities = [
       Details of your Suite
     </BaseSubTitle>
     <section
-      class="lg:w-full w-[90%] h-full flex flex-col lg:flex-row justify-between lg:items-center"
+      class="lg:w-full w-full h-full flex flex-col lg:flex-row justify-between lg:items-center"
     >
       <section
         class="w-full max-sm:mt-16 lg:w-1/2 h-full grid grid-cols-2 gap-x-5 gap-y-10 lg:gap-28"
@@ -191,7 +191,7 @@ const fullAmenities = [
         </div>
       </section>
       <figure
-        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden"
+        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden border"
         data-scroll
         data-scroll-repeat
       >
@@ -208,7 +208,7 @@ const fullAmenities = [
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-20 pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
   >
     <figure
       class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"
