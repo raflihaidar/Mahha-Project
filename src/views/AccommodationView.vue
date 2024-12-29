@@ -134,10 +134,10 @@ const fullAmenities = [
   <BaseBanner :text="bannerText" />
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-48 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+    class="px-3 pb-28 relative gap-y-5 lg:px-10 lg:pb-52 lg:mx-auto pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
   >
     <section
-      class="lg:w-[90%] w-full h-full flex flex-col lg:flex-row justify-between lg:items-center"
+      class="lg:w-[90%] w-full h-full flex flex-col lg:flex-row gap-x-36 justify-between lg:items-center"
     >
       <figure
         class="w-full mb-10 lg:mb-0 lg:w-[43.5rem] 2xl:w-[50rem] overflow-hidden"
@@ -153,8 +153,9 @@ const fullAmenities = [
           loading="lazy"
         />
       </figure>
+
       <section class="w-full lg:w-[17.5rem] 2xl:w-[30%]">
-        <BaseSubTitle text-color="text-dark-default" text-size="sm:text-2xl" class="2xl:text-3xl">
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           A Haven of Intimate and <br />
           Timeless Serenity
         </BaseSubTitle>
@@ -167,11 +168,13 @@ const fullAmenities = [
     </section>
   </section>
 
-  <section class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-[#e1e1d3]">
+  <section class="px-3 relative gap-y-5 lg:mx-auto lg:px-10 w-full h-full bg-[#e1e1d3]">
     <BaseSubTitle text-color="text-dark-default" text-size="lg:text-2xl" class="text-xl">
       Details of your Suite
     </BaseSubTitle>
-    <section class="w-full h-full flex flex-col lg:flex-row justify-between lg:items-center">
+    <section
+      class="lg:w-full w-full h-full flex flex-col lg:flex-row justify-between lg:items-center"
+    >
       <section
         class="w-full max-sm:mt-16 lg:w-1/2 h-full grid grid-cols-2 gap-x-5 gap-y-10 lg:gap-28"
       >
@@ -181,12 +184,14 @@ const fullAmenities = [
           :key="index"
         >
           <component :is="item.icon" />
-          <h3 class="text-dark-default text-base 2xl:text-xl mt-5">{{ item.title }}</h3>
+          <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
+            {{ item.title }}
+          </h3>
           <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
         </div>
       </section>
       <figure
-        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden"
+        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden border"
         data-scroll
         data-scroll-repeat
       >
@@ -203,7 +208,7 @@ const fullAmenities = [
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-60 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
   >
     <figure
       class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"
@@ -220,14 +225,18 @@ const fullAmenities = [
       />
     </figure>
     <section class="lg:w-[50%] w-full">
-      <section class="w-full h-full mt-20 lg:mt-28 grid gap-x-5 gap-y-10 grid-cols-2 lg:gap-28">
+      <section
+        class="w-[95%] lgw-full h-full mt-20 lg:mt-28 grid gap-x-5 gap-y-10 grid-cols-2 lg:gap-28"
+      >
         <div
           class="w-full lg:px-5"
           v-for="(item, index) in suite.filter((item, index) => index >= 4)"
           :key="index"
         >
           <component :is="item.icon" />
-          <h3 class="text-dark-default text-base 2xl:text-xl mt-5">{{ item.title }}</h3>
+          <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
+            {{ item.title }}
+          </h3>
           <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
         </div>
       </section>
@@ -235,7 +244,7 @@ const fullAmenities = [
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-[#e1e1d3] flex flex-col lg:flex-row justify-between lg:items-center"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-24 pb-8 w-full h-full bg-[#e1e1d3] flex flex-col lg:flex-row justify-between lg:items-center"
   >
     <section class="lg:w-full pb-28">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">

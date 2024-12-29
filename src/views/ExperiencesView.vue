@@ -61,10 +61,15 @@ const openModal = (item) => {
 </script>
 
 <template>
-  <BaseHero fTitle="Whispers of Endless Joy" lTitle="in Every Moment" :img="HeroImage" />
+  <BaseHero
+    fTitle="Whispers of Endless Joy"
+    lTitle="in Every Moment"
+    :img="HeroImage"
+    bg-position="90% 0%"
+  />
   <BaseBanner :text="bannerText" />
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-60 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-56 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
   >
     <section
       class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
@@ -120,7 +125,7 @@ const openModal = (item) => {
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto py-28 lg:py-60 w-full h-full bg-[#e1e1d3]"
+    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto py-28 lg:py-26 w-full h-full bg-[#e1e1d3]"
   >
     <section class="w-full text-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl mb-5">
@@ -178,7 +183,7 @@ const openModal = (item) => {
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-28 pb-40 lg:py-60 w-full h-full bg-[#e1e1d3]"
+    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 lg:pb-80 pb-32 w-full h-full bg-[#e1e1d3]"
   >
     <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
       <figure

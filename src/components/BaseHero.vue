@@ -2,7 +2,6 @@
 import { onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { onBeforeRouteLeave } from 'vue-router'
 
 // Daftarkan plugin ScrollTrigger
 gsap.registerPlugin(ScrollTrigger)
@@ -11,6 +10,14 @@ const props = defineProps({
   fTitle: String,
   lTitle: String,
   img: String,
+  bgPosition: {
+    type: String,
+    default: 'center',
+  },
+  overlayOpacity: {
+    type: String,
+    default: '0.5',
+  },
 })
 
 const headerRef = ref(null)
@@ -21,7 +28,6 @@ onMounted(() => {
   // Memastikan fungsi tersedia untuk komponen lain
   //
   const headerHeight = headerRef.value?.offsetHeight
-  console.log('Tinggi header:', headerHeight)
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out', duration: 2 } })
 
@@ -70,37 +76,44 @@ onMounted(() => {
   <header
     id="hero"
     ref="headerRef"
-    :style="{ backgroundImage: `url(${img})` }"
-    class="w-full h-full bg-cover bg-center md:bg-top md:px-0 relative z-10 bg-dark-default"
+    :style="{
+      backgroundImage: `url(${img})`,
+      backgroundPosition: `${bgPosition}`,
+    }"
+    class="w-full h-full bg-cover bg-fixed bg-no-repeat md:px-0 relative z-10 bg-dark-default"
   >
     <div
-      class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[95%] mx-auto z-30 relative"
+      class="text-center flex flex-col justify-center items-center h-screen md:w-full w-[20.5rem] mx-auto z-30 relative"
     >
       <h1
         ref="textRef"
-        class="w-full text-[2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal leading-tight text-light-default will-change-transform"
+        class="absolute top-[45vh] w-full text-[2rem] leading-[2.2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal text-light-default will-change-transform"
         data-scroll
         data-scroll-speed="2"
       >
         {{ fTitle }} <br />
-        {{ lTitle }}
+        <span class="lg:mt-1 lg:inline-block">{{ lTitle }}</span>
       </h1>
     </div>
 
     <p
       ref="subtext"
-      class="w-full text-center text-[0.625rem] 2xl:text-base absolute top-[90vh] text-dark-shade-3 cursor-pointer z-30 font-normal"
+      class="w-full text-center text-[0.625rem] 2xl:text-base absolute bottom-[45vh] text-dark-shade-3 cursor-pointer z-30 font-normal"
     >
       SCROLL DOWN TO DISCOVER
     </p>
 
-    <div class="w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A] z-0"></div>
+    <div class="w-full h-72"></div>
 
-    <div class="bg-black w-full h-full absolute bottom-0 top-0 bg-opacity-50 z-0">
-      <div
-        class="absolute bottom-0 w-full h-96 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
-      ></div>
-    </div>
+    <div
+      class="bg-black w-full h-full absolute bottom-0 top-0"
+      :style="{
+        backgroundColor: 'rgba(0, 0, 0, ' + overlayOpacity + ')',
+      }"
+    ></div>
+    <div
+      class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-[#45462A00] to-[#45462A]"
+    ></div>
   </header>
 </template>
 

@@ -33,7 +33,7 @@ const props = defineProps({
     <!-- Gradient Atas -->
     <div class="absolute top-0 mix-blend-screen z-50"></div>
     <div
-      class="absolute top-0 w-full h-60 bg-gradient-to-t"
+      class="absolute top-0 w-full h-32 bg-gradient-to-t"
       :class="[topGradient.fromColor, topGradient.toColor]"
     ></div>
 
