@@ -183,7 +183,7 @@ const openModal = (item) => {
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 pb-80 w-full h-full bg-[#e1e1d3]"
+    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 lg:pb-80 pb-32 w-full h-full bg-[#e1e1d3]"
   >
     <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
       <figure
