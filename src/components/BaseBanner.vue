@@ -26,28 +26,20 @@ const props = defineProps({
 })
 </script>
 
-<!-- py-40 px-60 -->
-
 <template>
-  <article
-    class="w-full h-full py-20 lg:py-40 lg:px-60 mx-auto bg-gradient-to-b relative"
-    :class="[
-      `${gradientFromColor}`,
-      `${gradientFromPercent}`,
-      `${gradientToColor}`,
-      `${gradientToPercent}`,
-    ]"
-  >
+  <article class="w-full h-full py-32 lg:py-40 lg:px-60 mx-auto bg-gradient-to-b relative" :class="[
+    `${gradientFromColor}`,
+    `${gradientFromPercent}`,
+    `${gradientToColor}`,
+    `${gradientToPercent}`,
+  ]">
     <div class="text-center w-full h-full">
       <div class="w-full h-full absolute top-0 right-0 flex lg:justify-between">
         <BannerDecoration />
         <BannerDecoration class="-scale-100" />
       </div>
-      <p
-        data-scroll
-        data-scroll-speed="2"
-        :class="`${textColor} will-change-transform font-light lg:w-[50rem] w-[20.5rem] mx-auto text-base md:text-xl 2xl:text-2xl 2xl:w-[60vw] `"
-      >
+      <p data-scroll data-scroll-speed="2"
+        :class="`${textColor} will-change-transform font-light lg:w-[50rem] w-[20.5rem] mx-auto text-base md:text-xl 2xl:text-2xl 2xl:w-[60vw] `">
         {{ text }}
       </p>
     </div>

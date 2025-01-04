@@ -34,8 +34,7 @@ const navigateWithAnimation = (event) => {
 <template>
   <Teleport to="body">
     <nav
-      class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent px-3 py-2 sm:px-8 sm:py-5 z-50"
-    >
+      class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent p-4 sm:px-8 sm:py-5 z-50">
       <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin justify-self-start">
         <li>
           <a href="/accommodation" @click="navigateWithAnimation">ACCOMMODATION</a>
@@ -47,38 +46,20 @@ const navigateWithAnimation = (event) => {
           <a href="/dining" @click="navigateWithAnimation">DINING</a>
         </li>
       </ul>
-      <section class="text-xs cursor-pointer block md:hidden" @click="isMenuOpen = true">
+      <section class="text-xs font-thin cursor-pointer block md:hidden" @click="isMenuOpen = true">
         <p>MENU</p>
       </section>
       <a :href="$router.resolve({ name: 'home' }).href">
         <figure class="w-auto cursor-pointer">
-          <img
-            class="w-[80%] md:w-full mx-auto"
-            src="../assets/images/Logo.svg"
-            alt="Logo Mahha diii MERU"
-          />
+          <img class="w-[80%] md:w-full mx-auto" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
         </figure>
       </a>
       <section class="w-fit justify-self-end">
-        <BaseButton
-          class="hidden md:block"
-          text="BOOK YOUR STAY"
-          iconColor="#FCFCF0"
-          textColor="text-light-default"
-          fontSize="text-xs"
-          font-weight="font-thin"
-          @click="calenderOpen = true"
-        />
+        <BaseButton class="hidden md:block" text="BOOK YOUR STAY" iconColor="#FCFCF0" textColor="text-light-default"
+          fontSize="text-xs" font-weight="font-thin" @click="calenderOpen = true" />
 
-        <BaseButton
-          class="block md:hidden"
-          text="BOOK"
-          iconColor="#FCFCF0"
-          textColor="text-light-default"
-          fontSize="text-xs"
-          :icon="false"
-          @click="calenderOpen = true"
-        />
+        <BaseButton class="block md:hidden" text="BOOK" iconColor="#FCFCF0" textColor="text-light-default"
+          fontSize="text-xs" font-weight="font-thin" :icon="false" @click="calenderOpen = true" />
       </section>
 
       <BaseCalendar :isOpen="calenderOpen" @close="calenderOpen = false" />
@@ -87,13 +68,9 @@ const navigateWithAnimation = (event) => {
 
   <!-- Mobile Navigation -->
   <Teleport to="body">
-    <section
-      v-if="isMenuOpen"
-      class="fixed flex flex-col justify-between w-screen h-full p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50"
-    >
-      <div
-        class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -z-20 pointer-events-none"
-      >
+    <section v-if="isMenuOpen"
+      class="fixed flex flex-col justify-between w-screen h-full p-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-default z-50">
+      <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -z-20 pointer-events-none">
         <GraphicsMobileIcon />
         <GraphicsMobileIcon />
       </div>
@@ -106,9 +83,7 @@ const navigateWithAnimation = (event) => {
         <CloseIcon @click="closeMenu" class="ml-auto cursor-pointer" />
       </nav>
 
-      <ul
-        class="w-full grid gap-y-2 text-center text-light-default text-[2rem] font-thin capitalize z-50"
-      >
+      <ul class="w-full grid gap-y-2 text-center text-light-default text-[2rem] font-thin capitalize z-50">
         <li>
           <a :href="$router.resolve({ name: 'accommodation' }).href">Accommodation</a>
         </li>
