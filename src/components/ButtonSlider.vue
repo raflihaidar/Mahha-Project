@@ -42,7 +42,7 @@ const swiper = useSwiper()
     :class="[
       `${textColor}`,
       {
-        'absolute top-0 left-1/2 -translate-x-1/2': typeButton === 2,
+        'absolute -top-5 left-1/2 -translate-x-1/2': typeButton === 2,
       },
     ]"
   >
