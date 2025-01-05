@@ -61,13 +61,22 @@ const openModal = (item) => {
 </script>
 
 <template>
-  <BaseHero fTitle="Whispers of Endless" lTitle="Joy in Every Moment" :img="HeroImage" bg-position="90% 0%" />
-  <BaseBanner :text="bannerText" />
+  <BaseHero
+    fTitle="Whispers of Endless"
+    lTitle="Joy in Every Moment"
+    :img="HeroImage"
+    bg-position="90% 0%"
+  />
+  <BaseBanner :text="bannerText" mobile-icon="true" />
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-56 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]">
-    <section class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center">
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-56 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.85)] to-[#e1e1d3]"
+  >
+    <section
+      class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
+    >
       <section
-        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative">
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative"
+      >
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Rejuvenation Awaits in <br />
           Nature's Embrace
@@ -77,32 +86,55 @@ const openModal = (item) => {
           to soothe the body and calm the mind. Surrounded by nature, let our expert therapists
           guide you into a peaceful state of renewal and tranquility.
         </p>
-        <BaseButton text="MAKE RESERVATION" icon-color="#45462A" text-color="text-dark-default"
-          @action="sendWhatsAppMessage" />
+        <BaseButton
+          text="MAKE RESERVATION"
+          icon-color="#45462A"
+          text-color="text-dark-default"
+          @action="sendWhatsAppMessage"
+        />
         <figure
           class="absolute lg:-top-96 top-20 left-5 lg:left-0 lg:right-10 w-40 lg:w-96 md:w-[300px] overflow-hidden"
-          data-scroll data-scroll-repeat>
-          <img src="../assets/images/Experiences_Page/Experiences-01.webp" data-scroll data-scroll-speed="-1"
+          data-scroll
+          data-scroll-repeat
+        >
+          <img
+            src="../assets/images/Experiences_Page/Experiences-01.webp"
+            data-scroll
+            data-scroll-speed="-1"
             alt="A woman receiving a soothing foot massage in a tranquil spa setting, enhancing her relaxation and comfort."
-            class="w-full h-full" loading="lazy" />
+            class="w-full h-full"
+            loading="lazy"
+          />
         </figure>
       </section>
-      <figure class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5" data-scroll
-        data-scroll-repeat>
-        <img src="../assets/images/Experiences_Page/Experiences-02.webp"
-          alt="A woman relaxes at a spa while receiving a soothing facial mask treatment" class="w-full h-full"
-          data-scroll data-scroll-speed="-1" loading="lazy" />
+      <figure
+        class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/images/Experiences_Page/Experiences-02.webp"
+          alt="A woman relaxes at a spa while receiving a soothing facial mask treatment"
+          class="w-full h-full"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
       </figure>
     </section>
   </section>
 
-  <section class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto py-28 lg:py-26 w-full h-full bg-[#e1e1d3]">
+  <section
+    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto py-28 lg:py-26 w-full h-full bg-[#e1e1d3]"
+  >
     <section class="w-full text-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl mb-5">
         Unwind and Explore at <br class="lg:hidden" />
         Your Own Pace
       </BaseSubTitle>
-      <p class="lg:w-[37rem] 2xl:w-[50rem] w-full mx-auto mb-10 text-dark-shade-3 text-xs 2xl:text-base font-thin">
+      <p
+        class="lg:w-[37rem] 2xl:w-[50rem] w-[20.5rem] mx-auto mb-10 text-dark-shade-3 text-xs 2xl:text-base font-thin"
+      >
         Immerse yourself in a variety of experiences, from peaceful nature walks to thrilling
         outdoor adventures. Whether you're seeking relaxation or excitement, our curated activities
         offer something for every mood and moment.
@@ -110,37 +142,67 @@ const openModal = (item) => {
     </section>
 
     <section
-      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar lg:grid grid-cols-4 sm:gap-x-10 lg:overflow-x-hidden">
-      <article v-for="(item, index) in cardContent" :key="index" class="flex-shrink-0 w-64 snap-center lg:w-auto group">
+      class="w-full flex gap-x-10 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar lg:grid grid-cols-4 sm:gap-x-10 lg:overflow-x-hidden"
+    >
+      <article
+        v-for="(item, index) in cardContent"
+        :key="index"
+        class="flex-shrink-0 w-64 snap-center lg:w-auto group"
+      >
         <figure class="overflow-hidden" data-scroll data-scroll-repeat>
-          <img :src="getImageUrl(item.image)" :alt="item.description" loading="lazy"
-            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform" />
+          <img
+            :src="getImageUrl(item.image)"
+            :alt="item.description"
+            loading="lazy"
+            class="w-full h-auto object-cover group-hover:scale-110 ease-out duration-500 transition-transform"
+          />
         </figure>
         <section class="mt-5">
           <h2 class="text-dark-default lg:text-base text-sm">{{ item.subTitle }}</h2>
-          <button class="text-accent-default text-xs cursor-pointer group-hover:blur-[1px]" @click="openModal(item)">
+          <button
+            class="text-accent-default text-xs cursor-pointer group-hover:blur-[1px]"
+            @click="openModal(item)"
+          >
             VIEW DETAILS
           </button>
         </section>
       </article>
 
-      <BaseModal :isOpen="showModal" @closeModal="showModal = false" :subTitle="modalData.subTitle"
-        title="Pedal Through Nature’s Serene Trails" :contents="[
-    'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
-    'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
-  ]">
+      <BaseModal
+        :isOpen="showModal"
+        @closeModal="showModal = false"
+        :subTitle="modalData.subTitle"
+        title="Pedal Through Nature’s Serene Trails"
+        :contents="[
+          'Set out on a thrilling bike trek through the lush, scenic trails of Puncak. Wind your way through verdant forests, peaceful meadows, and breathtaking vistas, as you feel the cool mountain breeze guide you along the path. Whether you’re seeking a gentle ride or an adventurous challenge, our trails offer the perfect balance of tranquility and excitement.',
+          'Each turn of the trail reveals something new—hidden paths, local wildlife, and stunning viewpoints that will leave you in awe of nature’s beauty. This is more than just a bike ride; it’s an immersive journey through the heart of Puncak’s natural wonders.',
+        ]"
+      >
       </BaseModal>
     </section>
   </section>
 
-  <section class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 lg:pb-80 pb-32 w-full h-full bg-[#e1e1d3]">
+  <section
+    class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 lg:pb-80 pb-32 w-full h-full bg-[#e1e1d3]"
+  >
     <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
-      <figure class="w-[70%] lg:w-[30.5rem] 2xl:w-[35rem] overflow-hidden" data-scroll data-scroll-repeat>
-        <img src="../assets/images/Experiences_Page/Experiences-07.webp"
+      <figure
+        class="w-[70%] lg:w-[30.5rem] 2xl:w-[35rem] overflow-hidden"
+        data-scroll
+        data-scroll-repeat
+      >
+        <img
+          src="../assets/images/Experiences_Page/Experiences-07.webp"
           alt="An outdoor wedding reception featuring elegantly arranged tables and chairs under a clear blue sky"
-          class="w-full h-auto" data-scroll data-scroll-speed="-1" loading="lazy" />
+          class="w-full h-auto"
+          data-scroll
+          data-scroll-speed="-1"
+          loading="lazy"
+        />
       </figure>
-      <section class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative">
+      <section
+        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative"
+      >
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Moments to Remember, <br />
           Spaces to Cherish
@@ -151,23 +213,40 @@ const openModal = (item) => {
           beautiful experience in a setting that feels uniquely yours.
         </p>
         <RouterLink to="/accommodation">
-          <BaseButton text="CONTACT US" icon-color="#45462A" text-color="text-dark-default" font-size="text-base"
-            @action="moreInfo" />
+          <BaseButton
+            text="CONTACT US"
+            icon-color="#45462A"
+            text-color="text-dark-default"
+            font-size="text-base"
+            @action="moreInfo"
+          />
         </RouterLink>
         <figure
           class="absolute lg:-bottom-[24rem] bottom-[24rem] md:bottom-60 right-10 lg:left-0 w-40 lg:w-96 md:w-[300px] overflow-hidden"
-          data-scroll data-scroll-repeat>
-          <img src="../assets/images/Experiences_Page/Experiences-08.webp" alt="" class="w-full h-auto" data-scroll
-            data-scroll-speed="-1" loading="lazy" />
+          data-scroll
+          data-scroll-repeat
+        >
+          <img
+            src="../assets/images/Experiences_Page/Experiences-08.webp"
+            alt=""
+            class="w-full h-auto"
+            data-scroll
+            data-scroll-speed="-1"
+            loading="lazy"
+          />
         </figure>
       </section>
     </section>
   </section>
 
-  <SliderSwiper :images="[
-    'Experiences_Page/Experiences-09.webp',
-    'Experiences_Page/Experiences-010.webp',
-    'Experiences_Page/Experiences-09.webp',
-    'Experiences_Page/Experiences-010.webp',
-  ]" from="from-[#e1e1d3]" to="to-dark-default/100" />
+  <SliderSwiper
+    :images="[
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
+      'Experiences_Page/Experiences-09.webp',
+      'Experiences_Page/Experiences-010.webp',
+    ]"
+    from="from-[#e1e1d3]"
+    to="to-dark-default/100"
+  />
 </template>

@@ -51,7 +51,7 @@ const generalInformation = [
 
 <template>
   <BaseHero fTitle="Culinary Escape in " lTitle="the Mountain Air" :img="HeroImage" />
-  <BaseBanner :text="bannerText" />
+  <BaseBanner :text="bannerText" :mobile-icon="true" />
 
   <section class="lg:hidden">
     <SliderSwiper
@@ -63,16 +63,16 @@ const generalInformation = [
         'Dining_Page/Dining-03.webp',
         'Dining_Page/Dining-04.webp',
       ]"
-      from="from-light-shade-2/75"
-      via="via-light-shade-2/75"
-      to="to-light-shade-2/75"
+      from="from-light-shade-2/85"
+      via="from-light-shade-2/85"
+      to="to-[#e1e1d3]"
       color-icon="#45462A"
       text-color="text-light-default"
     />
   </section>
 
   <section
-    class="lg:px-10 mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+    class="lg:px-10 mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b lg:from-[rgba(112,87,41,0.85)] from-[#e1e1d3] to-[#e1e1d3]"
   >
     <section
       class="lg:w-[90%] ml-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
@@ -196,7 +196,11 @@ const generalInformation = [
 
   <section class="lg:px-10 mx-auto space-y-10 lg:pb-28 pb-20 w-full h-full bg-[#e1e1d3]">
     <section class="lg:w-full w-[90%] mx-auto">
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="mb-16 w-[90%]">
+      <BaseSubTitle
+        text-color="text-dark-default"
+        text-size="text-2xl"
+        class="lg:mb-16 mb-8 w-[90%]"
+      >
         General Information
       </BaseSubTitle>
       <section class="w-full grid lg:grid-cols-3 grid-cols-1 gap-x-[2rem] gap-y-10">

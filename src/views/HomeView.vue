@@ -30,9 +30,9 @@ const directMap = () => {
     :img="HeroImage"
     overlay-opacity="0.25"
   />
-  <BaseBanner :text="bannerText[0]" />
+  <BaseBanner :text="bannerText[0]" :mobile-icon="true" />
   <section
-    class="px-3 pt-56 pb-28 relative gap-y-5 lg:px-10 lg:mx-auto w-full h-full bg-gradient-to-b from-[#705729]/75 from-90 to-[#e1e1d3] to-10 flex flex-col lg:flex-row justify-between lg:items-center"
+    class="px-3 pt-56 pb-28 relative gap-y-5 lg:px-10 lg:mx-auto w-full h-full bg-gradient-to-b from-[#705729]/85 from-90 to-[#e1e1d3] to-10 flex flex-col lg:flex-row justify-between lg:items-center"
   >
     <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
       <figure
@@ -140,7 +140,9 @@ const directMap = () => {
       </div>
     </article>
 
-    <section class="lg:w-[60vw] h-full flex justify-center items-end gap-x-5">
+    <section
+      class="lg:w-[60vw] w-[90vw] max-sm:mx-auto max-sm:mt-16 h-full flex lg:justify-center items-end gap-x-5"
+    >
       <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
         <img
           src="@/assets/images/Home_Page/Home-04.webp"
@@ -164,9 +166,7 @@ const directMap = () => {
     </section>
   </section>
 
-  <section
-    class="w-full h-full bg-gradient-to-b mix-blend-normal from-[#E1E1D3]/100 from-50 to-[#E1E1D3]/100 to-50"
-  >
+  <section class="w-full h-full mix-blend-normal bg-[#e1e1d3]">
     <section class="w-[95%] mx-auto flex flex-col gap-y-3 sm:flex-row justify-between items-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         How To Get Here

@@ -64,7 +64,7 @@ onMounted(() => {
     <Transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
       <section
         v-if="isOpen"
-        class="sm:w-[360px] z-50 sm:h-[222px] w-full h-[40%] bg-no-repeat bg-cover fixed bottom-0 sm:right-0 text-light-default px-10 py-10"
+        class="sm:w-[360px] z-50 sm:h-[222px] w-full h-[30%] bg-no-repeat bg-cover fixed bottom-0 sm:right-0 text-light-default px-10 py-10"
         :style="{ backgroundImage: `url(${bookingPopupImage})` }"
       >
         <h3 class="text-2xl mb-3">Direct Booking Benefits</h3>

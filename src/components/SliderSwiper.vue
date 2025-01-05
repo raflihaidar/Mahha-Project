@@ -31,6 +31,18 @@ const props = defineProps({
     type: Number,
     default: 1,
   },
+  percentFrom: {
+    type: String,
+    default: '0%',
+  },
+  percentVia: {
+    type: String,
+    default: '50%',
+  },
+  percentTo: {
+    type: String,
+    default: '100%',
+  },
 })
 
 const currentIndex = ref(0)
@@ -38,11 +50,9 @@ const currentIndex = ref(0)
 const onSwiper = (swiper) => {}
 
 const onSlideChange = (swiper) => {
-  // Menggunakan realIndex untuk mendapatkan indeks asli slide
   currentIndex.value = swiper.realIndex
 }
 
-// Fungsi untuk mendapatkan URL gambar
 const getImageUrl = (image) => {
   return new URL(`../assets/images/${image}`, import.meta.url)
 }

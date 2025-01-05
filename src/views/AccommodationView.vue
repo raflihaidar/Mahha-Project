@@ -131,10 +131,10 @@ const fullAmenities = [
 <template>
   <BaseHero :img="HeroImage" fTitle="A Haven of Intimate" lTitle="and Timeless Serenity" />
 
-  <BaseBanner :text="bannerText" />
+  <BaseBanner :text="bannerText" :mobile-icon="true" />
 
   <section
-    class="px-3 pb-28 relative gap-y-5 lg:px-10 lg:pb-52 lg:mx-auto pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.75)] to-[#e1e1d3]"
+    class="px-3 pb-28 relative gap-y-5 lg:px-10 lg:pb-52 lg:mx-auto pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.85)] max-sm:from-10% to-[#e1e1d3]"
   >
     <section
       class="lg:w-[90%] w-full h-full flex flex-col lg:flex-row gap-x-36 justify-between lg:items-center"
@@ -208,7 +208,7 @@ const fullAmenities = [
   </section>
 
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
+    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-32 pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
   >
     <figure
       class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"

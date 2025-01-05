@@ -73,31 +73,47 @@ onMounted(() => {
 </script>
 
 <template>
-  <header id="hero" ref="headerRef" :style="{
-    backgroundImage: `url(${img})`,
-    backgroundPosition: `${bgPosition}`,
-  }" class="w-full h-full bg-cover bg-fixed bg-no-repeat md:px-0 relative z-10 bg-dark-default">
+  <header
+    id="hero"
+    ref="headerRef"
+    :style="{
+      backgroundImage: `url(${img})`,
+      backgroundPosition: `${bgPosition}`,
+    }"
+    class="w-full h-full bg-cover bg-fixed bg-no-repeat md:px-0 relative z-10 bg-dark-default"
+  >
     <div
-      class="text-center flex flex-col justify-center items-center lg:h-screen h-[80vh] md:w-full w-[20rem] mx-auto z-30 relative">
-      <h1 ref="textRef"
+      class="text-center flex flex-col justify-center items-center lg:h-screen h-[80vh] md:w-full w-[20rem] mx-auto z-30 relative"
+    >
+      <h1
+        ref="textRef"
         class="absolute top-[45vh] w-full text-[2rem] leading-[2.2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal text-light-default will-change-transform"
-        data-scroll data-scroll-speed="2">
+        data-scroll
+        data-scroll-speed="2"
+      >
         {{ fTitle }} <br />
         <span class="lg:mt-1 lg:inline-block"> {{ lTitle }}</span>
       </h1>
     </div>
 
-    <p ref="subtext"
-      class="w-full text-center text-[0.625rem] 2xl:text-base absolute lg:bottom-[45vh] bottom-48  text-dark-shade-3 cursor-pointer z-30 font-normal">
+    <p
+      ref="subtext"
+      class="w-full text-center text-[0.625rem] 2xl:text-base absolute lg:bottom-[45vh] bottom-48 text-dark-shade-3 cursor-pointer z-30 font-normal"
+    >
       SCROLL DOWN TO DISCOVER
     </p>
 
     <div class="w-full h-72"></div>
 
-    <div class="bg-black w-full h-full absolute bottom-0 top-0" :style="{
-    backgroundColor: 'rgba(0, 0, 0, ' + overlayOpacity + ')',
-  }"></div>
-    <div class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-[#45462A00] to-[#45462A]"></div>
+    <div
+      class="bg-black w-full h-full absolute bottom-0 top-0"
+      :style="{
+        backgroundColor: 'rgba(0, 0, 0, ' + overlayOpacity + ')',
+      }"
+    ></div>
+    <div
+      class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-[#45462A00] to-[#45462A]/100"
+    ></div>
   </header>
 </template>
 
