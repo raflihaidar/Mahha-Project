@@ -57,7 +57,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <figure class="lg:w-[55%] h-full w-[90%] relative">
+  <figure class="lg:w-[43.5rem] h-full w-[90%] relative">
     <Transition name="fade">
       <img
         v-if="isChange"

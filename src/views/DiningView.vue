@@ -51,7 +51,7 @@ const generalInformation = [
 
 <template>
   <BaseHero fTitle="Culinary Escape in " lTitle="the Mountain Air" :img="HeroImage" />
-  <BaseBanner :text="bannerText" :mobile-icon="true" />
+  <BaseBanner :text="bannerText" :mobile-icon="true" class="mix-blend-screen" />
 
   <section class="lg:hidden">
     <SliderSwiper
@@ -63,21 +63,21 @@ const generalInformation = [
         'Dining_Page/Dining-03.webp',
         'Dining_Page/Dining-04.webp',
       ]"
-      from="from-light-shade-2/85"
-      via="from-light-shade-2/85"
-      to="to-[#e1e1d3]"
+      from="from-[rgba(112,87,41,0.80)]"
+      via="via-[rgba(112,87,41,0.40)]"
+      to="to-[rgba(112,87,41,0.40)]"
       color-icon="#45462A"
       text-color="text-light-default"
     />
   </section>
 
   <section
-    class="lg:px-10 mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b lg:from-[rgba(112,87,41,0.85)] from-[#e1e1d3] to-[#e1e1d3]"
+    class="mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.40)] lg:from-[rgba(112,87,41,0.80)] to-[#e1e1d3] bg-[#e1e1d3] via-[#e1e1d3]"
   >
     <section
-      class="lg:w-[90%] ml-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
+      class="lg:w-[95%] mx-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
     >
-      <article class="lg:w-[30.5rem] w-full">
+      <article class="lg:w-[30.5rem] w-full lg:pl-[7rem]">
         <div class="sm:w-[17.5rem] 2xl:w-[23rem] sm:mx-0 w-[90%] mx-auto pt-16 lg:pt-0">
           <BaseSubTitle
             text-color="text-dark-default"
@@ -151,10 +151,10 @@ const generalInformation = [
 
   <SliderSwiper
     :images="[
+      'Dining_Page/Dining-05.webp',
       'Dining_Page/Dining-06.webp',
-      'Dining_Page/Dining-07.webp',
+      'Dining_Page/Dining-05.webp',
       'Dining_Page/Dining-06.webp',
-      'Dining_Page/Dining-07.webp',
     ]"
     from="from-[#e1e1d3]"
     via="via[#e1e1d3]"
@@ -163,35 +163,37 @@ const generalInformation = [
     text-color="text-dark-default"
   />
 
-  <section class="lg:px-10 mx-auto space-y-10 lg:scroll-py-52 py-36 w-full h-full bg-[#e1e1d3]">
-    <section class="w-full flex flex-col lg:flex-row justify-between items-center">
-      <SlideShow :images="[Image1, Image2, Image3, Image4]" />
-      <article class="lg:w-[30.5rem] 2xl:w-[35rem] w-full flex justify-center">
-        <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto pt-16 lg:pt-0">
-          <BaseSubTitle
-            text-color="text-dark-default"
-            text-size="text-2xl"
-            class="mb-5 2xl:text-3xl"
-          >
-            Exclusive Spaces for <br />
-            Unforgettable Moments
-          </BaseSubTitle>
-          <p
-            class="w-full place-self-center text-dark-shade-3 text-xs 2xl:text-base font-thin mb-5"
-          >
-            Enjoy intimate gatherings and special occasions in the peaceful elegance of our private
-            dining areas. Thoughtfully designed and tailored to your needs, each event becomes a
-            cherished memory in a setting of quiet beauty.
-          </p>
-          <BaseButton
-            text="MAKE RESERVATION"
-            text-color="text-dark-default"
-            icon-color="#45462A"
-            @action="sendWhatsAppMessage"
-          />
-        </div>
-      </article>
-    </section>
+  <section class="mx-auto space-y-10 lg:scroll-py-52 py-36 w-full h-full bg-[#e1e1d3]">
+    <div class="lg:w-[95%] mx-auto">
+      <section class="w-full flex flex-col lg:flex-row justify-between items-center">
+        <SlideShow :images="[Image1, Image2, Image3, Image4]" />
+        <article class="lg:w-[30.5rem] 2xl:w-[35rem] w-full flex justify-center">
+          <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto pt-16 lg:pt-0">
+            <BaseSubTitle
+              text-color="text-dark-default"
+              text-size="text-2xl"
+              class="mb-5 2xl:text-3xl"
+            >
+              Exclusive Spaces for <br />
+              Unforgettable Moments
+            </BaseSubTitle>
+            <p
+              class="w-full place-self-center text-dark-shade-3 text-xs 2xl:text-base font-thin mb-5"
+            >
+              Enjoy intimate gatherings and special occasions in the peaceful elegance of our
+              private dining areas. Thoughtfully designed and tailored to your needs, each event
+              becomes a cherished memory in a setting of quiet beauty.
+            </p>
+            <BaseButton
+              text="MAKE RESERVATION"
+              text-color="text-dark-default"
+              icon-color="#45462A"
+              @action="sendWhatsAppMessage"
+            />
+          </div>
+        </article>
+      </section>
+    </div>
   </section>
 
   <section class="lg:px-10 mx-auto space-y-10 lg:pb-28 pb-20 w-full h-full bg-[#e1e1d3]">

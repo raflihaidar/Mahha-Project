@@ -69,13 +69,13 @@ const openModal = (item) => {
   />
   <BaseBanner :text="bannerText" mobile-icon="true" />
   <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto pt-56 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.85)] to-[#e1e1d3]"
+    class="max-sm:px-3 relative gap-y-5 lg:mx-auto pt-56 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.80)] to-[#e1e1d3]"
   >
     <section
-      class="lg:w-[90%] w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
+      class="lg:w-[95%] mx-auto w-full flex flex-col-reverse ml-auto lg:flex-row justify-between lg:items-center"
     >
       <section
-        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative"
+        class="w-[95%] lg:w-[17.5rem] ml-[7rem] 2xl:w-[23rem] grid gap-y-5 place-items-start max-sm:mx-auto max-lg:mt-10 lg:relative lg:pt-28 pt-8"
       >
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Rejuvenation Awaits in <br />
@@ -93,7 +93,7 @@ const openModal = (item) => {
           @action="sendWhatsAppMessage"
         />
         <figure
-          class="absolute lg:-top-96 top-20 left-5 lg:left-0 lg:right-10 w-40 lg:w-96 md:w-[300px] overflow-hidden"
+          class="absolute lg:-top-72 top-20 left-5 lg:left-0 lg:right-10 w-40 lg:w-96 md:w-[300px] overflow-hidden"
           data-scroll
           data-scroll-repeat
         >
@@ -108,7 +108,7 @@ const openModal = (item) => {
         </figure>
       </section>
       <figure
-        class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden lg:mr-5 lg:mt-0 mt-5"
+        class="w-[70%] sm:w-[30.5rem] 2xl:w-[35rem] self-end overflow-hidden max-sm:mt-5"
         data-scroll
         data-scroll-repeat
       >
@@ -185,7 +185,7 @@ const openModal = (item) => {
   <section
     class="px-3 relative gap-y-5 lg:px-8 lg:mx-auto lg:pt-0 lg:pb-80 pb-32 w-full h-full bg-[#e1e1d3]"
   >
-    <section class="lg:w-[80%] w-full flex flex-col lg:flex-row justify-between lg:items-center">
+    <section class="lg:w-[69.5rem] w-full flex flex-col lg:flex-row gap-x-64">
       <figure
         class="w-[70%] lg:w-[30.5rem] 2xl:w-[35rem] overflow-hidden"
         data-scroll
@@ -201,7 +201,7 @@ const openModal = (item) => {
         />
       </figure>
       <section
-        class="w-[95%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[200px] md:pt-96 lg:pt-0 grid gap-y-5 sm:relative"
+        class="w-[95%] h-[80%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[12.5rem] md:pt-96 lg:pt-20 sm:relative grid gap-y-5"
       >
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           Moments to Remember, <br />

@@ -134,10 +134,10 @@ const fullAmenities = [
   <BaseBanner :text="bannerText" :mobile-icon="true" />
 
   <section
-    class="px-3 pb-28 relative gap-y-5 lg:px-10 lg:pb-52 lg:mx-auto pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.85)] max-sm:from-10% to-[#e1e1d3]"
+    class="px-3 pb-28 relative gap-y-5 lg:px-0 lg:pb-52 pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.80)] max-sm:from-10% to-[#e1e1d3] to-90%"
   >
     <section
-      class="lg:w-[90%] w-full h-full flex flex-col lg:flex-row gap-x-36 justify-between lg:items-center"
+      class="w-full lg:w-[95%] mx-auto h-full flex flex-col lg:flex-row gap-x-[9rem] lg:items-center"
     >
       <figure
         class="w-full mb-10 lg:mb-0 lg:w-[43.5rem] 2xl:w-[50rem] overflow-hidden"
@@ -168,79 +168,81 @@ const fullAmenities = [
     </section>
   </section>
 
-  <section class="px-3 relative gap-y-5 lg:mx-auto lg:px-10 w-full h-full bg-[#e1e1d3]">
-    <BaseSubTitle text-color="text-dark-default" text-size="lg:text-2xl" class="text-xl">
-      Details of your Suite
-    </BaseSubTitle>
-    <section
-      class="lg:w-full w-full h-full flex flex-col lg:flex-row justify-between lg:items-center"
-    >
-      <section
-        class="w-full max-sm:mt-16 lg:w-1/2 h-full grid grid-cols-2 gap-x-5 gap-y-10 lg:gap-28"
-      >
-        <div
-          class="w-full lg:px-5"
-          v-for="(item, index) in suite.filter((item, index) => index < 4)"
-          :key="index"
+  <section class="max-sm:px-3 relative gap-y-5 lg:mx-auto w-full h-full bg-[#e1e1d3]">
+    <div class="lg:w-[95%] w-full mx-auto">
+      <BaseSubTitle text-color="text-dark-default" text-size="lg:text-2xl" class="text-xl">
+        Details of your Suite
+      </BaseSubTitle>
+      <section class="w-full h-full flex flex-col lg:flex-row justify-between lg:items-center">
+        <section
+          class="w-full max-sm:mt-16 lg:w-1/2 h-full grid grid-cols-2 gap-x-14 gap-y-10 lg:gap-x-10 lg:gap-y-20"
         >
-          <component :is="item.icon" />
-          <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
-            {{ item.title }}
-          </h3>
-          <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
-        </div>
+          <div
+            class="w-full lg:pl-10"
+            v-for="(item, index) in suite.filter((item, index) => index < 4)"
+            :key="index"
+          >
+            <component :is="item.icon" />
+            <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
+              {{ item.title }}
+            </h3>
+            <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
+          </div>
+        </section>
+        <figure
+          class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden border"
+          data-scroll
+          data-scroll-repeat
+        >
+          <img
+            src="../assets/images/Accommodation_Page/Accommodation-01.webp"
+            alt="A serene hot tub situated on a wooden deck, surrounded by lush jungle foliage and vibrant greenery"
+            class="w-full h-full"
+            data-scroll
+            data-scroll-speed="-1"
+            loading="lazy"
+          />
+        </figure>
       </section>
+    </div>
+  </section>
+
+  <section class="max-sm:px-3 relative gap-y-5 pt-16 lg:pt-32 pb-24 w-full h-full bg-[#e1e1d3]">
+    <div
+      class="lg:w-[95%] w-full mx-auto flex flex-col-reverse lg:flex-row justify-between lg:items-center"
+    >
       <figure
-        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden border"
+        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"
         data-scroll
         data-scroll-repeat
       >
         <img
-          src="../assets/images/Accommodation_Page/Accommodation-01.webp"
-          alt="A serene hot tub situated on a wooden deck, surrounded by lush jungle foliage and vibrant greenery"
-          class="w-full h-full"
+          src="../assets/images/Accommodation_Page/Accommodation-02.webp"
+          alt=" A bathroom featuring a sink and a mirror, showcasing a clean and modern design."
+          class="w-full h-auto"
           data-scroll
           data-scroll-speed="-1"
           loading="lazy"
         />
       </figure>
-    </section>
-  </section>
-
-  <section
-    class="px-3 relative gap-y-5 lg:px-10 lg:mx-auto lg:pt-32 pb-24 w-full h-full bg-[#e1e1d3] flex flex-col-reverse lg:flex-row justify-between lg:items-center"
-  >
-    <figure
-      class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"
-      data-scroll
-      data-scroll-repeat
-    >
-      <img
-        src="../assets/images/Accommodation_Page/Accommodation-02.webp"
-        alt=" A bathroom featuring a sink and a mirror, showcasing a clean and modern design."
-        class="w-full h-auto"
-        data-scroll
-        data-scroll-speed="-1"
-        loading="lazy"
-      />
-    </figure>
-    <section class="lg:w-[50%] w-full">
-      <section
-        class="w-[95%] lgw-full h-full mt-20 lg:mt-28 grid gap-x-5 gap-y-10 grid-cols-2 lg:gap-28"
-      >
-        <div
-          class="w-full lg:px-5"
-          v-for="(item, index) in suite.filter((item, index) => index >= 4)"
-          :key="index"
+      <section class="lg:w-[50%] w-full">
+        <section
+          class="w-[95%] lg:w-full h-full lg:mt-20 grid gap-x-5 gap-y-10 grid-cols-2 lg:gap-x-10 lg:gap-y-20"
         >
-          <component :is="item.icon" />
-          <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
-            {{ item.title }}
-          </h3>
-          <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
-        </div>
+          <div
+            class="w-full lg:px-5"
+            v-for="(item, index) in suite.filter((item, index) => index >= 4)"
+            :key="index"
+          >
+            <component :is="item.icon" />
+            <h3 class="text-dark-default text-base text-[14px] 2xl:text-xl mt-5 pb-3">
+              {{ item.title }}
+            </h3>
+            <p class="text-dark-shade-3 text-xs 2xl:text-base font-thin">{{ item.description }}</p>
+          </div>
+        </section>
       </section>
-    </section>
+    </div>
   </section>
 
   <section
@@ -269,10 +271,10 @@ const fullAmenities = [
 
   <SliderSwiper
     :images="[
+      'Accommodation_Page/Accommodation-03.webp',
       'Accommodation_Page/Accommodation-04.webp',
-      'Accommodation_Page/Accommodation-00-Hero.webp',
+      'Accommodation_Page/Accommodation-03.webp',
       'Accommodation_Page/Accommodation-04.webp',
-      'Accommodation_Page/Accommodation-00-Hero.webp',
     ]"
     from="from-[#e1e1d3]"
     to="to-dark-default/100"

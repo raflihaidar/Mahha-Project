@@ -32,59 +32,61 @@ const directMap = () => {
   />
   <BaseBanner :text="bannerText[0]" :mobile-icon="true" />
   <section
-    class="px-3 pt-56 pb-28 relative gap-y-5 lg:px-10 lg:mx-auto w-full h-full bg-gradient-to-b from-[#705729]/85 from-90 to-[#e1e1d3] to-10 flex flex-col lg:flex-row justify-between lg:items-center"
+    class="px-3 lg:px-0 pt-56 pb-28 relative gap-y-5 w-full h-full bg-gradient-to-b from-[#705729]/80 from-90 to-[#e1e1d3] to-10"
   >
-    <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
-      <figure
-        data-scroll
-        data-scroll-speed="-1"
-        class="w-[15.125rem] md:w-[25rem] lg:w-[30.5rem] 2xl:w-[80%] h-auto parallax-section"
-      >
-        <img
-          src="../assets/images/Home_Page/Home-01.webp"
-          alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
-          class="w-full h-full parallax-image"
-          loading="lazy"
-        />
-      </figure>
-    </div>
-    <section
-      class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-20 lg:relative"
-    >
-      <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
-        A Haven of Intimate and <br />
-        Timeless Serenity
-      </BaseSubTitle>
-      <p
-        class="text-dark-shade-2 text-xs 2xl:text-base font-thin w-full lg:max-w-[17.5rem] 2xl:max-w-[22rem]"
-      >
-        Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
-        sanctuary designed for romance, with breathtaking views that invite you to linger longer and
-        create unforgettable memories with your loved one.
-      </p>
-      <a :href="$router.resolve({ name: 'accommodation' }).href">
-        <BaseButton
-          text="EXPLORE ACCOMMODATION"
-          text-color="text-dark-default"
-          icon-color="#45462A"
-        />
-      </a>
-      <!-- Gambar Kecil Kanan -->
-      <div
-        data-scroll
-        data-scroll-repeat
-        class="absolute lg:-top-80 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
-      >
-        <figure data-scroll data-scroll-speed="-1" class="w-full h-auto">
+    <div class="w-[95%] mx-auto flex flex-col lg:flex-row justify-between lg:items-center">
+      <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
+        <figure
+          data-scroll
+          data-scroll-speed="-1"
+          class="w-[15.125rem] md:w-[25rem] lg:w-[30.5rem] 2xl:w-[80%] h-auto parallax-section"
+        >
           <img
-            src="../assets/images/Home_Page/Home-02.webp"
-            alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."
-            class="w-full h-full"
+            src="../assets/images/Home_Page/Home-01.webp"
+            alt="A charming house nestled among vibrant green trees, creating a serene and picturesque natural setting."
+            class="w-full h-full parallax-image"
             loading="lazy"
           />
         </figure>
       </div>
-    </section>
+      <section
+        class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-20 lg:relative"
+      >
+        <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
+          A Haven of Intimate and <br />
+          Timeless Serenity
+        </BaseSubTitle>
+        <p
+          class="text-dark-shade-2 text-xs 2xl:text-base font-thin w-full lg:max-w-[17.5rem] 2xl:max-w-[22rem]"
+        >
+          Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a
+          sanctuary designed for romance, with breathtaking views that invite you to linger longer
+          and create unforgettable memories with your loved one.
+        </p>
+        <a :href="$router.resolve({ name: 'accommodation' }).href">
+          <BaseButton
+            text="EXPLORE ACCOMMODATION"
+            text-color="text-dark-default"
+            icon-color="#45462A"
+          />
+        </a>
+        <!-- Gambar Kecil Kanan -->
+        <div
+          data-scroll
+          data-scroll-repeat
+          class="absolute lg:-top-72 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
+        >
+          <figure data-scroll data-scroll-speed="-1" class="w-full h-auto">
+            <img
+              src="../assets/images/Home_Page/Home-02.webp"
+              alt=" A woman sits peacefully on a circular patio, embraced by abundant greenery and lush plants, offering a calming environment."
+              class="w-full h-full"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+    </div>
   </section>
 
   <BaseBanner
@@ -109,61 +111,62 @@ const directMap = () => {
   />
 
   <section
-    class="sm:px-5 mx-auto lg:pt-20 lg:pb-28 pt-20 pb-32 w-full h-full bg-gradient-to-b from-dark-default/100 from-30 to-[#E1E1D3]/100 to-70 flex flex-col lg:flex-row justify-between"
+    class="mx-auto lg:pt-20 lg:pb-28 pt-20 pb-32 w-full h-full bg-gradient-to-b from-dark-default/100 from-30 to-[#E1E1D3]/100 to-70"
   >
-    <article class="lg:w-[40vw] w-full flex">
-      <div class="lg:w-[60%] w-[90%] mx-auto">
-        <BaseSubTitle
-          text-color="text-light-default"
-          text-size="text-2xl"
-          class="2xl:text-3xl mb-5"
-        >
-          Whispers of Endless Joy <br />
-          in Every Moment
-        </BaseSubTitle>
-        <p
-          class="lg:w-[17.5rem] 2xl:w-[22rem] 2xl:place-self-start 2xl:text-base place-self-center text-light-shade-1 text-xs font-thin mb-5"
-        >
-          Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
-          dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,
-          glance, and breath be a shared moment of calm, wrapped in the soft embrace of love and
-          nature.
-        </p>
-
-        <a :href="$router.resolve({ name: 'experiences' }).href">
-          <BaseButton
-            text="DISCOVER EXPERIENCE"
+    <div class="w-[95%] mx-auto flex flex-col lg:flex-row justify-between">
+      <article class="w-full">
+        <div class="w-[90%] mx-auto lg:w-full lg:pl-[6.5rem]">
+          <BaseSubTitle
             text-color="text-light-default"
-            icon-color="#FCFCF0"
-          />
-        </a>
-      </div>
-    </article>
+            text-size="text-2xl"
+            class="2xl:text-3xl mb-5"
+          >
+            Whispers of Endless Joy <br />
+            in Every Moment
+          </BaseSubTitle>
+          <p
+            class="lg:w-[17.5rem] 2xl:w-[22rem] 2xl:place-self-start 2xl:text-base place-self-center text-light-shade-1 text-xs font-thin mb-5"
+          >
+            Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
+            dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,
+            glance, and breath be a shared moment of calm, wrapped in the soft embrace of love and
+            nature.
+          </p>
+          <a :href="$router.resolve({ name: 'experiences' }).href">
+            <BaseButton
+              text="DISCOVER EXPERIENCE"
+              text-color="text-light-default"
+              icon-color="#FCFCF0"
+            />
+          </a>
+        </div>
+      </article>
 
-    <section
-      class="lg:w-[60vw] w-[90vw] max-sm:mx-auto max-sm:mt-16 h-full flex lg:justify-center items-end gap-x-5"
-    >
-      <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
-        <img
-          src="@/assets/images/Home_Page/Home-04.webp"
-          alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
-          class="w-full h-full"
-          data-scroll
-          data-scroll-speed="-1"
-          loading="lazy"
-        />
-      </figure>
-      <figure class="overflow-hidden sm:w-96 w-[12.5rem] h-fit" data-scroll data-scroll-repeat>
-        <img
-          src="@/assets/images/Home_Page/Home-05.webp"
-          alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
-          class="w-full h-full"
-          data-scroll
-          data-scroll-speed="-1"
-          loading="lazy"
-        />
-      </figure>
-    </section>
+      <section
+        class="w-[90vw] max-sm:mx-auto max-sm:mt-16 h-full flex lg:justify-center items-end gap-x-5"
+      >
+        <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
+          <img
+            src="@/assets/images/Home_Page/Home-04.webp"
+            alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
+            class="w-full h-full"
+            data-scroll
+            data-scroll-speed="-1"
+            loading="lazy"
+          />
+        </figure>
+        <figure class="overflow-hidden sm:w-96 w-[12.5rem] h-fit" data-scroll data-scroll-repeat>
+          <img
+            src="@/assets/images/Home_Page/Home-05.webp"
+            alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
+            class="w-full h-full"
+            data-scroll
+            data-scroll-speed="-1"
+            loading="lazy"
+          />
+        </figure>
+      </section>
+    </div>
   </section>
 
   <section class="w-full h-full mix-blend-normal bg-[#e1e1d3]">

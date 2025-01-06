@@ -22,10 +22,10 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="overflow-hidden w-full h-screen relative">
+  <section class="overflow-hidden w-full h-full relative">
     <section
       :style="{ backgroundImage: `url(${imgSrc})` }"
-      class="w-full h-full bg-cover bg-center"
+      class="w-screen h-screen bg-cover bg-center"
     >
       <!-- Konten -->
     </section>
