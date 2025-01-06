@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="bg-dark-default lg:px-10 px-5 lg:pt-28 pb-5 flex flex-col lg:space-y-52 space-y-20 mix-blend-screen"
+    class="bg-dark-default lg:px-10 px-5 lg:pt-28 pb-5 flex flex-col lg:space-y-52 space-y-20 z-50"
   >
     <section
       class="flex flex-col lg:flex-row space-y-10 justify-between items-center mt-28 lg:mt-0 text-light-default"
