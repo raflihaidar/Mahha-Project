@@ -51,7 +51,7 @@ const generalInformation = [
 
 <template>
   <BaseHero fTitle="Culinary Escape in " lTitle="the Mountain Air" :img="HeroImage" />
-  <BaseBanner :text="bannerText" :mobile-icon="true" class="mix-blend-screen" />
+  <BaseBanner :text="bannerText" :mobile-icon="true" />
 
   <section class="lg:hidden">
     <SliderSwiper
