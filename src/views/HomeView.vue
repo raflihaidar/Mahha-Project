@@ -32,7 +32,7 @@ const directMap = () => {
   />
   <BaseBanner :text="bannerText[0]" :mobile-icon="true" />
   <section
-    class="px-3 lg:px-0 pt-40 pb-28 relative gap-y-5 w-full h-full bg-gradient-to-b from-[#705729]/80 from-90 to-[#e1e1d3] to-10"
+    class="px-3 lg:px-0 pt-40 max-sm:pt-56 pb-28 relative gap-y-5 w-full h-full bg-gradient-to-b from-[#705729]/80 from-90 to-[#e1e1d3] to-10"
   >
     <div class="w-[95%] mx-auto flex flex-col lg:flex-row justify-between lg:items-center">
       <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
