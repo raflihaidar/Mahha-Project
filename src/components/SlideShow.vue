@@ -10,19 +10,19 @@ const props = defineProps({
 
 // Index gambar saat ini
 const currentIndex = ref(0)
-const isChange = ref(true) // Awalnya true untuk merender gambar pertama
+const isChange = ref(true)
 let intervalId = null
 
 // Fungsi untuk memulai slideshow otomatis
 const startSlideshow = () => {
   if (!intervalId) {
     intervalId = setInterval(() => {
-      isChange.value = false // Set ke false untuk memulai transisi keluar
+      isChange.value = false
       setTimeout(() => {
         currentIndex.value = (currentIndex.value + 1) % props.images.length
-        isChange.value = true // Set ke true untuk memulai transisi masuk
-      }, 500) // Waktu ini sesuai dengan durasi transisi (0.5s)
-    }, 5000) // Ganti gambar setiap 5 detik
+        isChange.value = true
+      }, 500)
+    }, 5000)
   }
 }
 
@@ -34,22 +34,23 @@ const stopSlideshow = () => {
   }
 }
 
-// Fungsi untuk memantau posisi scroll
+// Fungsi untuk mendeteksi scroll di semua device
 const handleScroll = () => {
-  if (window.scrollY === 0) {
-    startSlideshow() // Mulai slideshow jika tidak di-scroll
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  if (scrollTop === 0) {
+    startSlideshow()
   } else {
-    stopSlideshow() // Hentikan slideshow jika di-scroll
+    stopSlideshow()
   }
 }
 
-// Mulai slideshow dan tambahkan listener ketika komponen di-mount
+// Mulai slideshow saat komponen di-mount
 onMounted(() => {
   startSlideshow()
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
-// Hentikan slideshow dan hapus listener ketika komponen di-unmount
+// Hentikan slideshow saat komponen di-unmount
 onUnmounted(() => {
   stopSlideshow()
   window.removeEventListener('scroll', handleScroll)
@@ -57,7 +58,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <figure class="lg:w-[43.5rem] h-full w-[90%] relative">
+  <figure class="lg:w-[43.5rem] 2xl:w-[53vw] h-full w-[90%] relative">
     <Transition name="fade">
       <img
         v-if="isChange"

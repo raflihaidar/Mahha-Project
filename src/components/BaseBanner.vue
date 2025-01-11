@@ -18,7 +18,7 @@ const props = defineProps({
   },
   gradientToColor: {
     type: String,
-    default: 'to-[#705729]/80', // Warna default untuk gradient akhir
+    default: 'to-[#86754f] ', // Warna default untuk gradient akhir
   },
   gradientToPercent: {
     type: String,
@@ -29,6 +29,8 @@ const props = defineProps({
     default: false,
   },
 })
+
+// 85744f
 </script>
 
 <template>

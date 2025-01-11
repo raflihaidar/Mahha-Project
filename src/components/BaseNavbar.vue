@@ -34,7 +34,7 @@ const navigateWithAnimation = (event) => {
 <template>
   <Teleport to="body">
     <nav
-      class="fixed top-0 text-light-default w-full flex justify-between items-center bg-transparent p-4 sm:px-8 sm:py-5 z-50"
+      class="fixed top-0 text-light-default w-screen flex justify-between items-center bg-transparent p-4 lg:px-8 2xl:px-10 lg:py-5 z-50"
     >
       <ul class="cursor-pointer hidden md:block text-xs 2xl:text-base font-thin justify-self-start">
         <li>

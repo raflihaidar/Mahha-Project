@@ -134,13 +134,13 @@ const fullAmenities = [
   <BaseBanner :text="bannerText" :mobile-icon="true" />
 
   <section
-    class="px-3 pb-28 relative gap-y-5 lg:px-0 lg:pb-52 pt-20 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.80)] max-sm:from-10% to-[#e1e1d3] to-90%"
+    class="px-3 pb-28 relative gap-y-5 lg:px-0 lg:pb-52 pt-20 w-full h-full bg-gradient-to-b from-[#86754f] max-sm:from-10% to-[#e1e1d3] to-90%"
   >
     <section
       class="w-full lg:w-[95%] mx-auto h-full flex flex-col lg:flex-row gap-x-[9rem] lg:items-center"
     >
       <figure
-        class="w-full mb-10 lg:mb-0 lg:w-[43.5rem] 2xl:w-[50rem] overflow-hidden"
+        class="w-full mb-10 lg:mb-0 lg:w-[43.5rem] 2xl:w-[53vw] overflow-hidden"
         data-scroll
         data-scroll-repeat
       >
@@ -190,7 +190,7 @@ const fullAmenities = [
           </div>
         </section>
         <figure
-          class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-lg:mt-16 overflow-hidden border"
+          class="w-full lg:w-[30.5rem] 2xl:w-[38vw] max-lg:mt-16 overflow-hidden border"
           data-scroll
           data-scroll-repeat
         >
@@ -212,7 +212,7 @@ const fullAmenities = [
       class="lg:w-[95%] w-full mx-auto flex flex-col-reverse lg:flex-row justify-between lg:items-center"
     >
       <figure
-        class="w-full lg:w-[30.5rem] 2xl:w-[35rem] max-sm:mt-16 overflow-hidden"
+        class="w-full lg:w-[30.5rem] 2xl:w-[38vw] max-sm:mt-16 overflow-hidden"
         data-scroll
         data-scroll-repeat
       >

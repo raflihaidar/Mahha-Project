@@ -13,7 +13,7 @@ const setLocomotiveScroll = () => {
     el: container.value,
     smooth: true,
     lerp: 0.05,
-    multiplier: 1.35,
+    multiplier: 1.5,
     reloadOnContextChange: true,
     touchMultiplier: 1.5,
     smoothMobile: 0,
@@ -29,6 +29,7 @@ const setLocomotiveScroll = () => {
 }
 
 onMounted(() => {
+  console.log(container.value)
   setLocomotiveScroll()
   new ResizeObserver(() => locoScroll.update()).observe(container.value)
 })

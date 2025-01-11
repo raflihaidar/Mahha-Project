@@ -72,12 +72,12 @@ const generalInformation = [
   </section>
 
   <section
-    class="mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.40)] lg:from-[rgba(112,87,41,0.80)] to-[#e1e1d3] bg-[#e1e1d3] via-[#e1e1d3]"
+    class="mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.40)] lg:from-[#86754f] to-[#e1e1d3] bg-[#e1e1d3] via-[#e1e1d3]"
   >
     <section
       class="lg:w-[95%] mx-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
     >
-      <article class="lg:w-[30.5rem] w-full lg:pl-[7rem]">
+      <article class="lg:w-[30.5rem] w-full lg:pl-[7rem] 2xl:pl-[9rem]">
         <div class="sm:w-[17.5rem] 2xl:w-[23rem] sm:mx-0 w-[90%] mx-auto pt-16 lg:pt-0">
           <BaseSubTitle
             text-color="text-dark-default"
@@ -106,7 +106,7 @@ const generalInformation = [
         <figure
           data-scroll
           data-scroll-repeat
-          class="sm:w-[20.75rem] 2xl:w-[25rem] z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+          class="sm:w-[20.75rem] 2xl:w-[25.5rem] z-0 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
             src="@/assets/images/Dining_Page/Dining-01.webp"
@@ -127,7 +127,7 @@ const generalInformation = [
         <figure
           data-scroll
           data-scroll-repeat
-          class="sm:w-[20.75rem] 2xl:w-[25rem] z-0 group1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
+          class="sm:w-[20.75rem] 2xl:w-[25.5rem] z-0 group1/2 w-full h-fit flex-shrink-0 overflow-hidden relative group"
         >
           <img
             src="@/assets/images/Dining_Page/Dining-03.webp"
@@ -163,7 +163,7 @@ const generalInformation = [
     text-color="text-dark-default"
   />
 
-  <section class="mx-auto space-y-10 lg:scroll-py-52 py-36 w-full h-full bg-[#e1e1d3]">
+  <section class="mx-auto space-y-10 lg:py-52 py-36 w-full h-full bg-[#e1e1d3]">
     <div class="lg:w-[95%] mx-auto">
       <section class="w-full flex flex-col lg:flex-row justify-between items-center">
         <SlideShow :images="[Image1, Image2, Image3, Image4]" />

@@ -98,7 +98,7 @@ onMounted(() => {
 
     <p
       ref="subtext"
-      class="w-full text-center text-[0.625rem] 2xl:text-base absolute lg:bottom-[45vh] bottom-48 text-dark-shade-3 cursor-pointer z-30 font-normal"
+      class="w-full text-center text-[0.625rem] 2xl:text-xs absolute lg:bottom-[45vh] 2xl:bottom-[40vh] bottom-48 text-dark-shade-3 cursor-pointer z-30 font-normal"
     >
       SCROLL DOWN TO DISCOVER
     </p>
@@ -112,7 +112,7 @@ onMounted(() => {
       }"
     ></div>
     <div
-      class="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-[#45462A00] to-[#45462A]/100"
+      class="absolute -bottom-[1px] w-full h-1/2 bg-gradient-to-b from-[#45462A00] to-[#45462A]/100"
     ></div>
   </header>
 </template>

@@ -59,7 +59,7 @@ const getImageUrl = (image) => {
 </script>
 
 <template>
-  <section class="w-full bg-gradient-to-b" :class="[`${from}`, `${via}`, `${to}`]">
+  <section class="w-full z-30 -mb-[1px] bg-gradient-to-b" :class="[`${from}`, `${via}`, `${to}`]">
     <swiper
       :id="id"
       :loop="true"
@@ -80,14 +80,20 @@ const getImageUrl = (image) => {
       }"
       class="relative w-[90%] lg:w-full mx-auto"
     >
-      <swiper-slide v-for="(item, index) in images" :key="index">
+      <swiper-slide
+        v-for="(item, index) in images"
+        :key="index"
+        class="flex justify-center items-center"
+      >
         <figure
-          class="relative mx-auto"
+          class="relative"
           :class="
-            typeNavigation === 2 ? 'w-full h-full' : 'lg:w-[624px] lg:h-[624px] w-[328px] h-[328px]'
+            typeNavigation === 2
+              ? 'w-full h-full'
+              : 'lg:w-[39rem] lg:h-[39rem] 2xl:w-[50vw] 2xl:h-[50vw] w-[328px] h-[328px]'
           "
         >
-          <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full slider_image" />
+          <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full object-cover" />
         </figure>
       </swiper-slide>
       <ButtonSlider

@@ -32,14 +32,14 @@ const directMap = () => {
   />
   <BaseBanner :text="bannerText[0]" :mobile-icon="true" />
   <section
-    class="px-3 lg:px-0 pt-40 max-sm:pt-56 pb-28 relative gap-y-5 w-full h-full bg-gradient-to-b from-[#705729]/80 from-90 to-[#e1e1d3] to-10"
+    class="px-3 lg:px-0 pt-40 max-sm:pt-56 pb-28 relative gap-y-5 w-full h-full bg-gradient-to-b from-[#86754f] from-90 to-[#e1e1d3] to-10"
   >
     <div class="w-[95%] mx-auto flex flex-col lg:flex-row justify-between lg:items-center">
       <div data-scroll data-scroll-repeat class="w-full lg:w-1/2 h-full overflow-hidden">
         <figure
           data-scroll
           data-scroll-speed="-1"
-          class="w-[15.125rem] md:w-[25rem] lg:w-[30.5rem] 2xl:w-[80%] h-auto parallax-section"
+          class="w-[15.125rem] md:w-[25rem] lg:w-[30.5rem] 2xl:w-[80%] h-auto parallax-section will-change-transform"
         >
           <img
             src="../assets/images/Home_Page/Home-01.webp"
@@ -50,7 +50,7 @@ const directMap = () => {
         </figure>
       </div>
       <section
-        class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-20 lg:relative"
+        class="w-[95%] lg:w-[40%] grid gap-y-3 sm:gap-y-5 place-items-start pt-10 lg:pt-20 2xl:pt-48 lg:relative"
       >
         <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
           A Haven of Intimate and <br />
@@ -74,7 +74,7 @@ const directMap = () => {
         <div
           data-scroll
           data-scroll-repeat
-          class="absolute lg:-top-72 top-20 z-50 lg:left-0 right-10 w-full max-w-[9.75rem] sm:max-w-[12rem] md:max-w-[18.75rem] lg:max-w-96 overflow-hidden"
+          class="absolute lg:-top-72 top-20 z-50 lg:left-0 right-10 w-[9.75rem] sm:w-[12rem] md:w-[18.75rem] lg:w-96 2xl:w-[29rem] overflow-hidden"
         >
           <figure data-scroll data-scroll-speed="-1" class="w-full h-auto">
             <img
@@ -115,7 +115,7 @@ const directMap = () => {
   >
     <div class="w-[95%] mx-auto flex flex-col lg:flex-row justify-between">
       <article class="w-full">
-        <div class="w-[90%] mx-auto lg:w-full lg:pl-[6.5rem]">
+        <div class="w-[90vw] mx-auto lg:w-full lg:pl-[6.5rem] 2xl:pl-[9rem]">
           <BaseSubTitle
             text-color="text-light-default"
             text-size="text-2xl"
@@ -125,7 +125,7 @@ const directMap = () => {
             in Every Moment
           </BaseSubTitle>
           <p
-            class="lg:w-[17.5rem] 2xl:w-[22rem] 2xl:place-self-start 2xl:text-base place-self-center text-light-shade-1 text-xs font-thin mb-5"
+            class="lg:w-[17.5rem] 2xl:w-[23rem] 2xl:place-self-start 2xl:text-base place-self-center text-light-shade-1 text-xs font-thin mb-5"
           >
             Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
             dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,
@@ -145,7 +145,11 @@ const directMap = () => {
       <section
         class="w-[90vw] max-sm:mx-auto max-sm:mt-16 h-full flex lg:justify-center items-end gap-x-5"
       >
-        <figure class="overflow-hidden sm:w-[17.5rem] w-28 h-fit" data-scroll data-scroll-repeat>
+        <figure
+          class="overflow-hidden lg:w-[17.5rem] 2xl:w-[24rem] w-28 h-fit"
+          data-scroll
+          data-scroll-repeat
+        >
           <img
             src="@/assets/images/Home_Page/Home-04.webp"
             alt="A picturesque mountain landscape visible through a window, highlighting the serene beauty of the outdoors."
@@ -155,7 +159,11 @@ const directMap = () => {
             loading="lazy"
           />
         </figure>
-        <figure class="overflow-hidden sm:w-96 w-[12.5rem] h-fit" data-scroll data-scroll-repeat>
+        <figure
+          class="overflow-hidden lg:w-96 2xl:w-[27rem] w-[12.5rem] h-fit"
+          data-scroll
+          data-scroll-repeat
+        >
           <img
             src="@/assets/images/Home_Page/Home-05.webp"
             alt="Aerial view of a lush jungle resort, showcasing vibrant greenery and elegant structures nestled among the trees."
@@ -169,7 +177,7 @@ const directMap = () => {
     </div>
   </section>
 
-  <section class="w-full h-full mix-blend-normal bg-[#e1e1d3]">
+  <section class="w-full h-full mix-blend-normal bg-[#e1e1d3] -mb-[1px] z-50">
     <section class="w-[95%] mx-auto flex flex-col gap-y-3 sm:flex-row justify-between items-center">
       <BaseSubTitle text-color="text-dark-default" text-size="text-2xl">
         How To Get Here
@@ -189,8 +197,8 @@ const directMap = () => {
   <BaseBackground
     :img-src="Image2"
     :top-gradient="{
-      fromColor: 'from-light-shade-3/0 ',
-      toColor: 'to-light-shade-3/100',
+      fromColor: 'from-[#e1e1d3]/0 ',
+      toColor: 'to-[#e1e1d3]/100',
     }"
     :bottom-gradient="{
       fromColor: 'from-dark-default/0 ',
