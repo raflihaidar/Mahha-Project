@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
+import useWindowSize from '@/utils/useWindowSize.js'
 
 import HeroImage from '@/assets/images/Dining_Page/Dining-00-Hero.webp'
 import BackgroundImage from '@/assets/images/Dining_Page/Dining-09.webp'
@@ -17,9 +18,10 @@ import SlideShow from '@/components/SlideShow.vue'
 import BookIcon from '@/assets/icons/dinning/BookIcon.vue'
 import ClockIcon from '@/assets/icons/dinning/ClockIcon.vue'
 import PlateIcon from '@/assets/icons/accommodation/PlateIcon.vue'
-
 const SliderSwiper = defineAsyncComponent(() => import('@/components/SliderSwiper.vue'))
 const BaseBackground = defineAsyncComponent(() => import('@/components/BaseBackground.vue'))
+
+const { windowWidth } = useWindowSize()
 
 const bannerText =
   'Indulge in a dining experience that blends fresh, seasonal ingredients with the tranquil beauty of nature. From local delicacies to international favorites, every dish is thoughtfully prepared to create a moment of pure culinary delight, set against the serene backdrop of Puncak.'
@@ -53,7 +55,7 @@ const generalInformation = [
   <BaseHero fTitle="Culinary Escape in " lTitle="the Mountain Air" :img="HeroImage" />
   <BaseBanner :text="bannerText" :mobile-icon="true" />
 
-  <section class="lg:hidden">
+  <section v-if="windowWidth <= 768">
     <SliderSwiper
       id="swiper-2"
       :type-navigation="2"
@@ -72,7 +74,7 @@ const generalInformation = [
   </section>
 
   <section
-    class="mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.40)] lg:from-[#86754f] to-[#e1e1d3] bg-[#e1e1d3] via-[#e1e1d3]"
+    class="mx-auto space-y-10 pb-40 w-full h-full bg-gradient-to-b from-[rgba(112,87,41,0.40)] sm:from-[#86754f] to-[#e1e1d3] bg-[#e1e1d3] via-[#e1e1d3]"
   >
     <section
       class="lg:w-[95%] mx-auto w-full flex flex-col-reverse sm:flex-row justify-between items-center"
@@ -101,7 +103,8 @@ const generalInformation = [
       </article>
 
       <section
-        class="lg:w-[43.5rem] w-[90%] hidden lg:flex flex-row-reverse sm:flex-row justify-end gap-x-5 object-cover"
+        v-if="windowWidth > 768"
+        class="lg:w-[43.5rem] w-[90%] flex flex-row-reverse sm:flex-row justify-end gap-x-5 object-cover"
       >
         <figure
           data-scroll
@@ -110,7 +113,7 @@ const generalInformation = [
         >
           <img
             src="@/assets/images/Dining_Page/Dining-01.webp"
-            alt=""
+            alt="A jetted hot tub on a wooden deck surrounded by lush greenery. Nearby, there is a small round table with two chairs and a hanging lantern."
             class="w-full h-full group-hover:opacity-0 transition-opacity cursor-pointer"
             data-scroll
             data-scroll-speed="-1"
@@ -118,7 +121,7 @@ const generalInformation = [
 
           <img
             src="@/assets/images/Dining_Page/Dining-02.webp"
-            alt="Dining Image 3"
+            alt="Elegant modern bar with wooden paneling, three high-backed stools, a marble countertop, and a well-lit back shelf displaying various bottles of liquor in a sophisticated setting."
             class="w-full h-full object-cover absolute top-0 opacity-0 group-hover:opacity-100 transition-opacity"
             data-scroll
             data-scroll-speed="-1"
@@ -131,7 +134,7 @@ const generalInformation = [
         >
           <img
             src="@/assets/images/Dining_Page/Dining-03.webp"
-            alt=""
+            alt="Close-up of a hand holding a spoon, garnishing a sliced grilled dish topped with finely chopped green onions, served in a white oval plate with a rich dark sauce."
             class="w-full h-full group-hover:opacity-0"
             data-scroll
             data-scroll-speed="-1"
@@ -139,7 +142,7 @@ const generalInformation = [
 
           <img
             src="@/assets/images/Dining_Page/Dining-04.webp"
-            alt="Dining Image 4"
+            alt="Cozy restaurant interior with wooden tables set for dining, featuring minimalist tableware and small flower vases. Warm lighting from modern pendant lamps hangs above, and a cushioned bench with a red geometric pattern adds a touch of elegance."
             class="w-full h-full object-cover absolute top-0 group-hover:opacity-100 opacity-0 transition-opacity"
             data-scroll
             data-scroll-speed="-1"
@@ -168,7 +171,7 @@ const generalInformation = [
       <section class="w-full flex flex-col lg:flex-row justify-between items-center">
         <SlideShow :images="[Image1, Image2, Image3, Image4]" />
         <article class="lg:w-[30.5rem] 2xl:w-[35rem] w-full flex justify-center">
-          <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[90%] mx-auto pt-16 lg:pt-0">
+          <div class="lg:w-[17.5rem] 2xl:w-[23rem] w-[95vw] mx-auto pt-16 lg:pt-0">
             <BaseSubTitle
               text-color="text-dark-default"
               text-size="text-2xl"

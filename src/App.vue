@@ -1,5 +1,4 @@
 <script setup>
-import { useRouter } from 'vue-router'
 import { onMounted, ref, defineAsyncComponent } from 'vue'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 const BaseFooter = defineAsyncComponent(() => import('@/components/BaseFooter.vue'))
@@ -29,7 +28,6 @@ const setLocomotiveScroll = () => {
 }
 
 onMounted(() => {
-  console.log(container.value)
   setLocomotiveScroll()
   new ResizeObserver(() => locoScroll.update()).observe(container.value)
 })
