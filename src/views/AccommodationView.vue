@@ -1,13 +1,8 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
-import HeroImage from '@/assets/images/Accommodation_Page/Accommodation-00-Hero.webp'
 import BaseHero from '@/components/BaseHero.vue'
 import BaseBanner from '@/components/BaseBanner.vue'
 import BaseSubTitle from '@/components/BaseSubTitle.vue'
-import BaseButton from '../components/BaseButton.vue'
-
-const SliderSwiper = defineAsyncComponent(() => import('@/components/SliderSwiper.vue'))
-
 import BedIcon from '@/assets/icons/accommodation/BedIcon.vue'
 import ShowerIcon from '@/assets/icons/accommodation/ShowerIcon.vue'
 import SunIcon from '@/assets/icons/accommodation/SunIcon.vue'
@@ -16,6 +11,8 @@ import GlassIcon from '@/assets/icons/accommodation/GlassIcon.vue'
 import CupIcon from '@/assets/icons/accommodation/CupIcon.vue'
 import TVIcon from '@/assets/icons/accommodation/TVIcon.vue'
 import PlateIcon from '@/assets/icons/accommodation/PlateIcon.vue'
+import HeroImage from '@/assets/images/Accommodation_Page/Accommodation-00-Hero.webp'
+const SliderSwiper = defineAsyncComponent(() => import('@/components/SliderSwiper.vue'))
 
 const bannerText =
   'Let the quiet elegance of our rooms envelop you in warmth and comfort. Each space is a sanctuary designed for romance with breathtaking views that invite you to linger longer and create unforgettable memories with your loved one.'

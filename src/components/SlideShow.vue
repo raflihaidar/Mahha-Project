@@ -26,45 +26,27 @@ const startSlideshow = () => {
   }
 }
 
-// Fungsi untuk menghentikan slideshow
-const stopSlideshow = () => {
-  if (intervalId) {
-    clearInterval(intervalId)
-    intervalId = null
-  }
-}
-
-// Fungsi untuk mendeteksi scroll di semua device
-const handleScroll = () => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  if (scrollTop === 0) {
-    startSlideshow()
-  } else {
-    stopSlideshow()
-  }
-}
-
 // Mulai slideshow saat komponen di-mount
 onMounted(() => {
   startSlideshow()
-  window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
 // Hentikan slideshow saat komponen di-unmount
 onUnmounted(() => {
   stopSlideshow()
-  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <template>
-  <figure class="lg:w-[43.5rem] 2xl:w-[53vw] h-full w-[90%] relative">
+  <figure
+    class="lg:w-[43.5rem] 2xl:w-[53vw] h-[15.375rem] lg:h-[32.625rem] 2xl:h-[40rem] w-[95vw] relative"
+  >
     <Transition name="fade">
       <img
         v-if="isChange"
         :src="images[currentIndex]"
         alt="Slideshow"
-        class="sm:w-full h-full object-cover"
+        class="w-full h-full object-cover"
       />
     </Transition>
   </figure>

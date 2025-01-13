@@ -228,7 +228,7 @@ const openModal = (item) => {
         >
           <img
             src="../assets/images/Experiences_Page/Experiences-08.webp"
-            alt=""
+            alt="A round table set for a formal event with white tablecloth, floral centerpiece, plates with salad, bread rolls, and glasses of water and champagne. Brown wooden chairs surround the table."
             class="w-full h-auto"
             data-scroll
             data-scroll-speed="-1"

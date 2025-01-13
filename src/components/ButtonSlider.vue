@@ -38,11 +38,11 @@ const swiper = useSwiper()
   </div>
 
   <div
-    class="lg:hidden flex w-[90%] text-xs mx-auto justify-between mt-5 z-50 py-5"
+    class="lg:hidden flex w-[90%] text-xs mx-auto justify-between mt-0 z-50 py-5"
     :class="[
       `${textColor}`,
       {
-        'absolute -top-5 left-1/2 -translate-x-1/2': typeButton === 2,
+        'absolute top-0 left-1/2 -translate-x-1/2': typeButton === 2,
       },
     ]"
   >
