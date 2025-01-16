@@ -80,17 +80,13 @@ const getImageUrl = (image) => {
       }"
       class="relative w-[95vw] lg:w-full mx-auto"
     >
-      <swiper-slide
-        v-for="(item, index) in images"
-        :key="index"
-        class="flex justify-center items-center"
-      >
+      <swiper-slide v-for="(item, index) in images" :key="index">
         <figure
           class="relative mx-auto"
           :class="
             typeNavigation === 2
               ? 'w-full h-full'
-              : 'lg:w-[39rem] lg:h-[39rem] 2xl:w-[50vw] 2xl:h-[50vw] w-[24rem] h-[24rem]'
+              : 'lg:w-full lg:h-[39rem] 2xl:w-[50vw] 2xl:h-[50vw] w-[24rem] h-[24rem]'
           "
         >
           <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full object-cover" />

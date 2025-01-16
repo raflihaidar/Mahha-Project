@@ -56,17 +56,10 @@ body {
   border: none;
 }
 
-@media (min-width: 1536px) {
-  #mySwiper .swiper-wrapper .swiper-slide-next {
-    margin-top: -100px !important;
-  }
-}
-
 @media (min-width: 768px) {
   #mySwiper .swiper-wrapper .swiper-slide-next {
-    margin-top: -80px;
-    transform: translateX(0%) scaleY(0.75); /* Bergeser ke kiri dengan scale lebih kecil */
-    transform-origin: center center; /* Menentukan pusat transformasi */
+    transform: translateX(0) scaleY(0.75); /* Bergeser ke kiri dengan scale lebih kecil */
+    transform-origin: top center; /* Menentukan pusat transformasi di atas */
     transition:
       transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
       margin-top 0.8s ease;

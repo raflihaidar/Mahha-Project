@@ -125,7 +125,7 @@ const directMap = () => {
             in Every Moment
           </BaseSubTitle>
           <p
-            class="lg:w-[17.5rem] 2xl:w-[23rem] 2xl:place-self-start 2xl:text-base place-self-center text-light-shade-1 text-xs font-thin mb-5"
+            class="lg:w-[17.5rem] 2xl:w-[23rem] 2xl:place-self-start 2xl:text-base text-light-shade-1 text-xs font-thin mb-5"
           >
             Whether it's a quiet walk through misty forests or a cozy evening under the stars, Mahha
             dii Meru curates gentle, heartfelt experiences that warm the spirit. Let every step,

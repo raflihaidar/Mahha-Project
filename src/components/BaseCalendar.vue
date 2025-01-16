@@ -1,6 +1,7 @@
 <script setup>
 import CloseIcon from '@/assets/icons/CloseIcon.vue'
 import NextIcon from '@/assets/icons/NextIcon.vue'
+import PrevIcon from '@/assets/icons/PreviousIcon.vue'
 import UserIcon from '@/assets/icons/calendar/UserIcon.vue'
 import CalendarInIcon from '@/assets/icons/calendar/CalendarInIcon.vue'
 import CalendarOutIcon from '@/assets/icons/calendar/CalendarOutIcon.vue'
@@ -109,6 +110,12 @@ const handleSlide = () => {
   if (currentMonth.value === 12) {
     currentMonth.value = 0
     currentYear.value += 1
+  }
+}
+
+const handlePrevious = () => {
+  if (currentMonth.value !== 0) {
+    currentMonth.value -= 1 // Kurangi bulan
   }
 }
 
@@ -297,6 +304,13 @@ const handleClose = () => {
               </h4>
               <h4>{{ currentMonth === 11 ? currentYear + 1 : currentYear }}</h4>
             </section>
+
+            <PrevIcon
+              v-if="currentMonth != 0"
+              color="#45462A"
+              @click="handlePrevious"
+              class="absolute top-0 left-0 z-50 cursor-pointer"
+            />
 
             <NextIcon
               color="#45462A"
