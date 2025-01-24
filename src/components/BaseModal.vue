@@ -30,12 +30,8 @@
           <h3 class="text-light-shade-1 uppercase text-base font-medium">{{ subTitle }}</h3>
           <h2 class="text-light-default text-2xl mt-5 w-[20.5rem] lg:w-full">{{ title }}</h2>
           <div class="w-full my-10 font-thin">
-            <p
-              class="text-light-shade-1 mb-7 text-xs 2xl:text-base"
-              v-for="(item, index) in contents"
-              :key="index"
-            >
-              {{ item }}
+            <p class="text-light-shade-1 mb-7 text-xs 2xl:text-base">
+              {{ contents }}
             </p>
           </div>
           <BaseButton
@@ -55,7 +51,6 @@
 import gsap from 'gsap'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
-import bikeImage from '@/assets/images/Experiences_Page/Modal.png'
 import CloseIcon from '../assets/icons/CloseIcon.vue'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 
@@ -66,7 +61,7 @@ const props = defineProps({
   },
   subTitle: String,
   title: String,
-  contents: Array,
+  contents: String,
 })
 
 const emit = defineEmits(['closeModal'])

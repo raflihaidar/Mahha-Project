@@ -121,7 +121,7 @@ const handlePrevious = () => {
 
 const onBook = () => {
   const link = 'https://secure.guestaps.com/'
-  let merchant_id = 'biladeubud'
+  let merchant_id = 'mahha'
 
   location.href =
     link +
@@ -385,7 +385,7 @@ const handleClose = () => {
         </section>
 
         <div class="w-full h-auto mx-auto sm:w-[5.875rem] mt-5 border" @click="onBook">
-          <button class="w-full bg-dark-default text-xs text-light-default py-4 px-6" disabled>
+          <button class="w-full bg-dark-default text-xs text-light-default py-4 px-6">
             SEARCH
           </button>
         </div>

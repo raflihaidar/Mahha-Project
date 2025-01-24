@@ -24,7 +24,7 @@ const props = defineProps({
 <template>
   <section class="overflow-hidden w-full h-full relative z-30 -mb-1">
     <section
-      :style="{ backgroundImage: `url(${imgSrc})` }"
+      :style="imgSrc ? { backgroundImage: `url(${imgSrc})` } : ''"
       class="w-screen h-screen bg-cover bg-center backface-hidden will-change-transform"
     >
       <!-- Konten -->
