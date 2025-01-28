@@ -22,18 +22,20 @@ const { heroData, bannerData, contentHighlight, articleData, sliderImages, isLoa
 const showModal = ref(false)
 const modalData = ref({
   title: '',
+  img: '',
   subTitle: '',
   contents: '',
 })
 
 const openModal = (item) => {
-  console.log(item.ftitle)
+  console.log(item)
   modalData.value = {
-    subTitle: item.fTitle,
+    title: item.stitle,
+    subTitle: item.ftitle,
+    img: BASE_IMAGE_URL + item.images[0].file_path,
     contents: item.description,
   }
 
-  console.log(modalData.value)
   showModal.value = true
 }
 
@@ -141,8 +143,9 @@ onBeforeMount(async () => {
         <BaseModal
           :isOpen="showModal"
           @closeModal="showModal = false"
-          subTitle="test"
-          title="Pedal Through Nature’s Serene Trails"
+          :subTitle="modalData.subTitle"
+          :title="modalData.title"
+          :img="modalData.img"
           :contents="modalData.contents"
         >
         </BaseModal>

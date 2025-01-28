@@ -195,7 +195,7 @@ onBeforeMount(async () => {
     <BaseBackground
       :imgSrc="BASE_IMAGE_URL + contentHighlight[5].images[0].file_path"
       :top-gradient="{
-        fromColor: 'from-[#e1e1d3]/0 ',
+        fromColor: 'from-[#e1e1d3]/0',
         toColor: 'to-[#e1e1d3]/100',
       }"
       :bottom-gradient="{
