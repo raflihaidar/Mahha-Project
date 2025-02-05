@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation } from 'swiper/modules'
 import ButtonSlider from './ButtonSlider.vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
@@ -53,9 +53,11 @@ const onSlideChange = (swiper) => {
   currentIndex.value = swiper.realIndex
 }
 
-const getImageUrl = (image) => {
-  return new URL(`../assets/images/${image}`, import.meta.url)
-}
+onMounted(() => {
+  console.log(props.images)
+})
+
+const BASE_IMAGE_URL = 'https://admin.mahharesorts.com/storage/public/'
 </script>
 
 <template>
@@ -89,7 +91,11 @@ const getImageUrl = (image) => {
               : 'lg:w-full lg:h-[39rem] 2xl:w-[50vw] 2xl:h-[50vw] w-[24rem] h-[24rem]'
           "
         >
-          <img :src="getImageUrl(item)" alt="Slide" class="w-full h-full object-cover" />
+          <img
+            :src="typeNavigation !== 2 ? BASE_IMAGE_URL + item.file_path : item"
+            alt="Slide"
+            class="w-full h-full object-cover"
+          />
         </figure>
       </swiper-slide>
       <ButtonSlider

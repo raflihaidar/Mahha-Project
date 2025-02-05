@@ -1,3 +1,22 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import dayjs from 'dayjs'
+
+// Reactive variable untuk waktu dan tanggal
+const currentTime = ref(dayjs().format('h:mm:ss A'))
+const currentDate = ref(dayjs().format('dddd, D MMM YYYY'))
+
+// Function untuk memperbarui waktu setiap detik
+const updateTime = () => {
+  currentTime.value = dayjs().format('h:mm:ss A')
+}
+
+// Jalankan interval untuk memperbarui waktu
+onMounted(() => {
+  setInterval(updateTime, 1000) // Update waktu setiap 1 detik
+})
+</script>
+
 <template>
   <footer
     class="bg-dark-default lg:px-10 px-5 lg:pt-28 pb-5 flex flex-col lg:space-y-52 space-y-20 z-50"
@@ -9,16 +28,16 @@
         <img class="w-full" src="../assets/images/Logo.svg" alt="Logo Mahha diii MERU" />
       </figure>
       <ul
-        class="flex flex-col lg:flex-row irems-center text-center gap-y-3 gap-x-5 uppercase text-xs 2xl:text-base font-thin"
+        class="flex flex-col lg:flex-row items-center text-center gap-y-3 gap-x-5 uppercase text-xs 2xl:text-base font-thin"
       >
         <li>
-          <a :href="$router.resolve({ name: 'accommodation' }).href">Accomodation </a>
+          <a :href="$router.resolve({ name: 'accommodation' }).href">Accomodation</a>
         </li>
         <li>
-          <a :href="$router.resolve({ name: 'experiences' }).href">Experiences </a>
+          <a :href="$router.resolve({ name: 'experiences' }).href">Experiences</a>
         </li>
         <li>
-          <a :href="$router.resolve({ name: 'dining' }).href">Dining </a>
+          <a :href="$router.resolve({ name: 'dining' }).href">Dining</a>
         </li>
       </ul>
     </section>
@@ -52,8 +71,8 @@
           <p>GMT+7</p>
         </section>
         <section class="text-light-shade-1 font-thin">
-          <p>Sunday, 22 Sep 2024</p>
-          <p>7:28:41 PM</p>
+          <p>{{ currentDate }}</p>
+          <p>{{ currentTime }}</p>
         </section>
       </div>
       <div>

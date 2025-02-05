@@ -9,8 +9,6 @@ const router = createRouter({
       component: () => import('@/views/HomeView.vue'),
       meta: {
         title: 'Mahha Dii Meru - Luxury Retreat in Nature',
-        description:
-          'Find serenity at Mahha dii Meru Resort, a serene retreat nestled amidst the natural beauty of Puncak Bogor. Indulge in the enchantment of nature with romantic stays, mesmerising views and heartfelt experiences designed to refresh your soul.',
         navbar: true,
         footer: true,
       },
@@ -21,8 +19,6 @@ const router = createRouter({
       component: () => import('@/views/AccommodationView.vue'),
       meta: {
         title: 'Accommodation - Stay at Mahha Dii Meru',
-        description:
-          'Discover comfort and tranquility at Mahha di Meru. Enjoy an unforgettable stay with luxurious suites, breathtaking views of nature, and top-notch amenities including private balconies, free Wi-Fi, and 24-hour room service.',
         navbar: true,
         footer: true,
       },
@@ -33,8 +29,6 @@ const router = createRouter({
       component: () => import('@/views/ExperiencesView.vue'),
       meta: {
         title: 'Experiences - Discover Mahha Dii Meru Adventures',
-        description:
-          "Immerse yourself in a variety of curated experiences at Mahha di Meru, from tranquil nature walks to thrilling outdoor adventures. Whether you seek relaxation or excitement, our tailored activities promise unforgettable moments in nature's embrace.",
         navbar: true,
         footer: true,
       },
@@ -45,8 +39,6 @@ const router = createRouter({
       component: () => import('@/views/DiningView.vue'),
       meta: {
         title: 'Dining - Culinary Delights at Mahha Dii Meru',
-        description:
-          'Indulge in a dining experience that blends fresh, seasonal ingredients with the tranquil beauty of nature. From local delicacies to international favorites, every dish is thoughtfully prepared to create a moment of pure culinary delight amidst the serene mountain air.',
         navbar: true,
         footer: true,
       },
@@ -74,16 +66,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const { title, description } = to.meta
+  const { title } = to.meta
   const defaultTitle = 'Mahha dii Meru'
-  const defaultDescription =
-    'Discover Mahha dii Meru resort, a tranquil haven in Puncak Bogor. One of the best resorts in Bogor, offering romantic accommodations and breathtaking views.'
-
   document.title = title || defaultTitle
-
-  const descriptionElement = document.querySelector('head meta[name="description"]')
-
-  descriptionElement.setAttribute('content', description || defaultDescription)
   next()
 })
 

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -18,6 +18,12 @@ const props = defineProps({
     type: String,
     default: '0.5',
   },
+})
+
+const fontSize = computed(() => {
+  const length = props.fTitle.length
+  if (length > 20) return 'text-[1.8rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] '
+  return 'text-[2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] '
 })
 
 const headerRef = ref(null)
@@ -87,7 +93,8 @@ onMounted(() => {
     >
       <h1
         ref="textRef"
-        class="absolute top-[45vh] w-full text-[2rem] leading-[2.2rem] md:text-6xl lg:text-[4rem] 2xl:text-[5rem] font-normal text-light-default will-change-transform"
+        :class="`${fontSize}`"
+        class="absolute top-[45vh] w-full leading-[2.2rem] font-normal text-light-default will-change-transform"
         data-scroll
         data-scroll-speed="2"
       >
