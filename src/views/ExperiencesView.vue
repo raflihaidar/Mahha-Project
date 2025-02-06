@@ -3,6 +3,8 @@ import { ref, defineAsyncComponent, onBeforeMount } from 'vue'
 import { storeToRefs } from 'pinia'
 import { sendWhatsAppMessage, moreInfo } from '@/utils/waDirect.js'
 import { useExperienceStore } from '@/stores/experiences.js'
+import { useContactStore } from '@/stores/contact.js'
+
 import { RouterLink } from 'vue-router'
 
 import BaseHero from '@/components/BaseHero.vue'
@@ -16,6 +18,7 @@ const BaseImage = defineAsyncComponent(() => import('@/components/BaseImage.vue'
 
 const BASE_IMAGE_URL = 'https:///admin.mahharesorts.com/storage/public/'
 const store = useExperienceStore()
+const contactStore = useContactStore()
 const { heroData, bannerData, contentHighlight, articleData, sliderImages, isLoading, error } =
   storeToRefs(store)
 
@@ -28,7 +31,6 @@ const modalData = ref({
 })
 
 const openModal = (item) => {
-  console.log(item)
   modalData.value = {
     title: item.stitle,
     subTitle: item.ftitle,
@@ -41,6 +43,7 @@ const openModal = (item) => {
 
 onBeforeMount(async () => {
   await store.fetchAllData()
+  await contactStore.fetchAllData()
 })
 </script>
 
@@ -165,7 +168,7 @@ onBeforeMount(async () => {
         />
 
         <section
-          class="w-[95%] h-[80%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[12.5rem] md:pt-96 lg:pt-20 2xl:pt-28 sm:relative grid gap-y-5"
+          class="w-[95%] h-[80%] lg:w-[17.5rem] 2xl:w-[23rem] pt-[12.5rem] md:pt-96 lg:pt-20 2xl:pt-28 sm:relative grid justify-items-start gap-y-5"
         >
           <BaseSubTitle text-color="text-dark-default" text-size="text-2xl" class="2xl:text-3xl">
             {{ contentHighlight[2].ftitle }} <br />
@@ -174,15 +177,13 @@ onBeforeMount(async () => {
           <p class="text-dark-shade-2 font-thin text-xs 2xl:text-base w-full">
             {{ contentHighlight[2].description }}
           </p>
-          <RouterLink to="/accommodation">
-            <BaseButton
-              text="CONTACT US"
-              icon-color="#45462A"
-              text-color="text-dark-default"
-              font-size="text-base"
-              @action="moreInfo"
-            />
-          </RouterLink>
+          <BaseButton
+            text="CONTACT US"
+            icon-color="#45462A"
+            text-color="text-dark-default"
+            font-size="text-base"
+            @action="moreInfo"
+          />
 
           <BaseImage
             :src="BASE_IMAGE_URL + contentHighlight[3].images[0].file_path"

@@ -1,10 +1,11 @@
 <script setup>
-import { RouterLink, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { defineAsyncComponent, onBeforeMount } from 'vue'
 import { storeToRefs } from 'pinia'
 import { sendWhatsAppMessage } from '@/utils/waDirect.js'
 import useWindowSize from '@/utils/useWindowSize.js'
 import { useDiningStore } from '@/stores/dining.js'
+import { useContactStore } from '@/stores/contact.js'
 
 import LoadingScreen from '@/components/LoadingScreen.vue'
 import BaseHero from '@/components/BaseHero.vue'
@@ -49,6 +50,7 @@ const generalInformation = [
 ]
 
 const store = useDiningStore()
+const contactStore = useContactStore()
 const { heroData, bannerData, contentHighlight, sliderImages, isLoading, error } =
   storeToRefs(store)
 
@@ -59,6 +61,7 @@ const viewMenu = (content) => {
 
 onBeforeMount(async () => {
   await store.fetchAllData()
+  await contactStore.fetchAllData()
 })
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, defineAsyncComponent } from 'vue'
+import { onMounted, ref, defineAsyncComponent, onBeforeMount } from 'vue'
 import BaseNavbar from '@/components/BaseNavbar.vue'
 const BaseFooter = defineAsyncComponent(() => import('@/components/BaseFooter.vue'))
 import LocomotiveScroll from 'locomotive-scroll'

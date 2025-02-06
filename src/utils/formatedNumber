@@ -1,0 +1,11 @@
+export const formatContact = (contact) => {
+  if (contact.includes('@')) {
+    // Jika contact berupa email
+    return contact // Kembalikan email tanpa perubahan
+  } else {
+    const countryCode = '0'
+    // Memformat nomor telepon tanpa menggunakan join
+    const formattedPhoneNumber = `${countryCode}${contact.slice(0, 4)}-${contact.slice(4, 8)}-${contact.slice(8)}`
+    return formattedPhoneNumber
+  }
+}

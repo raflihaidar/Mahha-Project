@@ -1,10 +1,15 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeMount } from 'vue'
+import { useContactStore } from '@/stores/contact.js'
 import dayjs from 'dayjs'
+import { storeToRefs } from 'pinia'
+import { formatContact } from '../utils/formatedNumber'
 
 // Reactive variable untuk waktu dan tanggal
 const currentTime = ref(dayjs().format('h:mm:ss A'))
 const currentDate = ref(dayjs().format('dddd, D MMM YYYY'))
+const store = useContactStore()
+const { contactData } = storeToRefs(store)
 
 // Function untuk memperbarui waktu setiap detik
 const updateTime = () => {
@@ -14,6 +19,10 @@ const updateTime = () => {
 // Jalankan interval untuk memperbarui waktu
 onMounted(() => {
   setInterval(updateTime, 1000) // Update waktu setiap 1 detik
+})
+
+onBeforeMount(async () => {
+  await store.fetchAllData()
 })
 </script>
 
@@ -57,10 +66,9 @@ onMounted(() => {
           <h3>Contact</h3>
         </section>
         <section class="text-light-shade-1 font-thin">
-          <p>0877-8985-9595</p>
-          <p>0878-8194-8999</p>
-          <p>info@mahharesorts.com</p>
-          <p>reservation@mahharesorts.com</p>
+          <p v-for="(item, index) in contactData" :key="index">
+            {{ item.type === 'phone' ? formatContact(item.number) : item.email }}
+          </p>
         </section>
       </div>
       <div>
